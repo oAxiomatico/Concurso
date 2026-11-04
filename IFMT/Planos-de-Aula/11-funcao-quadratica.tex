@@ -1,0 +1,20 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Função quadrática: zeros, vértice e interpretação}{IFMT Edital complementar 01 ao Edital 210/2024, Matemática/Juína; também tema sorteado no PSS 105/2026, Campo Novo do Parecis.}{1º ano do Ensino Médio integrado ao técnico.}{Encontrar os zeros e o vértice por completar quadrados; identificar intervalo de crescimento e decréscimo e interpretar máximo em um modelo.}{Produtos notáveis, fatoração, equação de 2º grau e representação cartesiana.}{Problema de trajetória idealizada com gráfico, análise algébrica e verificação de unidades no quadro.}
+\Roteiro{Apresentar a função idealizada $h(t)=-5t^2+20t+1$ (metros, com $t$ em segundos) e perguntar quando ocorre altura máxima.}{Reconhecer concavidade e domínio físico $t\ge0$ enquanto o objeto está no ar; apresentar forma $at^2+bt+c$.}{Completar quadrados e demonstrar fórmula do vértice; obter $h(t)=21-5(t-2)^2$.}{Concluir máximo de $21$ m em $t=2$ s; comparar com fatoração de $f(x)=x^2-6x+5$ e seus zeros $1,5$, vértice $(3,-4)$.}{Sintetizar concavidade, vértice, domínio e interpretação; realizar uma questão de saída.}
+\section{Demonstração algébrica do vértice}
+Para $a\ne0$,
+\[
+ax^2+bx+c
+=a\left(x+\frac{b}{2a}\right)^2+c-\frac{b^2}{4a}.
+\]
+Com efeito, a expansão da parcela quadrática é $ax^2+bx+b^2/(4a)$, e a constante corrige o termo adicional. Assim a abscissa do vértice é $x_v=-b/(2a)$ e sua ordenada é $y_v=c-b^2/(4a)=-\Delta/(4a)$. Se $a<0$, o quadrado não negativo é multiplicado por número negativo, logo o vértice é máximo global da função em $\mathbb R$; se $a>0$, é mínimo.
+\section{Exemplos com respostas e diagnóstico}
+Na trajetória idealizada, $h(t)=-5(t-2)^2+21$, com máximo $h(2)=21$ m. A condição física restringe a interpretação: para $t<0$ a fórmula não descreve instantes da experiência, e após o impacto no solo o modelo deixa de valer. Para a função $f(x)=(x-1)(x-5)$, os zeros são $1$ e $5$, o eixo de simetria é $x=3$ e $f(3)=-4$. No quadro, marcar $(1,0),(5,0),(3,-4)$ e $(0,5)$, e explicar concavidade para cima.
+\QuadroEAvaliacao{Esquerda: parábola e dados; centro: completar quadrados; direita: gráfico de $f$ com zeros e vértice.}{Se $a<0$, por que $x_v$ dá máximo? Porque $a(x-x_v)^2\le0$, logo $f(x)\le f(x_v)$.}
+\Auditoria{Não misturar a concavidade da trajetória com a do exemplo $f$; não usar fórmula do vértice sem explicar sua origem; não afirmar validade de modelo físico fora do domínio; concluir com coordenadas e unidades.}
+\section{Bibliografia}
+G. Iezzi et al., \emph{Fundamentos de Matemática Elementar --- Conjuntos e Funções}; livros didáticos de Matemática do Ensino Médio.
+
+\end{document}
