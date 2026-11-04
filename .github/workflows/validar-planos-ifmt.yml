@@ -1,0 +1,32 @@
+name: Validar planos de aula IFMT em LaTeX
+on:
+  push:
+    paths:
+      - "IFMT/Planos-de-Aula/**"
+      - ".github/workflows/validar-planos-ifmt.yml"
+  workflow_dispatch:
+
+jobs:
+  compilar-planos:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+
+      - name: Compilar planos EBTT
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: "*.tex"
+          working_directory: "IFMT/Planos-de-Aula"
+          continue_on_error: true
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Publicar PDFs como artefatos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: planos-de-aula-IFMT-PDF
+          path: "IFMT/Planos-de-Aula/*.pdf"
+          if-no-files-found: warn
