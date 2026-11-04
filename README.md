@@ -2,9 +2,10 @@
 
 Repositório de estudos para concursos de professor de Matemática, com foco em **UFMT** (magistério superior) e **IFMT** (Ensino Básico, Técnico e Tecnológico).
 
-## Coleção de planos de aula
+## Coleções de planos de aula
 
-- [UFMT — 14 planos para provas didáticas universitárias, organizados por edital e campus](UFMT/Planos-de-Aula/README.md). Inclui demonstrações, exemplos e rubricas de autoavaliação.
+- [UFMT — 14 planos para provas didáticas universitárias](UFMT/Planos-de-Aula/README.md), organizados por edital e campus.
+- [IFMT — 15 planos para provas didáticas EBTT](IFMT/Planos-de-Aula/README.md), com 33 minutos de simulação, matemática desenvolvida e autoavaliação.
 
 ## Guias em LaTeX
 
