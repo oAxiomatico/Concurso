@@ -1,0 +1,41 @@
+name: Compilar materiais de provas anteriores do IFMT
+on:
+  push:
+    paths:
+      - "IFMT/Provas-Objetivas/**"
+      - "IFMT/Provas-Didaticas/**"
+      - ".github/workflows/validar-provas-ifmt.yml"
+  workflow_dispatch:
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Obter repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar conteudos objetivos
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: "conteudos_provas_objetivas_2023_2024_2026.tex"
+          working_directory: "IFMT/Provas-Objetivas"
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Compilar temas didaticos
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: "temas_didaticos_2023_2024_2026.tex"
+          working_directory: "IFMT/Provas-Didaticas"
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Anexar os dois PDFs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: referencias-provas-IFMT-PDF
+          path: |
+            IFMT/Provas-Objetivas/*.pdf
+            IFMT/Provas-Didaticas/*.pdf
+          if-no-files-found: warn
