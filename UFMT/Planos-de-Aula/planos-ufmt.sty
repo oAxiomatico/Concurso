@@ -1,0 +1,63 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{planos-ufmt}[2026/11/04 Apoio aos planos didaticos de Matematica]
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[brazil]{babel}
+\RequirePackage{lmodern,microtype}
+\RequirePackage[a4paper,margin=2.3cm]{geometry}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage{array,booktabs,tabularx,enumitem}
+\RequirePackage[table]{xcolor}
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=2pt}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=2pt}
+\emergencystretch=2em
+\newtheorem{teorema}{Teorema}
+\newtheorem{proposicao}{Proposição}
+\newtheorem{lema}{Lema}
+\newcommand{\CapaPlano}[3]{%
+\begin{center}
+{\Large\bfseries #1\par}\vspace{3pt}
+{\small Plano de aula autoral para simulação de prova didática universitária --- 45 minutos\par}
+{\small\textit{Origem do tema: #2}\par}
+\end{center}
+\noindent\textbf{Disciplina e público:} #3\par
+\noindent\textbf{Natureza:} proposta de treinamento, sem nota oficial e sem vínculo com banca examinadora. Verificar o edital e as retificações de um futuro concurso.\par
+\medskip\hrule\medskip
+}
+\newcommand{\Cronograma}[5]{%
+\section{Cronograma de 45 minutos}
+\begin{tabularx}{\textwidth}{p{2cm}X}
+\toprule
+\textbf{Minutos}&\textbf{Ação e evidência observável}\\\midrule
+0--5 & #1\\
+5--12 & #2\\
+12--28 & #3\\
+28--40 & #4\\
+40--45 & #5\\\bottomrule
+\end{tabularx}
+}
+\newcommand{\RubricaUFMT}{%
+\section{Autoavaliação após ensaio filmado}
+\noindent\textbf{Ficha de treinamento inspirada nas quatro dimensões da rubrica UFMT 2025/2026.} As pontuações máximas são históricas e não representam nota atribuída por uma banca a este plano.
+\begin{tabularx}{\textwidth}{p{3.5cm}p{1.2cm}X}
+\toprule
+\textbf{Dimensão}&\textbf{Máx.}&\textbf{O que deve ficar verificável na gravação}\\\midrule
+Plano escrito & 10 & Objetivos, hipóteses, método, nível universitário, referências e coerência com o executado.\\
+Desempenho & 25 & Clareza da fala, ritmo, postura, leitura de símbolos, uso legível do quadro.\\
+Desenvolvimento & 60 & Correção das provas, alcance delimitado, exemplos resolvidos, profundidade e sequência lógica.\\
+Tempo & 5 & Concluir entre os limites do edital; nesta simulação fechar aos 45 min.\\\midrule
+\textbf{Total}&\textbf{100}&\textbf{Registrar nota estimada e evidências, sem tratá-la como avaliação oficial.}\\\bottomrule
+\end{tabularx}
+\par\noindent\textbf{Registro:} Plano \underline{\hspace{1cm}}/10; desempenho \underline{\hspace{1cm}}/25; conteúdo \underline{\hspace{1cm}}/60; tempo \underline{\hspace{1cm}}/5; total \underline{\hspace{1cm}}/100.
+\par\noindent\textbf{Condições de simulação:} quadro e giz/pincel; demonstrar sem consulta; não presumir intervenções da banca; reservar 5 minutos para encerrar, nunca iniciar teorema novo no fechamento.
+}
+\newcommand{\Fechamento}[2]{%
+\section{Organização do quadro e diagnóstico}
+\textbf{Quadro:} #1
+\par\textbf{Checagem final:} #2
+\par\textbf{Perguntas para o avaliador do ensaio:} Há hipóteses omitidas? Alguma igualdade foi afirmada sem justificativa? Um exemplo foi apenas citado, sem solução? A conclusão respondeu ao objetivo?
+}
