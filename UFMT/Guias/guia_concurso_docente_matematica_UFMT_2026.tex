@@ -1,0 +1,651 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=2.2cm,headheight=16pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array,booktabs,tabularx,longtable,multirow}
+\usepackage[table]{xcolor}
+\usepackage{enumitem,hyperref,xurl,fancyhdr,tcolorbox,needspace,titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black,
+ pdftitle={Guia para concurso docente universitario em Matematica na UFMT},
+ pdfauthor={Estudo documental independente}}
+\definecolor{marinho}{RGB}{25,60,104}
+\definecolor{claro}{RGB}{237,244,251}
+\definecolor{neutro}{RGB}{246,247,248}
+\definecolor{alarme}{RGB}{155,52,48}
+\titleformat{\section}{\Large\bfseries\color{marinho}}{\thesection}{.7em}{}
+\titleformat{\subsection}{\large\bfseries\color{marinho}}{\thesubsection}{.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{.5em}{}
+\setlist[itemize]{leftmargin=1.8em,topsep=4pt,itemsep=2pt}
+\setlist[enumerate]{leftmargin=1.8em,topsep=4pt,itemsep=2pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+\emergencystretch=1.5em
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\textcolor{marinho}{Magistério Superior -- Matemática / UFMT}}\fancyhead[R]{\small Estudo documental}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{.3pt}
+\newtcolorbox{ideia}[1][]{colback=claro,colframe=marinho!45,arc=1.5pt,boxrule=.55pt,left=7pt,right=7pt,top=6pt,bottom=6pt,#1}
+\newtcolorbox{cuidado}[1][]{colback=red!2,colframe=alarme!55,arc=1.5pt,boxrule=.55pt,left=7pt,right=7pt,top=6pt,bottom=6pt,#1}
+\newcommand{\oficial}{\textbf{Regra documental.}~}
+\newcommand{\infer}{\textbf{Análise/recomendação.}~}
+\newcommand{\limite}{\textbf{Limite documental.}~}
+\newcommand{\fufmt}{\textsf{[UFMT--26]}}
+\newcommand{\fufmtv}{\textsf{[UFMT--25]}}
+\newcommand{\fifc}{\textsf{[IFC--26]}}
+\newcommand{\fufu}{\textsf{[UFU--24]}}
+\newtheorem{proposicao}{Proposição}
+\newtheorem{teorema}{Teorema}
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{1.6cm}
+{\large ESTUDO DE EDITAIS, RUBRICAS E JUSTIFICATIVAS DE BANCAS\par}
+\vspace{1.1cm}
+{\Huge\bfseries\color{marinho} Preparação estratégica para concurso docente universitário em Matemática\par}
+\vspace{.7cm}
+{\LARGE Universidade Federal de Mato Grosso -- UFMT\par}
+\vspace{.4cm}
+{\large Edital nº 01/PROGEP/UFMT/2026 como referência principal\par}
+\vspace{1.3cm}
+\begin{ideia}
+\centering\large
+\textbf{A meta não é somente explicar Matemática corretamente: é demonstrar domínio avançado, organizar uma prova matemática rigorosa, ensiná-la em nível de graduação e construir uma trajetória acadêmica compatível com a vaga.}
+\end{ideia}
+\vfill
+{\large 30 de outubro de 2026\par}
+{\small Material independente para estudo pessoal. Inclui matriz de critérios, seis temas de Matemática, rotas de formação, plano-modelo de 45 minutos, prova escrita-modelo, análise do IFC e programa de preparação.\par}
+\vspace{.5cm}
+{\footnotesize O edital de referência é histórico. Em concurso futuro, sempre verificar requisitos, anexos, retificações e normas vigentes no portal oficial. Não constitui orientação institucional nem promessa de aprovação.\par}
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section{Síntese executiva: qual concurso e qual carreira?}
+O objetivo deste documento é orientar a preparação de longo prazo para \textbf{professor efetivo do Magistério Superior em Matemática na Universidade Federal de Mato Grosso (UFMT)}. Não se trata do concurso para Professor do Ensino Básico, Técnico e Tecnológico (EBTT) do \textbf{Instituto Federal de Mato Grosso (IFMT)}. Os dois podem avaliar didática e domínio de conteúdo, mas possuem \textbf{carreiras, requisitos de titulação, público de ensino, temas e critérios distintos}.
+
+\oficial O Edital nº 01/PROGEP/UFMT/2026, de 26 de fevereiro de 2026, publicado no DOU em 3 de março de 2026, previu provas \textbf{escrita}, \textbf{didática} e \textbf{de títulos}. As duas primeiras foram eliminatórias e classificatórias; a última, classificatória. Há vagas da área \emph{Matemática} e vagas da área \emph{Ensino} vinculadas à formação de professores de Matemática. \fufmt
+
+\begin{cuidado}
+\textbf{Decisão de carreira antes do treinamento de prova:} no perfil do Departamento de Matemática em Cuiabá, o concurso de 2026 exigiu \textbf{doutorado em Matemática ou Matemática Aplicada} para a área Matemática; para a área Ensino, exigiu \textbf{doutorado em Educação Matemática, Educação ou Ensino de Ciências e Matemática}. A Licenciatura em Matemática, isoladamente, \textbf{não atendia} ao requisito de doutorado dessas vagas. Um futuro edital pode mudar: verificar literalmente o perfil da vaga e possíveis retificações. \fufmt
+\end{cuidado}
+
+\subsection{As três trilhas de vagas relacionadas à Matemática em 2026}
+\rowcolors{2}{neutro}{white}
+\begin{tabularx}{\textwidth}{p{.23\textwidth}X p{.09\textwidth}}
+\toprule
+\textbf{Local e área} & \textbf{Titulação requerida no quadro original de vagas} & \textbf{Vagas}\\ \midrule
+Cuiabá / ICET / Departamento de Matemática / \textbf{Matemática} & Graduação em Licenciatura ou Bacharelado em Matemática, Matemática Aplicada, Matemática Industrial ou Matemática Aplicada e Computacional; \textbf{doutorado em Matemática ou Matemática Aplicada}. & 1\\
+Cuiabá / ICET / Departamento de Matemática / \textbf{Ensino} & Licenciatura em Matemática e doutorado em \textbf{Educação Matemática, Educação ou Ensino de Ciências e Matemática}. & 1\\
+Campus do Araguaia / Licenciatura em Matemática / \textbf{Ensino} & Licenciatura em Matemática e doutorado dentre áreas específicas de \textbf{Educação Matemática / Educação em Ciências e Matemática / Ensino de Ciências e Matemática} e denominações afins expressamente listadas. & 2\\
+\bottomrule
+\end{tabularx}
+\rowcolors{2}{}{}
+\textit{Fonte:} Anexo I, DOU de 3/3/2026, p. 93 e seguintes, na reprodução do edital. Não confundir a área do concurso com o nome genérico do curso. \fufmt
+
+\subsection{Qual caminho faz mais sentido?}
+\begin{enumerate}
+\item \textbf{Matemática (pesquisa em áreas matemáticas):} caminho natural para quem pretende mestrado/doutorado em Matemática ou Matemática Aplicada, demonstrar teoremas e lecionar Cálculo, Álgebra, Análise, EDOs, Geometria Diferencial e áreas correlatas.
+\item \textbf{Ensino (pesquisa em Educação Matemática):} caminho para quem pretende mestrado/doutorado em Educação Matemática ou na área de Ensino admitida em edital, com pesquisa em formação docente, currículo, inclusão, modelagem, resolução de problemas, história e epistemologia da Educação Matemática.
+\item \textbf{Evite uma escolha apenas pelo título da vaga.} O requisito é jurídico e específico: o nome do programa de pós-graduação, o diploma e a área aceita precisam coincidir com o texto vigente quando o concurso ocorrer.
+\end{enumerate}
+\infer Para quem ainda está construindo a trajetória acadêmica, o \textbf{primeiro marco} é definir a área de pesquisa e verificar a aderência do futuro doutorado ao cargo pretendido. Preparar uma excelente aula sem possuir a titulação exigida não resolve a elegibilidade.
+
+\section{Método documental, fontes e limitações}
+A análise adota três níveis de evidência: \textbf{(A)} edital/rubrica UFMT (norma aplicável ao concurso observado); \textbf{(B)} justificativas oficiais de banca do IFC (comportamento avaliativo de outro concurso e outra carreira); \textbf{(C)} espelhos e modelos de instituições diversas (referência comparativa, sem força obrigatória na UFMT). Os links completos estão na seção final.
+
+\textbf{Documento principal.} Edital e anexos publicados na edição do DOU de 3/3/2026, aqui consultados por reprodução integral do documento do Diário Oficial. O portal de acompanhamento é \url{https://www.concursos.ufmt.br}. \textbf{Atenção:} foram divulgadas retificações durante o concurso de 2026. Nem todas as modificações puderam ser cotejadas em versão única consolidada. Esta análise usa o texto-base publicado e não afirma que toda redação continuou inalterada após as retificações. \fufmt
+
+\textbf{Documentos complementares.} Anexos de 2025 da UFMT (comparação entre critérios); fundamentação e respostas a recursos do IFC de 2026 (247 páginas); espelho da UFU/ESEBA de 2024 (padrão explícito de excelência em outra carreira). \fufmtv\ \fifc\ \fufu
+
+\begin{ideia}
+\textbf{Regra de leitura:} todas as tabelas de pontuação indicadas como ``UFMT 2026'' são reproduções/sínteses da regra histórica. As seções intituladas ``estratégia'', ``erro a evitar'', ``roteiro'' e ``modelo'' são \textbf{propostas autorais de preparação}, e não exigências novas da UFMT.
+\end{ideia}
+
+\section{Leitura criteriosa do edital UFMT 2026}
+\subsection{A prova escrita: 100 pontos em duas questões}
+\oficial A prova escrita tinha \textbf{duas questões dissertativas}, com \textbf{quatro horas}, nota mínima \textbf{70/100} e peso \textbf{1}. Cada questão valia 50 pontos e dispunha de espaço próprio de até \textbf{100 linhas} na folha definitiva. A correção só considerava o que estivesse registrado no espaço apropriado. \fufmt
+
+\begin{tabularx}{\textwidth}{Xrr}
+\toprule
+\textbf{Critério do Anexo V -- UFMT 2026} & \textbf{Q1} & \textbf{Q2}\\ \midrule
+Domínio, terminologia, cálculos e consistência/coerência teórica e argumentativa & 40 & 40\\
+Objetividade, clareza e registro linguístico adequado & 10 & 10\\ \midrule
+\textbf{Total} & \textbf{50} & \textbf{50}\\ \bottomrule
+\end{tabularx}
+
+\infer O peso dado ao domínio matemático torna insuficiente decorar respostas. Espera-se, numa questão sobre um teorema, formular corretamente suas hipóteses, produzir um argumento lógico com justificativas verificáveis e usar notação compatível com o nível superior. Um texto impecável, mas com uma demonstração falsa, deixa de cumprir o núcleo de 40 pontos por questão.
+
+\subsection{A prova didática: 100 pontos e peso dois}
+\oficial A prova didática consistia em \textbf{aula teórica de graduação}, \textbf{40 a 50 minutos}, a partir de tema sorteado entre os do Anexo IV. Exigiam-se \textbf{três vias do plano de aula} entregues antes do início. A nota mínima era \textbf{70/100}, com peso \textbf{2}. Não haveria arguição da banca durante a aula. \fufmt
+
+\rowcolors{2}{neutro}{white}
+\begin{tabularx}{\textwidth}{Xr}
+\toprule
+\textbf{Critério oficial UFMT 2026} & \textbf{Máximo}\\\midrule
+Plano: estrutura, coerência de objetivos/conteúdo, adequação à graduação/tema e bibliografia & 10\\
+Desempenho: comunicação, postura, espontaneidade, dicção, clareza, autocontrole & 25\\
+Desenvolvimento do tema: domínio, exatidão, profundidade, quantidade e qualidade, sequência lógica, exemplos, uso de recursos e distribuição temporal & 60\\
+Utilização adequada do tempo (40--50 minutos) & 5\\\midrule
+\textbf{Total} & \textbf{100}\\\bottomrule
+\end{tabularx}
+\rowcolors{2}{}{}
+
+\begin{cuidado}
+\textbf{Infraestrutura:} o edital-base informa que a UFMT disponibilizaria apenas \textbf{quadro e giz/pincel}. Projetor, tela e outros meios deveriam ser trazidos e instalados pelo candidato; havia previsão de \textbf{cinco minutos antes e cinco depois} para montagem/desmontagem. Não construa uma aula que dependa de tecnologia indisponível. Planeje uma \textbf{versão inteiramente exequível no quadro}. \fufmt
+\end{cuidado}
+
+\subsection{Classificação e papel dos títulos}
+\oficial No edital-base de 2026, a pontuação final foi calculada por
+\[
+\boxed{\mathrm{PF}=\frac{\mathrm{N}_{\mathrm{escrita}}+2\mathrm{N}_{\mathrm{did\acute{a}tica}}}{3}+\mathrm{N}_{\mathrm{t\acute{i}tulos}}.}
+\]
+A avaliação de títulos tinha escala própria de \textbf{0--100 pontos}, com três grupos de teto 40 (titulação), 30 (produção científica/técnica/artística/cultural) e 30 (experiência profissional), segundo o Anexo VI. Não substitui a aprovação nas provas eliminatórias. \fufmt
+
+\textbf{Exemplo hipotético, sem previsão de classificação real:} candidato A com escrita 84, didática 92 e títulos 30 obtém PF $=(84+2\cdot92)/3+30\approx119{,}33$. Candidato B com escrita 92, didática 86 e títulos 40 obtém PF $=(92+2\cdot86)/3+40=128$. Logo, produção acadêmica e experiência podem modificar bastante a ordem final; não basta ``passar na didática''.
+
+\textbf{Sensibilidade da fórmula:} um ponto a mais na prova escrita acrescenta $1/3$ à PF; um ponto na didática, $2/3$; um ponto válido em títulos, $1$. Isso é aritmética da fórmula histórica, \textbf{não} previsão de quantos pontos um diploma ou artigo futuro renderá.
+
+\subsection{Títulos: o que de fato pode pontuar}
+\begin{tabularx}{\textwidth}{p{.20\textwidth}X}
+\toprule
+\textbf{Grupo} & \textbf{Exemplos do Anexo VI e alertas}\\\midrule
+I -- titulação (até 40) & Doutorado reconhecido na área: 20 pontos por título (até dois); mestrado na área: 10 por título (até dois). Fora da área há pontuação menor. A aceitação e o cumprimento do perfil da vaga são condições separadas.\\
+II -- produção (até 30) & Artigos, livros, capítulos, trabalhos em anais e outros itens, com pontuação e comprovantes próprios. Período de produção científica: \textbf{últimos cinco anos}, segundo o documento.\\
+III -- experiência (até 30) & Magistério \textbf{superior} efetivo (até 10 pontos por anos considerados), orientações concluídas, bancas e funções acadêmicas. \textbf{Estágio docência} não pontua como atividade docente efetiva no item correspondente.\\\bottomrule
+\end{tabularx}
+
+\infer Comece cedo uma pasta por item do barema com comprovantes auditáveis. Um certificado sem data, documento sem comprovação de publicação ou atividade realizada fora do grupo temporal pode não pontuar. O edital-base também exige Lattes e comprovações organizadas de acordo com a ordem dos itens. \fufmt
+
+\subsection{O funil de classificação e a prova escrita como prioridade inicial}
+O texto-base convocava para a didática os candidatos que alcançassem pelo menos 70 na escrita e estivessem dentro do limite de convocação especificado por vaga, com regras de listas e empate. Não basta atingir a nota mínima se houver regra adicional de classificação por colocação. Portanto, \textbf{a escrita é o primeiro gargalo}: o candidato que não chega à didática não pode compensá-la com excelente desempenho oral ou títulos. \fufmt
+
+\section{Comparação com os critérios de 2025 e com a carreira EBTT}
+O Anexo V da UFMT de \textbf{2025} usava o mesmo arranjo global da prova didática (plano 10, desempenho 25, desenvolvimento 60, tempo 5), mas discriminava a escrita de modo mais granular: por questão, 30 pontos para domínio/cálculos, 10 para coerência argumentativa, 5 para objetividade/clareza e 5 para registro linguístico. Em 2026, os itens de conteúdo/argumentação foram reunidos em 40 pontos e os de clareza/linguagem em 10. \fufmtv\ \fufmt
+
+\infer A estabilidade da rubrica didática entre os dois documentos consultados é um bom sinal para planejar simulações; \textbf{não} é garantia de que o próximo edital preservará os pesos.
+
+\begin{tabularx}{\textwidth}{p{.22\textwidth}XX}
+\toprule
+\textbf{Questão} & \textbf{EBTT (IFMT/IFC)} & \textbf{Magistério Superior (UFMT)}\\\midrule
+Público da prova didática & Educação Básica/técnica, frequentemente Ensino Médio Integrado & \textbf{Graduação}, exigência expressa no edital UFMT 2026\\
+Profundidade & Matemática escolar e aplicações técnico-profissionais conforme vaga & Teoremas, hipóteses, demonstrações, exemplos não triviais, conexões acadêmicas\\
+Principal risco & Contextualização decorativa; metodologia prometida não realizada & Demonstrações incompletas; salto lógico; aula desconectada do público universitário\\
+Regra de tempo & Depende do edital; o IFMT 2026 teve formato próprio & \textbf{40--50 min} no edital-base UFMT 2026\\
+Recursos & Dependem do edital e campi & Apenas quadro e giz/pincel fornecidos no texto-base\\
+\bottomrule
+\end{tabularx}
+
+\begin{ideia}
+\textbf{O que se aproveita do IFC:} a exigência de coerência entre plano e execução, profundidade, progressão conceitual, fechamento e uso intencional dos recursos. \textbf{O que não deve ser transportado automaticamente:} conteúdo agropecuário, nível do Ensino Médio Integrado, objetivos da BNCC ou qualquer pontuação específica da banca catarinense.
+\end{ideia}
+
+\section{Leitura aprofundada das justificativas do IFC: do erro detectado à prevenção na UFMT}
+\subsection{Como interpretar corretamente as notas do IFC}
+O IFC divulgou em 22/6/2026 as justificativas dos recursos da prova de desempenho didático do concurso EBTT nº 01/2026. O documento oficial contém um \textbf{Bloco 1 -- preparação/elaboração do plano} e um \textbf{Bloco 2 -- desenvolvimento/execução}, com comentários individuais de avaliadores. As notas mencionadas abaixo são de \emph{itens daquele concurso}, não notas totais nem pontos automáticos do edital UFMT. \fifc
+
+\begin{cuidado}
+\textbf{Inferência sob controle:} o IFC não é a banca da UFMT. Quando se escreve ``recomendação à UFMT'', trata-se de uma precaução racional diante de critérios semelhantes (exatidão, coerência, clareza, exemplos), e nunca da afirmação de que a UFMT penalizará exatamente da mesma forma.
+\end{cuidado}
+
+\subsection{Caso 1 -- atividades apenas anunciadas, sem solução esperada}
+\textbf{Constatação documentada:} o \textbf{protocolo 66}, item 1.1, teve nota 4,00 mantida porque anexar exercícios e apresentar uma seção de atividades não substituía explicar seu desenvolvimento metodológico e as resoluções matemáticas esperadas, passo a passo. O parecer diferencia a presença formal da atividade da clareza de sua mediação. \fifc\ (p. 25 do PDF, indexada como página 24).
+
+\textbf{Transposição para a UFMT:} não escreva no plano apenas ``demonstração do teorema'' ou ``resolução de exercício''. Indique \emph{qual} enunciado será demonstrado, \emph{qual} estratégia de prova será usada, \emph{onde} os estudantes costumam errar e \emph{qual} exemplo verificará a compreensão. Para o Teorema Fundamental do Cálculo, por exemplo: ``introduzir $F(x)=\int_a^x f$, mostrar o quociente incremental, usar continuidade de $f$ para controlar a diferença e concluir $F'=f$''.
+
+\subsection{Caso 2 -- plano sem público identificado com precisão}
+\textbf{Constatação:} o \textbf{protocolo 67}, item 1.2, nota 3,50 mantida, foi criticado por não identificar formalmente o nível/a série de destino e por apresentar profundidade abaixo da esperada no Médio Integrado. \fifc\ (p. 25).
+
+\textbf{Na UFMT:} o público não é ``alunos'', e sim, por exemplo, ``estudantes de Cálculo I dos cursos de graduação, com conhecimento de continuidade e integral de Riemann''. Se a aula for de Álgebra, explicite a familiaridade presumida com homomorfismos, subgrupos normais ou ideais. A escolha das hipóteses e dos exemplos depende dessas informações.
+
+\subsection{Caso 3 -- contextualização simpática, mas matematicamente superficial}
+\textbf{Constatação:} o \textbf{protocolo 68}, item 1.2, nota 1,83, foi mantido após a banca observar que o cenário de Agropecuária não compensava uma exploração elementar da porcentagem. Eram esperadas articulações conceituais mais fortes. \fifc\ (p. 25).
+
+\textbf{Na UFMT:} jamais confunda ``aplicação visualmente interessante'' com profundidade. Uma aula sobre Stokes com uma imagem de campo vetorial, mas sem definição de orientação e sem explicar a relação entre integral de linha e fluxo do rotacional, ficará conceitualmente oca. A aplicação deve resultar da teoria apresentada.
+
+\subsection{Caso 4 -- bibliografia matemática sem sustentação pedagógica suficiente}
+\textbf{Constatação:} o \textbf{protocolo 69}, item 1.3, nota 4,00, foi mantido porque, embora as referências do conteúdo fossem reconhecidas, a metodologia de Educação Matemática anunciada não tinha fundamentação correspondente. No mesmo caso, o item 1.2 registrou distância entre a metodologia declarada e o predomínio da exposição tradicional. \fifc\ (p. 25).
+
+\textbf{Na UFMT:} bibliografia de Análise ou Álgebra é indispensável para o conteúdo; referências de didática do ensino superior são pertinentes quando há uma opção metodológica explicitada. Não atribua a um livro de teoremas a justificativa de uma metodologia investigativa que ele não discute. Uma aula expositiva-dialogada pode ser legítima: anuncie-a de forma precisa e execute os pequenos momentos de problematização previstos.
+
+\subsection{Caso 5 -- objetivos vagos, não verificáveis ou deslocados}
+A banca do IFC, em vários recursos sobre o plano, distinguiu objetivos próprios da aula de habilidades curriculares gerais e apontou a falta de conexão entre a intenção declarada e as atividades efetivamente previstas. \fifc\ (pp. 25--26).
+
+\begin{tabularx}{\textwidth}{p{.35\textwidth}X}
+\toprule
+\textbf{Objetivo frágil} & \textbf{Objetivo verificável em graduação}\\\midrule
+``Entender o Teorema de Stokes.'' & ``Enunciar Stokes com as hipóteses de regularidade/orientação e calcular ambos os lados em um exemplo elementar.''\\
+``Estudar Jordan.'' & ``Explicar por que uma matriz não diagonalizável pode admitir uma cadeia generalizada de autovetores e determinar sua forma de Jordan em um exemplo $2\times2$.''\\
+``Conhecer Euler.'' & ``Deduzir o método explícito de Euler da aproximação tangente e interpretar suas limitações de erro e estabilidade.''\\\bottomrule
+\end{tabularx}
+
+\subsection{Caso 6 -- prometer investigação e apenas projetar conteúdo}
+Em justificativas de execução, a comissão observou que o uso de slides e a menção a investigação/modelagem \textbf{não constituíam a prática dessas abordagens}. O \textbf{protocolo 86} registra crítica à metodologia anunciada que não se concretizou e à projeção de slides com pouca problematização conceitual. \fifc\ (pp. 105--106).
+
+\textbf{Na UFMT:} se anunciar uma abordagem de resolução de problemas para o Teorema de Isomorfismo, apresente efetivamente o problema de construir a aplicação $G/\ker\varphi\to\mathrm{Im}\varphi$, discuta por que é bem definida, estabeleça a injetividade/sobrejetividade e feche a prova. Não substitua esse trabalho por uma sequência de slides com definições.
+
+\subsection{Caso 7 -- repetição de contas, sem progressão conceitual}
+\textbf{Constatação:} os \textbf{protocolos 81 e 82}, itens 2.1/2.2, reconheceram a apresentação contextualizada de porcentagens, mas registraram exemplos elementares ou truncados, falta de completude e insuficiente aprofundamento. \fifc\ (p. 103 do PDF).
+
+\textbf{Na UFMT:} um exemplo deve \emph{fazer alguma coisa} matematicamente: ilustrar a necessidade de uma hipótese, identificar um obstáculo, exibir contraexemplo ou aplicar um teorema. No tema Formas de Jordan, calcular três autovalores de matrizes diagonais não demonstra compreensão de Jordan; é essencial mostrar por que surgem autovetores generalizados e o que a forma normal resolve.
+
+\subsection{Caso 8 -- sequência cronológica sem encadeamento lógico}
+\textbf{Constatação:} o IFC distinguiu ter percorrido os tópicos na ordem do plano de \textbf{construir conceitualmente uma sequência}; pareceres referentes à progressão aritmética mencionaram fragilidade nas relações entre propriedades, casos e contextos. \fifc\ (pp. 104--106).
+
+\textbf{Na UFMT:} monte a aula como uma cadeia de necessidade: \emph{pergunta} $\to$ \emph{definição} $\to$ \emph{hipótese} $\to$ \emph{resultado} $\to$ \emph{prova} $\to$ \emph{exemplo} $\to$ \emph{limitação}. A sequência ``definição, teorema, exemplo, exercício'' só é boa quando cada passagem responde ao passo anterior.
+
+\subsection{Caso 9 -- linguagem oral solta ou notação imprecisa}
+A banca registrou situações em que a fluência oral era satisfatória, mas \textbf{faltava rigor matemático na linguagem}. O parecer não equiparou falar com desenvoltura a comunicar com precisão. \fifc\ (pp. 102--105).
+
+\textbf{Na UFMT:} evite frases como ``a derivada existe porque a função é bonitinha'', ``o limite dá certo'' ou ``o núcleo some''. Prefira ``pela continuidade de $f$ em $x$, o supremo do módulo da diferença no intervalo entre $x$ e $x+h$ tende a zero'' e ``pelo Teorema do Isomorfismo, o quociente pelo núcleo identifica classes com os elementos da imagem''. Uma linguagem acessível \emph{não} pede renúncia à precisão.
+
+\subsection{Caso 10 -- conclusão corrida e objetivos não retomados}
+\textbf{Constatação:} os \textbf{protocolos 78 e 82}, especialmente itens de gestão do tempo e fechamento, registraram sínteses apressadas, conceitos não retomados e ausência de encaminhamento pedagógico conclusivo. \fifc\ (pp. 101--103).
+
+\textbf{Na UFMT:} reserve três ou quatro minutos para concluir o argumento, distinguir o teorema de seus corolários e apresentar uma questão de verificação. O candidato pode cumprir 45 minutos e, ainda assim, deixar a aula intelectualmente incompleta. Ao atrasar, elimine um exemplo secundário; não deixe pela metade a demonstração central.
+
+\subsection{Caso 11 -- recurso empregado sem exploração didática}
+\textbf{Constatação:} o IFC diferenciou \emph{usar} recurso de \emph{explorar conceitualmente} recurso, inclusive em avaliações de slides e de representações matemáticas. \fifc\ (pp. 105--109).
+
+\textbf{Na UFMT:} o quadro é suficiente e muitas vezes superior a slides para provar um resultado, porque expõe a cadeia argumentativa. Um gráfico feito no quadro pode auxiliar, mas só se tiver eixos, variáveis e hipóteses claros. Se usar software numérico para Euler, mostre tabela, tamanho de passo e comparação com a solução exata: sem interpretação, vira ornamento.
+
+\subsection{Caso 12 -- plano e aula dirigidos a públicos diferentes}
+\textbf{Constatação:} a banca descreveu propostas voltadas à \textbf{formação inicial de docentes} que, na execução, se reduziram a uma apresentação de conteúdo escolar, sem desenvolver questões da formação de professores. \fifc\ (pp. 107--109).
+
+\textbf{Na UFMT, área Ensino:} se o tema for Resolução de Problemas, a aula deve discutir \emph{como formar professores para organizar e avaliar essa metodologia}, e não apenas resolver uma lista de exercícios escolares. Na área Matemática, a adequação consiste em aula de graduação com prova e conceitos da graduação, e não em uma aula preparada para o 9º ano.
+
+\subsection{Matriz operacional dos descontos e dos antídotos}
+\small
+\rowcolors{2}{neutro}{white}
+\begin{longtable}{p{.17\textwidth}p{.29\textwidth}p{.42\textwidth}}
+\toprule
+\textbf{Caso IFC} & \textbf{Insuficiência da aula/plano} & \textbf{Prevenção para prova didática universitária}\\\midrule
+\endfirsthead
+\toprule\textbf{Caso}&\textbf{Insuficiência}&\textbf{Prevenção}\\\midrule\endhead
+Prot. 66, p. 25 & Atividades listadas, sem resolução prevista. & Incluir roteiro da demonstração e solução do exemplo nuclear no plano pessoal.\\
+Prot. 67, p. 25 & Público pouco definido e complexidade baixa. & Especificar a disciplina de graduação e seus pré-requisitos.\\
+Prot. 68, p. 25 & Contexto decorativo. & Articular a aplicação a uma propriedade matemática demonstrada.\\
+Prot. 69, p. 25 & Fundamentação pedagógica inadequada. & Bibliografia de conteúdo pertinente e metodologia realmente adotada.\\
+Prot. 81, p. 103 & Tema apenas parcialmente desenvolvido. & Definir objetivos centrais e cobrir teorema, prova e um exemplo completo.\\
+Prot. 82, p. 103 & Contas truncadas, exemplos repetitivos. & Conferir integralmente as contas, e escolher exemplos com função lógica.\\
+Prot. 82, p. 103 & Encerramento fraco. & Fazer síntese, conclusão do resultado e pergunta de verificação.\\
+Prot. 86, pp. 105--106 & Recursos e metodologia não coincidiram. & Ensaiar versão sem slides; mostrar claramente o procedimento didático.\\
+Outros recursos, pp. 104--108 & Sequência mais cronológica que conceitual. & Organizar cada afirmação como consequência do passo anterior.\\
+Outros recursos, pp. 102--105 & Linguagem pouco rigorosa. & Treinar enunciados e justificativas matemáticas precisas.\\
+Outros recursos, pp. 107--109 & Público universitário de licenciatura descaracterizado. & Na área Ensino, analisar práticas de formação docente, não apenas conteúdos escolares.\\
+\bottomrule
+\end{longtable}
+\normalsize\rowcolors{2}{}{}
+
+\begin{ideia}
+\textbf{Síntese das justificativas:} uma banca pode reconhecer que o candidato ``abordou o conteúdo'', ``usou slides'' ou ``cumpriu o plano'' e, ainda assim, justificar o desconto por \textbf{falta de profundidade, precisão, articulação, execução metodológica e conclusão}. Na UFMT, essas exigências encontram correspondência sobretudo no bloco de \textbf{60 pontos pelo desenvolvimento do tema}. \fufmt\ \fifc
+\end{ideia}
+
+\section{O que a banca da UFMT pode observar nos 60 pontos de desenvolvimento}
+A rubrica da UFMT usa critérios amplos, sem decompor os 60 pontos em subnotas oficiais. O detalhamento abaixo é \textbf{instrumento de autoavaliação}, não subrubrica do concurso.
+
+\subsection{Domínio matemático e exatidão}
+A qualidade de uma prova matemática deve ser verificável. São sinais de domínio:
+\begin{itemize}
+\item enunciar precisamente objetos e hipóteses (continuidade, diferenciabilidade, estrutura algébrica, orientação, domínio, campo de escalares);
+\item explicitar o que será provado e distinguir \emph{teorema}, \emph{corolário}, \emph{exemplo} e \emph{conjectura};
+\item justificar passagens não triviais, evitando ``é claro'' como substituto de argumento;
+\item escolher notação consistente e corrigir prontamente deslizes aritméticos ou de sinais;
+\item saber o que deixa de valer quando uma hipótese é removida, com pelo menos um contraexemplo pertinente.
+\end{itemize}
+
+\subsection{Profundidade sem excesso de abrangência}
+Não se obtêm pontos extras por empilhar nomes de teoremas. Em 45 minutos, um \textbf{resultado central bem demonstrado} pode ser pedagogicamente superior a cinco teoremas apenas anunciados. O equilíbrio é apresentar um caminho completo: problema motivador, hipóteses, resultado, demonstração, exemplo e limites de aplicação.
+
+\subsection{Distribuição do tempo e organização do quadro}
+Planeje o quadro em três regiões: \textbf{(1)} tema/objetivos/hipóteses, \textbf{(2)} demonstração central, \textbf{(3)} aplicação/conclusão. Evite apagar os dados de que depende a próxima linha da demonstração. Treine a mudança de página do quadro como se fosse uma etapa de exposição: quem assiste deve conseguir recuperar a notação principal a qualquer momento.
+
+\subsection{Aula simulada sem alunos reais e sem arguição}
+O edital UFMT de 2026 previa que a banca \textbf{não se manifestaria} e \textbf{não arguiria o candidato}. Por isso, \textbf{não invente respostas de estudantes nem baseie sua aula numa interação que não acontecerá}. Você pode propor uma pergunta curta, dar tempo de reflexão, apresentar uma resposta provável (identificada como hipótese didática) e explicar o erro conceitual comum. O diálogo é planejado sem simular fatos não ocorridos. \fufmt
+
+\section{Seis temas oficiais da área Matemática -- UFMT 2026}
+O Anexo III (conteúdo programático da escrita) e o Anexo IV (temas da didática), para o \textbf{Departamento de Matemática, área Matemática, Campus Cuiabá}, continham os \textbf{mesmos seis grandes eixos}. Isso permite estudar cada tema com uma dupla produção: \emph{uma prova escrita em até 100 linhas} e \emph{uma aula de 45 minutos}. \fufmt
+
+\subsection{Tema 1 -- Teorema Fundamental do Cálculo}
+\textbf{Conteúdo mínimo:} integral de Riemann/continuidade, integral com limite variável, derivada da função área, primitiva, regra de Newton--Leibniz e condições de validade.
+
+\textbf{Enunciado rigoroso útil:} se $f:[a,b]\to\mathbb{R}$ é contínua e $F(x)=\int_a^x f(t)\,dt$, então $F$ é derivável no interior de $[a,b]$ e $F'(x)=f(x)$. Se $G'=f$, então $\int_a^b f=G(b)-G(a)$.
+
+\textbf{Aula forte:} iniciar com a pergunta ``a integral acumulada de $f$ varia a que taxa?'', definir $F$, demonstrar a primeira parte com o quociente incremental e a continuidade, deduzir a regra de avaliação de integrais e fechar com um exemplo. \textbf{Erro grave:} afirmar o teorema para função arbitrária sem enunciar as hipóteses necessárias para a versão escolhida.
+
+\subsection{Tema 2 -- Teorema do Isomorfismo para Grupos e para Anéis}
+\textbf{Conteúdo mínimo:} homomorfismo, núcleo, imagem, normalidade (grupos), ideal (anéis), quociente e aplicação canônica. A formulação para grupos: $G/\ker\varphi\cong\operatorname{Im}(\varphi)$.
+
+\textbf{Aula forte:} construir explicitamente $\bar\varphi(g\ker\varphi)=\varphi(g)$ e verificar: (i) boa definição; (ii) homomorfismo; (iii) injetividade; (iv) sobrejetividade na imagem. Para anéis, explicar por que o núcleo é um ideal e repetir o raciocínio na estrutura apropriada. \textbf{Erro grave:} usar $G/H$ sem garantir $H\trianglelefteq G$ ou tratar ideal como mero subgrupo aditivo.
+
+\subsection{Tema 3 -- Sistemas de EDOs lineares}
+\textbf{Conteúdo mínimo:} sistema $X'=AX+b(t)$, matriz fundamental, exponencial de matriz, problema de valor inicial, existência/unicidade sob hipóteses apropriadas e variação das constantes.
+
+\textbf{Aula forte:} partir do caso homogêneo $X'=AX$, verificar diretamente que $e^{tA}X_0$ resolve o PVI, explicar por que o caso não homogêneo se reduz à variação das constantes e realizar um exemplo $2\times2$. \textbf{Erro grave:} assumir diagonalização de toda matriz ou escrever $e^{tA}$ como exponenciais elemento a elemento.
+
+\subsection{Tema 4 -- Formas de Jordan de um operador linear}
+\textbf{Conteúdo mínimo:} autovalores, multiplicidades algébrica/geométrica, autovetores generalizados, cadeias de Jordan e forma normal quando o polinômio característico se decompõe no corpo considerado.
+
+\textbf{Exemplo nuclear:} para $A=\begin{pmatrix}2&1\\0&2\end{pmatrix}$, tem-se $A=2I+N$ com $N^2=0$, logo
+\[
+ e^{tA}=e^{2t}e^{tN}=e^{2t}(I+tN)
+ =e^{2t}\begin{pmatrix}1&t\\0&1\end{pmatrix}.
+\]
+\textbf{Erro grave:} misturar diagonalização e Jordan sem explicar a existência insuficiente de autovetores; ignorar a dependência do corpo de escalares.
+
+\subsection{Tema 5 -- Soluções numéricas de EDOs}
+\textbf{Conteúdo mínimo:} PVI $y'=f(t,y)$, malha $t_n=t_0+nh$, método explícito de Euler, erro local/global, ordem de convergência e noções de estabilidade quando pertinentes.
+
+\textbf{Exemplo nuclear:} para $y'=-y$, Euler fornece $y_{n+1}=(1-h)y_n$ e solução exata $y(t)=y_0e^{-t}$. O método discreto exige $|1-h|<1$ para decair assintoticamente nesse teste ($0<h<2$). \textbf{Erro grave:} anunciar ``Euler sempre converge'' sem hipóteses e sem distinguir redução de passo, erro de truncamento e estabilidade.
+
+\subsection{Tema 6 -- Teorema de Stokes}
+\textbf{Conteúdo mínimo:} campo vetorial com regularidade apropriada, superfície orientável regular por partes, borda orientada positivamente, integral de linha, rotacional e fluxo.
+
+\textbf{Enunciado em $\mathbb{R}^3$:} sob as hipóteses usuais,
+\[
+\oint_{\partial S}\mathbf F\cdot d\mathbf r
+=\iint_S (\nabla\times\mathbf F)\cdot\mathbf n\,dS.
+\]
+\textbf{Exemplo nuclear:} para o disco plano de raio $R$, orientação para cima e $\mathbf F=(-y/2,x/2,0)$, o rotacional é $(0,0,1)$, dando $\pi R^2$ nos dois lados. \textbf{Erro grave:} esquecer que a orientação da curva deve ser compatível com a normal escolhida.
+
+\subsection{Checklist de profundidade para os seis temas}
+Para cada tema, prepare \textbf{seis fichas}: (1) hipóteses e enunciados, (2) prova principal sem consulta, (3) dois exemplos diferentes, (4) contraexemplo/limite, (5) aula cronometrada e (6) questões escritas de treinamento. Progrida de domínio conceitual para performance; inverter a ordem produz memorização frágil.
+
+\section{Temas oficiais da área Ensino -- rotas alternativas na UFMT}
+A escolha por \emph{Ensino} demanda outro tipo de preparação. O edital-base de 2026 listou \textbf{seis temas para o Departamento de Matemática/Cuiabá} e \textbf{seis temas próprios para a Licenciatura em Matemática do Araguaia}. \fufmt
+
+\subsection{Cuiabá -- Departamento de Matemática, área Ensino}
+\begin{enumerate}
+\item Diversidade e Inclusão: perspectivas teóricas e práticas de sala de aula.
+\item Educação Matemática Crítica: perspectivas teóricas e práticas de sala de aula.
+\item Formação de professores e Estágio Supervisionado nos anos finais do Ensino Fundamental e no Ensino Médio.
+\item História da Matemática e História da Educação Matemática: perspectivas teóricas e práticas de sala de aula.
+\item Etnomatemática e Modelagem Matemática na Educação Matemática: perspectivas teóricas e práticas de sala de aula.
+\item Resolução de Problemas: perspectivas teóricas e práticas de sala de aula.
+\end{enumerate}
+
+\subsection{Araguaia -- Licenciatura em Matemática, área Ensino}
+\begin{enumerate}
+\item Ensino de Estatística e tecnologias: equidade na Licenciatura e na Educação Básica.
+\item Ensino de Álgebra, metodologias e Educação Matemática inclusiva.
+\item Estágio Supervisionado, identidade profissional e compromisso político docente.
+\item Ensino de funções e tecnologias em perspectiva de diversidade étnico-racial.
+\item Currículo e Ensino de Geometria com perspectiva multicultural.
+\item Educação financeira e Educação Matemática Crítica voltada a questões sociais.
+\end{enumerate}
+Os tópicos foram condensados em paráfrase; para planejar uma aula, copiar o enunciado literal do Anexo IV do próximo concurso. \fufmt
+
+\subsection{Exigência de qualidade em uma prova de Ensino}
+Uma aula universitária de Educação Matemática deve vincular três planos: \textbf{(i)} referencial teórico efetivo, \textbf{(ii)} análise de uma situação concreta de ensino e \textbf{(iii)} consequências para a formação de docentes. Por exemplo, em Resolução de Problemas, não basta propor um problema. É preciso explicitar o que diferencia um problema de um exercício de rotina; como organizar fases de discussão, registros e institucionalização; e como analisar caminhos e erros de estudantes.
+
+\textbf{Exemplo de sequência de 45 minutos para Resolução de Problemas:} problema de entrada e definição da abordagem (0--7), discussão das diferentes soluções e possíveis erros (7--17), fundamentos teóricos e o papel do professor (17--28), análise de um roteiro de aula da Educação Básica (28--39), síntese e avaliação da formação de professores (39--45). Este roteiro é sugestão; não um modelo oficial da UFMT.
+
+\subsection{Bibliografia da área Ensino}
+O Anexo III de 2026 cita, entre outros, \textbf{D'Ambrosio}, \textbf{Fiorentini e Lorenzato}, \textbf{Onuchic}, \textbf{Pólya}, \textbf{Ponte}, \textbf{Skovsmose}, \textbf{Miguel e Miorim}, \textbf{Pimenta e Lima}. A bibliografia exata muda conforme a vaga e precisa ser confrontada com o programa oficial. A chave não é listar autores, mas mobilizar seus conceitos para justificar decisões pedagógicas observáveis. \fufmt
+
+\section{Plano de aula-modelo completo (autoral): Teorema Fundamental do Cálculo}
+\begin{ideia}
+\textbf{Situação de uso:} modelo para \textbf{prova didática universitária}, área Matemática, na duração histórica de \textbf{45 minutos}. Não foi submetido à UFMT, não recebeu nota oficial e não foi retirado de prova de candidato aprovado. Deve ser adaptado à escolha de recorte matemático, ao tema sorteado e às normas do próximo edital.
+\end{ideia}
+
+\subsection{Identificação e objetivos}
+\begin{tabularx}{\textwidth}{p{.23\textwidth}X}
+\toprule
+\textbf{Campo} & \textbf{Preenchimento sugerido}\\\midrule
+Instituição/área & UFMT, Magistério Superior, área Matemática (simulação).\\
+Disciplina / nível & Cálculo I -- graduação, estudantes com noções de continuidade, derivação e integral definida.\\
+Tema & Teorema Fundamental do Cálculo: derivada da integral acumulada e avaliação de integrais.\\
+Duração & 45 minutos (planejamento interno de 45 min; janela histórica de 40--50 min).\\
+Objetivo geral & Relacionar integração e derivação com formulação e demonstração rigorosas.\\
+Objetivos específicos & (1) Enunciar corretamente a primeira parte; (2) justificar $F'(x)=f(x)$ via continuidade; (3) deduzir a fórmula de Newton--Leibniz; (4) aplicar e reconhecer as hipóteses do resultado.\\
+Metodologia & Exposição demonstrativa com problematização inicial, exemplos e verificação final de aprendizagem.\\
+Recursos & Quadro e giz/pincel; régua opcional; folhas do plano impressas. Sem dependência de projetor.\\
+Avaliação & Questão oral de reflexão, exemplo resolvido e questão final: identificar qual hipótese foi usada na passagem crítica da prova.\\
+Bibliografia & LIMA, \emph{Curso de Análise}, vol. 1; FIGUEIREDO, \emph{Análise I}; bibliografia exata do edital vigente.\\\bottomrule
+\end{tabularx}
+
+\subsection{Cronograma de 45 minutos}
+\begin{tabularx}{\textwidth}{p{.14\textwidth}p{.23\textwidth}X}
+\toprule
+\textbf{Minutos} & \textbf{Fase} & \textbf{Ação observável}\\\midrule
+0--4 & Problema & Apresentar $F(x)=\int_a^x f$ e perguntar qual é sua derivada. Delimitar o objetivo.\\
+4--10 & Hipóteses e enunciado & Relembrar continuidade e enunciar a parte 1 com domínio e limites explícitos.\\
+10--23 & Prova central & Trabalhar o quociente incremental, a estimativa por supremo e a passagem ao limite.\\
+23--30 & Parte 2 & Deduzir a fórmula de Newton--Leibniz com a diferença de primitivas.\\
+30--38 & Exemplo completo & Resolver uma integral definida; conferir via derivada e interpretar função área.\\
+38--42 & Verificação & Questão: em qual passo a continuidade foi essencial? O que muda sem ela?\\
+42--45 & Fechamento & Registrar no quadro enunciado, consequência e condições de uso.\\\bottomrule
+\end{tabularx}
+
+\subsection{Roteiro matemático da demonstração}
+\begin{teorema}[Primeira parte do Teorema Fundamental do Cálculo]
+Seja $f:[a,b]\to\mathbb R$ contínua. Defina
+\[
+F(x)=\int_a^x f(t)\,dt,\qquad x\in[a,b].
+\]
+Então $F$ é derivável em $(a,b)$ e $F'(x)=f(x)$ para todo $x\in(a,b)$, com derivadas laterais adequadas nos extremos.
+\end{teorema}
+
+\begin{proof}
+Fixe $x\in(a,b)$. Para $h\ne0$ suficientemente pequeno com $x+h\in[a,b]$, pela aditividade da integral,
+\[
+\frac{F(x+h)-F(x)}{h}=\frac{1}{h}\int_x^{x+h}f(t)\,dt.
+\]
+Subtraindo $f(x)$ e utilizando $\int_x^{x+h}f(x)\,dt=h f(x)$, obtemos
+\[
+\frac{F(x+h)-F(x)}{h}-f(x)
+=\frac{1}{h}\int_x^{x+h}\bigl(f(t)-f(x)\bigr)\,dt.
+\]
+Ao tomar módulo, independentemente do sinal de $h$, a estimativa pelo comprimento do intervalo fornece
+\[
+\left|\frac{F(x+h)-F(x)}{h}-f(x)\right|
+\le \sup_{t\in I_h}|f(t)-f(x)|,
+\qquad I_h=[\min\{x,x+h\},\max\{x,x+h\}].
+\]
+Como $f$ é contínua em $x$ e o diâmetro de $I_h$ tende a zero, o supremo à direita converge para zero. Portanto,
+\[
+\lim_{h\to0}\frac{F(x+h)-F(x)}{h}=f(x),
+\]
+isto é, $F'(x)=f(x)$.
+\end{proof}
+
+\textbf{Pergunta de ensino para o quadro:} ``Se $h<0$, o argumento ainda é válido?'' Resposta esperada: sim; é preciso tratar a orientação da integral e tomar o módulo corretamente. \textbf{Não} basta apresentar o limite apenas para $h>0$ e concluir a derivabilidade bilateral.
+
+\begin{teorema}[Regra de Newton--Leibniz]
+Se $f:[a,b]\to\mathbb R$ é contínua e $G$ é qualquer primitiva de $f$ em $[a,b]$, então
+\[\int_a^b f(t)\,dt=G(b)-G(a).\]
+\end{teorema}
+\begin{proof}
+Pela primeira parte, $F(x)=\int_a^x f(t)\,dt$ é primitiva de $f$. Portanto $(G-F)'=0$ em $(a,b)$. Pelo Teorema do Valor Médio, $G-F$ é constante em $[a,b]$. Como $F(a)=0$ e $F(b)=\int_a^b f(t)\,dt$, segue a identidade desejada.
+\end{proof}
+
+\subsection{Exemplo final, limitação e retorno ao objetivo}
+\textbf{Exemplo:} para $f(t)=3t^2$, a primitiva $G(t)=t^3$ leva a
+\[
+\int_0^2 3t^2\,dt=G(2)-G(0)=8.
+\]
+A função acumulada desde 0 é $F(x)=x^3$ e satisfaz $F'(x)=3x^2$.
+
+\textbf{Limitação didaticamente importante:} o enunciado demonstrado usa continuidade. Versões mais gerais existem, mas não devem ser evocadas sem novas hipóteses. Se o tema da aula for amplo, a versão escolhida deve ser \emph{claramente identificada}; apresentar uma versão específica com prova completa é melhor do que sugerir falsamente generalidade irrestrita.
+
+\textbf{Questão de saída (modelo):} ``Qual propriedade de $f$ justificou que $\sup_{t\in I_h}|f(t)-f(x)|\to0$?'' Resposta: continuidade de $f$ no ponto $x$. O docente registra na conclusão o que o teorema afirma, suas hipóteses e a relação entre as duas partes.
+
+\subsection{Como este plano responde à rubrica da UFMT}
+\begin{itemize}
+\item \textbf{Plano (10):} contém público, conteúdo, objetivos, método, recursos, cronograma, avaliação e bibliografia.
+\item \textbf{Desempenho (25):} requer treino oral em voz alta; o documento por si só não comprova dicção, ritmo ou autocontrole.
+\item \textbf{Desenvolvimento (60):} centraliza hipóteses, prova, exemplos, coerência lógica e uso efetivo do quadro.
+\item \textbf{Tempo (5):} distribui 45 minutos, deixando margem para pequenas flutuações. Um plano cronometrado não garante cumprimento sem simulação.
+\end{itemize}
+
+\section{Modelo de resposta dissertativa rigorosa: formato para a prova escrita}
+A seguir, a mesma matemática é reorganizada para uma questão discursiva. A ideia é treinar \emph{conteúdo completo em espaço finito}, evitando fórmulas soltas e argumentos circulares.
+
+\begin{cuidado}
+\textbf{Questão autoral de treinamento, não questão oficial:} ``Enuncie e demonstre a primeira parte do Teorema Fundamental do Cálculo e deduza a fórmula de avaliação de integrais definidas para funções contínuas.''
+\end{cuidado}
+
+\textbf{Estrutura recomendada da resposta:}
+\begin{enumerate}
+\item \textbf{Enunciado} (4--8 linhas): definir $f$, domínio, continuidade, $F(x)$ e conclusão. Evitar confundir integração em $t$ com derivação em $x$.
+\item \textbf{Prova principal} (25--40 linhas): quociente incremental, aditividade da integral, estimativa uniforme sobre o intervalo pequeno, continuidade e passagem ao limite; cuidado com $h<0$.
+\item \textbf{Corolário} (10--15 linhas): qualquer primitiva $G$ difere de $F$ por constante, via Teorema do Valor Médio; concluir Newton--Leibniz.
+\item \textbf{Exemplo interpretativo} (5--10 linhas): escolher função simples que ilustre o método, não que substitua a prova.
+\item \textbf{Conferência final} (3--5 linhas): símbolos e limites corretos, inexistência de passos circularmente justificados, legibilidade.
+\end{enumerate}
+
+\textbf{Dica de escrita:} na prova, não economize em frases que justificam o raciocínio. Uma igualdade precisa de motivo matemático; porém também não acrescente páginas de história do cálculo quando o comando exige uma demonstração. O melhor estilo é \textbf{preciso, direto e verificável}.
+
+\subsection{Roteiros para as outras cinco questões escritas (todos autorais)}
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[Teorema do Isomorfismo] Definir estrutura, construir aplicação quociente--imagem, justificar que é bem definida, injetiva, sobrejetiva e compatível com operações; acrescentar exemplo $\mathbb Z/n\mathbb Z\cong\mathrm{Im}(\mathbb Z\to\mathbb Z/n\mathbb Z)$ na formulação adequada.
+\item[Sistemas lineares de EDOs] Apresentar $X'=AX$, definir exponencial via série de matrizes, verificar derivada e condição inicial; no não homogêneo, explicitar $X(t)=e^{(t-t_0)A}X_0+\int_{t_0}^t e^{(t-s)A}b(s)\,ds$.
+\item[Jordan] Enunciar as hipóteses de decomposição sobre o corpo, definir autovetores generalizados, construir cadeias e identificar blocos. Evitar enunciado que atribua forma de Jordan real a toda matriz real sem extensão de escalares.
+\item[EDOs numéricas] Deduzir Euler, explicar erro local/global sob regularidade apropriada e estudar estabilidade num PVI-teste. Não confundir tamanho de passo com precisão garantida em qualquer problema.
+\item[Stokes] Enunciar orientação, regularidade e borda; ilustrar com exemplo de disco e campo vetorial cuja integral de linha e o fluxo possam ser calculados independentemente; observar convenção da regra da mão direita.
+\end{description}
+
+\section{Gestão da prova didática: simular o que será observado}
+\subsection{Três camadas de ensaio}
+\begin{enumerate}
+\item \textbf{Ensaio matemático sem tempo:} provar cada afirmação no quadro, depurar hipóteses, verificar exemplos e criar uma lista de possíveis perguntas críticas.
+\item \textbf{Ensaio didático com tempo:} gravar uma aula de 45 minutos, usar os recursos reais e registrar tempo de cada etapa. Treinar ao menos três versões de fechamento: normal, antecipado e abreviado por atraso.
+\item \textbf{Ensaio de banca:} convidar colegas a marcar erros de conteúdo, transições confusas, escrita ilegível e uso insuficiente da janela de 40--50 minutos; avaliar com a tabela do Anexo V, deixando claro que se trata de \emph{pontuação simulada}.
+\end{enumerate}
+
+\subsection{Autoavaliação simulada -- espelho de 100 pontos}
+\rowcolors{2}{neutro}{white}
+\begin{tabularx}{\textwidth}{Xr p{.16\textwidth}}
+\toprule
+\textbf{Bloco oficial} & \textbf{Máx.} & \textbf{Minha nota}\\\midrule
+Plano: estrutura/objetivos/adequação/bibliografia & 10 & \rule{1cm}{.4pt}\\
+Desempenho: clareza, postura, dicção, autocontrole & 25 & \rule{1cm}{.4pt}\\
+Conteúdo: domínio, rigor, profundidade, exemplos, sequência & 60 & \rule{1cm}{.4pt}\\
+Tempo: 40--50 minutos & 5 & \rule{1cm}{.4pt}\\\midrule
+\textbf{Total} & \textbf{100} & \rule{1cm}{.4pt}\\\bottomrule
+\end{tabularx}
+\rowcolors{2}{}{}
+\textbf{Observação:} para autoavaliação, anote ao lado de cada bloco \textit{evidências} (por exemplo, ``pulei justificativa do $h<0$'', ``prova terminou aos 44 min'', ``exemplo não foi concluído''). Sem justificativas, a nota simulada produz pouca melhoria.
+
+\subsection{Protocolo de emergência no quadro}
+Se não houver projetor, a aula continua. Se a exposição atrasar dois minutos, corte uma aplicação adicional e \textbf{preserve a demonstração central e a síntese}. Se errar um sinal, corrija explicitamente, identifique a causa e retome: negar o deslize e prosseguir com conta falsa é pior. Se esquecer um passo de prova, reconstrua a dependência lógica a partir da definição e não invente resultado. Se a prova sorteada trouxer tema amplo, declare um \emph{recorte justificável} que cumpra o tema, sem prometer muito além da janela temporal.
+
+\section{Trajetória acadêmica de longo prazo: habilitação e competitividade}
+\subsection{O currículo de concursos universitários começa antes do edital}
+Uma preparação para a UFMT não deve começar apenas quando sai a lista de temas. Na área Matemática do concurso histórico, o \textbf{doutorado compatível} era requisito e a avaliação de títulos dava pontos relevantes para pesquisa e magistério superior. O planejamento reúne quatro frentes:
+\begin{enumerate}
+\item \textbf{Elegibilidade formal:} graduação e pós-graduação em áreas expressamente admitidas no perfil da vaga.
+\item \textbf{Formação matemática:} leitura de provas, resolução de problemas de nível de mestrado e comunicação oral de teoremas.
+\item \textbf{Pesquisa:} projetos, dissertação/tese, seminários, artigos e produção qualificada nos termos de um barema futuro.
+\item \textbf{Docência superior:} monitoria e práticas supervisionadas para aprender; experiências efetivas comprováveis quando disponíveis, sem presumir que estágio docência pontuará no barema.
+\end{enumerate}
+
+\subsection{Roteiro progressivo orientado por marcos, não por promessas de prazo}
+\begin{longtable}{p{.18\textwidth}p{.38\textwidth}p{.32\textwidth}}
+\toprule
+\textbf{Fase} & \textbf{Ações de formação} & \textbf{Produto verificável}\\\midrule
+\endfirsthead
+\toprule\textbf{Fase}&\textbf{Ações}&\textbf{Produto}\\\midrule\endhead
+Definição de área & Comparar programas stricto sensu aceitos nos últimos editais, linhas de pesquisa e orientadores. & Trilha de ingresso em mestrado/doutorado e lista de pré-requisitos formais.\\
+Bases avançadas & Estudar Análise Real, Álgebra, Álgebra Linear, Topologia, EDOs e Cálculo em várias variáveis; fazer problemas com prova rigorosa. & Caderno próprio de teoremas/demonstrações e simulados escritos.\\
+Pós-graduação & Participar de seminários e disciplinas; construir projeto de pesquisa coerente com a área da vaga. & Histórico, dissertação/tese, exposições orais e documentação acadêmica.\\
+Produção científica & Pesquisar com orientador e colaboradores; produzir trabalhos com integridade autoral; apresentar em eventos reconhecidos. & Publicações comprováveis (respeitadas qualidade, indexação e tempo de referência).\\
+Prática universitária & Buscar experiências legítimas de ensino superior, orientar atividades quando permitido e treinar aulas de graduação. & Aulas gravadas, planos refinados e declarações que comprovem atividades elegíveis.\\
+Pré-edital & Revisar seis eixos, realizar escrita dissertativa cronometrada, preparar modelos de aula de 45 min. & Seis dossiês temáticos, simulados, portfólio documental completo.\\
+Edital publicado & Validar o quadro de vagas, titulação, temas, retificações, prova, banca e cronograma. & Versão final da preparação estritamente aderente ao edital novo.\\\bottomrule
+\end{longtable}
+
+\subsection{Duas trilhas curriculares e seus riscos}
+\textbf{Trilha Matemática:} priorize Análise, Álgebra, EDOs, Geometria, métodos numéricos e aprofundamento em uma linha de pesquisa; o desafio é manter amplitudes suficientes para os temas de concurso enquanto desenvolve uma tese especializada. \textbf{Risco:} pesquisa excelente em uma subárea e desempenho inseguro em tópicos básicos de outra área.
+
+\textbf{Trilha Ensino:} priorize fundamentos de Educação Matemática, metodologia de pesquisa, formação docente, currículo, inclusão e análise de práticas; mantenha repertório matemático real para analisar os episódios de ensino. \textbf{Risco:} citar muitas abordagens teóricas sem mostrar como orientam uma aula de formação de professores.
+
+\subsection{Estratégia realista para títulos}
+O Anexo VI da UFMT de 2026 apresentou produção científica de cinco anos e experiência de magistério superior com critérios específicos. Isso sugere um arquivo atualizado de comprovantes e produção contínua, \textbf{sem} perseguir quantidade a qualquer custo. Publicação e titulação devem resultar de uma formação acadêmica consistente, não de certificados acumulados aleatoriamente. O barema de futuro edital pode alterar pontuações ou janelas temporais. \fufmt
+
+\section{Erros críticos que não se deve cometer}
+\begin{enumerate}
+\item \textbf{Confundir UFMT com IFMT:} preparar ensino médio técnico para prova de \textbf{graduação} ou usar nota de corte da carreira EBTT.
+\item \textbf{Ignorar o doutorado exigido:} treinar concurso para cuja vaga ainda não possui a titulação especificada.
+\item \textbf{Estudar somente temas favoritos:} é preciso dominar todos os temas passíveis de sorteio/questão.
+\item \textbf{Apresentar enunciado sem hipóteses:} continuidade, orientação, normalidade, regularidade e corpo de escalares não são detalhes opcionais.
+\item \textbf{Usar provas com passos falsos ou circulares:} um argumento sofisticado mas inválido pode comprometer o principal bloco de pontos.
+\item \textbf{Exibir exemplos fáceis que não iluminam o teorema:} o exemplo deve aplicar, testar ou problematizar o resultado.
+\item \textbf{Prometer metodologia e não a executar:} problema motivador e problematização precisam aparecer concretamente.
+\item \textbf{Usar slides como muleta:} o edital-base da UFMT só garantia quadro e giz/pincel.
+\item \textbf{Deixar o último teorema ou a conclusão inacabados:} a banca avalia profundidade e sequência, não o número bruto de tópicos citados.
+\item \textbf{Não adaptar a linguagem ao nível:} ``é óbvio'' e frases informalmente vagas são perigosas; formalismo inexplicado também.
+\item \textbf{Simular respostas de alunos inexistentes:} a banca do edital-base não faz arguição durante a aula.
+\item \textbf{Desorganizar os documentos de títulos:} atividade sem comprovante ou fora das regras não deve ser contabilizada mentalmente como ponto garantido.
+\item \textbf{Ignorar retificações:} o edital-base é fotografia de um concurso passado; novo certame e suas atualizações prevalecem.
+\end{enumerate}
+
+\section{Checklists para uso recorrente}
+\subsection{Antes de escolher a pós-graduação}
+\begin{itemize}[label=$\square$]
+\item Conferi a diferença entre as vagas de Matemática e Ensino nos editais anteriores.
+\item Identifiquei os nomes \emph{exatos} de doutorados aceitos para a área que me interessa.
+\item Conversei com docentes sobre a coerência entre linha de pesquisa e carreira universitária.
+\item Tenho programa de leitura de base matemática e/ou Educação Matemática.
+\end{itemize}
+
+\subsection{Ao preparar um dos seis temas}
+\begin{itemize}[label=$\square$]
+\item Tenho enunciado correto com hipóteses e notação padronizadas.
+\item Consigo demonstrar o resultado sem ler o livro.
+\item Sei explicar cada passagem delicada e indicar um contraexemplo relevante.
+\item Produzi resposta escrita em espaço e tempo delimitados.
+\item Produzi plano de 45 minutos exequível com o quadro.
+\item Ensaiei e gravei a aula; identifiquei o minuto de cada etapa.
+\item Tenho versão reduzida que preserva o raciocínio e o fechamento.
+\end{itemize}
+
+\subsection{Na véspera da prova didática (adaptar ao edital vigente)}
+\begin{itemize}[label=$\square$]
+\item Li o edital, todas as retificações, o tema sorteado e a convocação.
+\item Separei as \textbf{três vias} do plano, se a mesma exigência persistir.
+\item Revisei o quadro de hipóteses, a prova e o exemplo completo.
+\item Cronometrei o plano dentro da janela \textbf{40--50 minutos}, caso ela seja mantida.
+\item Verifiquei materiais de quadro e qualquer equipamento próprio permitido.
+\item Preparei uma forma de concluir o tema caso o tempo fique curto.
+\end{itemize}
+
+\section{Quadro de acompanhamento de estudo}
+\renewcommand{\arraystretch}{1.55}
+\begin{tabularx}{\textwidth}{p{.39\textwidth}p{.12\textwidth}p{.12\textwidth}p{.12\textwidth}X}
+\toprule
+\textbf{Tema (área Matemática)} & \textbf{Prova} & \textbf{Exemplo} & \textbf{Aula} & \textbf{Fragilidade a corrigir}\\\midrule
+Teorema Fundamental do Cálculo & & & & \\
+Isomorfismo (grupos/anéis) & & & & \\
+Sistemas de EDOs lineares & & & & \\
+Formas de Jordan & & & & \\
+Soluções numéricas de EDOs & & & & \\
+Teorema de Stokes & & & & \\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\section{Referências documentais e links verificáveis}
+\small
+\begin{enumerate}
+\item \textbf{[UFMT--26].} UNIVERSIDADE FEDERAL DE MATO GROSSO. Edital nº 01/PROGEP/UFMT/2026, de 26 fev. 2026, DOU de 3 mar. 2026 (edital e anexos I--VI; documento reproduzido a partir da edição do Diário Oficial). Disponível em: \url{https://www.agrobase.com.br/concursos/wp-content/uploads/sites/4/2026/03/edital-001-2026-da-ufmt-mt.pdf}. Acompanhamento oficial: \url{https://www.concursos.ufmt.br}. Especialmente: itens 16--18 e 20; Anexo I (perfis), Anexo III (programas/bibliografias), Anexo IV (temas didáticos), Anexo V (pontuação) e Anexo VI (títulos). \textbf{Ressalva:} conferir retificações e texto consolidado diretamente na instituição antes de qualquer inscrição.
+\item \textbf{[UFMT--25].} UNIVERSIDADE FEDERAL DE MATO GROSSO. Edital nº 01/PROGEP/UFMT/2025, Anexo V, critérios para escrita e didática. Disponível em: \url{https://www.agrobase.com.br/concursos/wp-content/uploads/sites/4/2025/07/anexos-edital-01-2025-ufmt-mt.pdf}. Uso exclusivamente comparativo/histórico.
+\item \textbf{[IFC--26].} INSTITUTO FEDERAL CATARINENSE. Concurso Público nº 01/2026. Divulgação das notas definitivas de desempenho didático e \emph{Anexo I -- justificativas para manutenção/alteração de notas}, de 22 jun. 2026. PDF com 247 páginas, especialmente pp. 25 e 101--109. Disponível em: \url{https://concursos-publicacoes.s3.amazonaws.com/1079/publico/1-1079_EBTT_Edital_de_NotasDefinitivas_DidAtica_Rev1_COMBINADO_6a39c289b18bc.pdf?idpub=508628}. Fonte comparativa; não rege a UFMT.
+\item \textbf{[UFU--24].} UNIVERSIDADE FEDERAL DE UBERLÂNDIA, ESEBA. Espelho de correção da prova didática, Edital PROGEP nº 02/2024, área Matemática (documento que explicita condições para nota máxima em concurso EBTT). Disponível em: \url{https://www.portalselecao.ufu.br/servicos/ArquivoAdministrativo/download/283aa4a76808d58cfa74922e2fe228b7}. Fonte comparativa, não é plano de candidato com nota 100 comprovada.
+\item \textbf{[UFMT--HIST].} UNIVERSIDADE FEDERAL DE MATO GROSSO. Anexo IV de concurso anterior para Matemática/Matemática Aplicada (retificação do Edital nº 06/SGP/UFMT/2019, publicado em 2021). Exemplos históricos: Teorema do Valor Médio/Taylor, Teorema Fundamental do Cálculo, EDOs qualitativas, diagonalização, anéis de polinômios e isomorfismo. Disponível em: \url{https://www.agrobase.com.br/concursos/wp-content/uploads/sites/4/2022/01/ANEXO_IV___TEMAS_PARA_PROVA_DIDATICA.pdf}. Útil para ampliar preparação; \textbf{não} substitui os seis temas de 2026.
+\item \textbf{[IFAL].} INSTITUTO FEDERAL DE ALAGOAS. Critérios de Avaliação da Prova de Desempenho Didático (outro exemplo de decomposição de critérios). \url{https://concurso-antigo.ifal.edu.br/files/Criterios%20de%20Avaliacao%20Desempenho%20Didatico_8.pdf}.
+\item \textbf{[IFMG].} INSTITUTO FEDERAL DE MINAS GERAIS. Resultado oficial da prova didática de Matemática, Edital nº 001/2014: registro de notas 100/100, sem acesso pareado aos planos originais. \url{https://solucoes.ifmg.edu.br/recepta/visao/arquivos/3408_edital_001-2014_-_area-matematica_-_resultado_prova_didatica.pdf}.
+\end{enumerate}
+\normalsize
+
+\section*{Conclusão}
+\addcontentsline{toc}{section}{Conclusão}
+Uma preparação de alto nível para \textbf{concurso docente de Matemática na UFMT} tem de começar por uma decisão de trajetória: \textbf{Matemática ou Ensino}, com titulação de doutorado expressamente compatível. Para a área Matemática, o edital de 2026 sugere estudo profundamente rigoroso de seis grandes eixos, prova escrita dissertativa e aula demonstrativa de graduação. O maior bloco da didática (60/100) avalia desenvolvimento do tema, não mera formatação do plano.
+
+As justificativas do IFC complementam esse retrato com exemplos de falhas concretas: conteúdo anunciado sem solução, metodologia que não se materializou, exemplos pobres, linguagem matemática imprecisa e conclusão incompleta. A lição transferível não é reproduzir a aula do ensino técnico, mas adotar a regra \textbf{planejar com precisão, executar o que foi planejado e fechar o raciocínio matemático com rigor}. Ao lado disso, a titulação, a produção acadêmica e os comprovantes de experiência exigem construção continuada.
+
+\begin{ideia}
+\textbf{Prioridades, em ordem:} (1) escolher uma rota de formação compatível com o tipo de vaga; (2) consolidar a matemática ou a Educação Matemática do programa; (3) produzir demonstrações escritas e aulas de 45 minutos para todos os temas; (4) formar currículo científico e docente documentado; (5) atualizar integralmente tudo à luz do próximo edital.
+\end{ideia}
+\end{document}
