@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Técnicas de integração, integral definida e aplicações}{IFMT Edital 029/2024, Anexo X retificado em 30/08/2024, Matemática, tema 3.}{Curso superior de tecnologia com Cálculo I; também adaptável a formação técnica com cálculo.}{Deduzir as regras de substituição e integração por partes, selecionar estratégias e verificar resultados pela derivada.}{Regra da cadeia, derivada do produto e integrais elementares.}{Exposição matemática com problema inicial de duas integrais distintas, soluções completas e verificação.}
+\Roteiro{Problema: como integrar $\int2x\cos(x^2)\,dx$ e $\int xe^x\,dx$ sem decorar respostas?}{Relembrar regra da cadeia e produto, explicitando o sentido das substituições.}{Deduzir ambas as fórmulas a partir de derivadas; resolver integral por substituição e conferir.}{Resolver por partes e calcular $\int_0^1 xe^x\,dx=1$; discutir quando as técnicas não são diretamente adequadas.}{Concluir com um quadro comparativo e uma pergunta sobre verificação de primitivas.}
+\section{Demonstrações}
+\begin{proposicao}[Substituição]
+Se $F'=f$ e $u$ é diferenciável, então $\int f(u(x))u'(x)\,dx=F(u(x))+C$ nos intervalos de definição.
+\end{proposicao}
+\begin{proof}
+Pela regra da cadeia, $\frac{d}{dx}F(u(x))=F'(u(x))u'(x)=f(u(x))u'(x)$.
+\end{proof}
+\begin{proposicao}[Integração por partes]
+Para funções $u,v$ de classe $C^1$, $\int u v'\,dx=uv-\int u'v\,dx$.
+\end{proposicao}
+\begin{proof}
+A regra do produto fornece $(uv)'=u'v+uv'$. Integre e isole o termo $\int uv'$.
+\end{proof}
+\section{Exemplos resolvidos}
+Pondo $u=x^2$, temos $du=2x\,dx$:
+\[
+\int 2x\cos(x^2)\,dx=\int\cos(u)\,du=\sin(x^2)+C.
+\]
+A derivada da resposta é $2x\cos(x^2)$.
+Para $\int xe^x\,dx$, escolha $u=x$ e $dv=e^x\,dx$. Então $du=dx$, $v=e^x$ e
+\[
+\int xe^x\,dx=xe^x-\int e^x\,dx=(x-1)e^x+C.
+\]
+Conferência: $\frac{d}{dx}[(x-1)e^x]=xe^x$. Finalmente,
+$\int_0^1 xe^x\,dx=[(x-1)e^x]_0^1=1$.
+\QuadroEAvaliacao{À esquerda: cadeia/substituição; à direita: produto/partes; na base: verificação por derivadas.}{Por que $\sin(x^2)$ não é primitiva de $\cos(x^2)$? Porque sua derivada é $2x\cos(x^2)$.}
+\Auditoria{Não omitir $+C$ em integrais indefinidas; não perder fatores da regra da cadeia; não anunciar aplicações sem resolver o caso definido; distinguir integral indefinida de um número obtido numa integral definida.}
+\section{Bibliografia}
+J. Stewart, \emph{Cálculo}; E. L. Lima, \emph{Curso de Análise}.
+
+\end{document}
