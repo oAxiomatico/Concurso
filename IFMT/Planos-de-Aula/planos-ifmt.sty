@@ -1,0 +1,85 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{planos-ifmt}[2026/11/04 Planos para provas didaticas IFMT]
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[brazilian]{babel}
+\RequirePackage{lmodern,microtype}
+\RequirePackage[a4paper,margin=2.15cm]{geometry}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage{array,booktabs,tabularx,enumitem}
+\RequirePackage[table]{xcolor}
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\emergencystretch=2em
+\setlist[itemize]{leftmargin=1.6em,topsep=2pt,itemsep=2pt}
+\newtheorem{teorema}{Teorema}
+\newtheorem{proposicao}{Proposição}
+\newtheorem{lema}{Lema}
+\newcommand{\Ficha}[6]{%
+\begin{center}
+{\Large\bfseries #1\par}\smallskip
+{\small Aula autoral para simulação de prova didática EBTT em Matemática --- 33 minutos\par}
+\end{center}
+\textbf{Origem documental do tema:} #2\par
+\textbf{Público e nível:} #3\par
+\textbf{Objetivos observáveis:} #4\par
+\textbf{Conhecimentos prévios:} #5\par
+\textbf{Metodologia e recursos:} #6\par
+\textbf{Nota de uso:} simulação independente, não é plano oficial nem de candidato com nota máxima. Não confundir o conteúdo de um edital antigo com o Anexo XVI de 2026, que precisa ser verificado à parte. Revisar regulamentos e retificações antes de utilizar em concurso.\par\medskip\hrule\medskip
+}
+\newcommand{\Roteiro}[5]{%
+\section{Cronograma de 33 minutos}
+\small
+\begin{tabularx}{\textwidth}{p{1.65cm}X}
+\toprule
+\textbf{Min.}&\textbf{Ações observáveis e produtos da aula}\\\midrule
+0--4 & #1\\
+4--9 & #2\\
+9--20 & #3\\
+20--29 & #4\\
+29--33 & #5\\\bottomrule
+\end{tabularx}
+\normalsize
+}
+\newcommand{\QuadroEAvaliacao}[2]{%
+\section{Organização do quadro e avaliação formativa}
+\textbf{Distribuição do quadro:} #1\par
+\textbf{Questão de saída, com resposta prevista:} #2\par
+\textbf{Execução em simulação sem alunos:} formular a questão, conceder breve tempo de reflexão e \emph{explicitar a resposta esperada e um erro plausível}; não simular falas inexistentes de estudantes.\par
+}
+\newcommand{\Auditoria}[1]{%
+\section{Erros críticos a evitar neste tema}
+#1
+\par\textbf{Cheque a correspondência plano--aula:} o problema inicial realmente fundamentou a explicação? A atividade foi resolvida? As unidades, hipóteses e interpretações ficaram explícitas? A conclusão retomou os objetivos?\par
+\section{Autoavaliação da simulação}
+\small
+\begin{tabularx}{\textwidth}{Xr}
+\toprule
+\textbf{Critérios de referência, IFMT 2026 (conforme guia analítico do repositório)} & \textbf{Máx.}\\\midrule
+Plano: elementos essenciais e sequência & 5\\
+Plano: adequação, coerência e referências & 5\\
+Introdução e motivação inicial & 10\\
+Clareza da explicação e linguagem apropriada & 10\\
+Domínio do conteúdo matemático & 20\\
+Sequência lógica do desenvolvimento & 10\\
+Síntese e fechamento coerentes & 10\\
+Verificação de aprendizagem ligada aos objetivos & 5\\
+Conclusão no intervalo de 30--35 minutos (item binário) & 5\\
+Postura e comunicação oral e não verbal & 5\\
+Ações docentes apropriadas aos objetivos & 5\\
+Metodologia prometida efetivamente executada & 5\\
+Pertinência e aproveitamento dos recursos & 5\\\midrule
+\textbf{Total} & \textbf{100}\\\bottomrule
+\end{tabularx}
+\normalsize\par
+\textbf{Registro após a aula filmada:} plano \underline{\hspace{.6cm}}/10;
+desenvolvimento \underline{\hspace{.6cm}}/70; metodologia \underline{\hspace{.6cm}}/15;
+recursos \underline{\hspace{.6cm}}/5. Total \underline{\hspace{.8cm}}/100.
+\par\textbf{Três melhorias concretas para o próximo ensaio:}
+(1) \underline{\hspace{4cm}}\;
+(2) \underline{\hspace{4cm}}\;
+(3) \underline{\hspace{4cm}}.
+\par\textbf{Atenção:} a ficha é instrumento de treino, não julgamento da banca. O edital novo prevalece; revisar regras de plano impresso, recursos digitais e uso de IA.
+}
