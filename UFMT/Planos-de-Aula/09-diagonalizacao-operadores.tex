@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Diagonalização de Operadores Lineares}{UFMT Matemática/Matemática Aplicada, edital 2019 (retificação 2021)}{Álgebra Linear; graduação com autovalores, autovetores e base.}
+\section{Objetivos e estratégia}
+Demonstrar o critério de existência de base de autovetores, a independência de autovetores de autovalores distintos e calcular uma diagonalização com verificação explícita. Distinguir diagonalização de Jordan e dependência do corpo.
+\Cronograma{Exibir $A=\begin{psmallmatrix}2&1\\0&3\end{psmallmatrix}$ e perguntar se existe base em que a transformação seja diagonal.}{Definir autovetor, autovalor e matrizes semelhantes; enunciar critério.}{Provar equivalência entre diagonalizabilidade e existência de base de autovetores; demonstrar independência para autovalores distintos.}{Calcular $P,D,P^{-1}$ no exemplo; contrapor $B=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$.}{Concluir com teste rápido: quantidade de vetores próprios independentes, não apenas raízes do polinômio.}
+\section{Demonstrações}
+\begin{teorema}
+Um operador linear $T:V\to V$, com $\dim V=n$, é diagonalizável sobre o corpo base se e somente se $V$ possui uma base formada por autovetores de $T$.
+\end{teorema}
+\begin{proof}
+Se $(v_1,\dots,v_n)$ é base de autovetores com $Tv_i=\lambda_i v_i$, a $i$-ésima coluna de $[T]_{(v_i)}$ contém somente $\lambda_i$ na posição diagonal; logo a matriz é diagonal. Reciprocamente, se a matriz de $T$ em alguma base é diagonal, cada vetor daquela base é autovetor correspondente à entrada na diagonal.
+\end{proof}
+\begin{proposicao}
+Autovetores não nulos associados a autovalores distintos $\lambda_1,\dots,\lambda_m$ são linearmente independentes.
+\end{proposicao}
+\begin{proof}
+Por indução em $m$. Para $m=1$ é imediato. Se $\sum_{i=1}^m a_i v_i=0$, aplicar $T-\lambda_m I$ dá
+$\sum_{i=1}^{m-1}a_i(\lambda_i-\lambda_m)v_i=0$. Pela hipótese indutiva, todos os coeficientes $a_i(\lambda_i-\lambda_m)$, $i<m$, são nulos. Como os autovalores são distintos, $a_i=0$ para $i<m$; a igualdade original implica $a_m=0$.
+\end{proof}
+\section{Exemplos calculados}
+Para
+\[
+A=\begin{pmatrix}2&1\\0&3\end{pmatrix},\quad
+v_2=\binom10,\quad v_3=\binom11,\quad
+P=\begin{pmatrix}1&1\\0&1\end{pmatrix},
+\]
+temos $Av_2=2v_2$, $Av_3=3v_3$ e
+\[
+D=\begin{pmatrix}2&0\\0&3\end{pmatrix},\quad
+P^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix},\quad A=PDP^{-1}.
+\]
+Já $B=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$ tem único autovalor $1$ e $\ker(B-I)=\{(x,0)\}$, de dimensão $1$; não é diagonalizável. \textbf{Cuidado:} ter polinômio característico cindido é necessário, mas não suficiente.
+\Fechamento{Quadro 1: equivalência; 2: prova de independência; 3: matrizes $P,D$ e contraexemplo.}{Ter dois autovalores iguais implica não diagonalização? Não: a identidade é diagonalizável.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Apresentei o sentido correto da mudança de base $P^{-1}AP=D$?
+\item Provei a independência, sem assumir o que pretendia demonstrar?
+\item Indiquei claramente o corpo de escalares do problema?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+K. Hoffman e R. Kunze, \emph{Álgebra Linear}; E. L. Lima, \emph{Álgebra Linear}.
+
+\end{document}
