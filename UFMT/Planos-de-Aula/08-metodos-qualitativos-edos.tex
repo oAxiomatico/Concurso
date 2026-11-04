@@ -1,0 +1,31 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Métodos Qualitativos para Equações Diferenciais Ordinárias}{UFMT Matemática/Matemática Aplicada, edital 2019 (retificação 2021)}{EDOs; graduação com existência, unicidade e prolongamento de soluções.}
+\section{Objetivos e estratégia}
+Construir uma análise qualitativa sem precisar da solução explícita: identificar equilíbrios, invariância de intervalos, monotonicidade, existência global e limites. Exemplo-guia: equação logística $x'=rx(1-x/K)$, com $r,K>0$.
+\Cronograma{Traçar campo de direções esquemático para uma EDO autônoma $x'=f(x)$.}{Definir equilíbrios $0,K$ e sinais de $f(x)$ em cada intervalo.}{Provar que para $x_0\in(0,K)$ a solução permanece nesse intervalo e é global; provar convergência a $K$.}{Analisar o caso $x_0>K$ e a estabilidade relativa; fazer retrato de fase.}{Concluir com a lógica existência local, unicidade, prolongamento e comportamento assintótico.}
+\section{Demonstrações}
+Considere $f(x)=rx(1-x/K)$, função $C^1$ na reta; portanto é localmente Lipschitz. Os pontos $x=0$ e $x=K$ são equilíbrios.
+\begin{proposicao}
+Para $0<x_0<K$, a solução maximal de $x'=f(x)$ com $x(0)=x_0$ existe para todo $t\ge0$, satisfaz $0<x(t)<K$, é crescente e $\lim_{t\to+\infty}x(t)=K$.
+\end{proposicao}
+\begin{proof}
+O teorema local de existência e unicidade fornece solução em torno de $0$. Enquanto $x(t)\in(0,K)$, temos $x'(t)>0$, logo a solução cresce. Ela não pode encontrar os equilíbrios em tempo finito: se $x(t_*)=K$ (ou $0$), teria o mesmo dado inicial, no instante $t_*$, que a solução constante $K$ (ou $0$); pela unicidade local, coincidiria com ela e, por continuação da identidade, contrariaria $x(0)=x_0$. Consequentemente $x(t)\in(0,K)$ no seu intervalo futuro de existência. Como o gráfico permanece no compacto $[0,T]\times[x_0,K]$ para qualquer $T$ finito, o teorema de prolongamento impede extremo direito finito: a solução é global para $t\ge0$.
+
+Por ser crescente e limitada superiormente, possui limite $\ell\in[x_0,K]$. Se $\ell<K$, escolha $\eta>0$ pequeno tal que $[x_0,\ell+\eta]\subset(0,K)$. A função contínua $f$ tem mínimo $m>0$ nesse compacto; assim, para todo $t\ge0$, $x'(t)\ge m$, donde $x(t)\ge x_0+mt$, contradição com a limitação. Portanto $\ell=K$.
+\end{proof}
+\section{Exemplos e limites}
+Para $x_0>K$, vale $f(x_0)<0$ e uma argumentação análoga mostra que a solução é decrescente, permanece acima de $K$, é global no futuro e converge a $K$. Para $x_0=0$ ou $K$, temos soluções constantes. Conclusão: $K$ atrai trajetórias positivas, enquanto $0$ repele perturbações positivas; não confundir afirmações para $t\ge0$ com existência para todos os tempos.
+\Fechamento{À esquerda: sinais de $f$; centro: prova de invariância e globalidade; à direita: retrato de fase com setas.}{Por que a unicidade pode ser comparada a uma solução de equilíbrio embora os valores iniciais originais sejam diferentes? Porque comparamos ambas a partir do instante hipotético de encontro.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Separei argumentos de unicidade, monotonicidade e prolongamento?
+\item Justifiquei globalidade futura via confinamento em compacto em cada intervalo finito?
+\item Provei o limite usando positividade uniforme de $f$ sob hipótese contrária?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+J. Sotomayor, \emph{Equações Diferenciais Ordinárias}; D. G. Figueiredo e A. F. Neves, \emph{Equações Diferenciais Aplicadas}.
+
+\end{document}
