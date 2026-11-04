@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Sistemas de Equações Diferenciais Ordinárias Lineares}{UFMT, Matemática/Cuiabá, editais de 2025 e 2026}{EDOs e Álgebra Linear na graduação.}
+\section{Objetivos}
+Definir o exponencial matricial, demonstrar sua propriedade diferencial, deduzir a fórmula de variação das constantes e calcular uma solução com conferência. Metodologia expositiva-demonstrativa com problema inicial e conferência de um PVI no quadro.
+\Cronograma{Comparar $x'=ax$ com $X'=AX$.}{Definir $e^{tA}$ como série matricial e distinguir da exponenciação entrada a entrada.}{Justificar a derivação da série e deduzir variação das constantes para $A$ constante e $b$ contínua.}{Resolver integralmente um sistema diagonal forçado e verificar derivadas e dados iniciais.}{Sintetizar condições de validade, unicidade e aplicação da fórmula.}
+\section{Demonstrações}
+A definição é $e^{tA}=\sum_{k\ge0}t^kA^k/k!$. Para norma submultiplicativa, os termos satisfazem $\|t^kA^k/k!\|\le |t|^k\|A\|^k/k!$. A série e sua série de derivadas convergem uniformemente em compactos, de modo que
+\[
+\frac{d}{dt}e^{tA}=\sum_{k\ge1}\frac{t^{k-1}A^k}{(k-1)!}=Ae^{tA}.
+\]
+A derivada de $e^{tA}e^{-tA}$ é nula, pois $A$ comuta com ambas as séries; o valor em $t=0$ é $I$, logo $e^{-tA}$ é a inversa de $e^{tA}$.
+\begin{teorema}[Variação das constantes]
+Para $A\in M_n(\mathbb R)$ constante e $b:I\to\mathbb R^n$ contínua, a solução única de $X'=AX+b(t)$, $X(t_0)=X_0$, é
+\[
+X(t)=e^{(t-t_0)A}X_0+\int_{t_0}^{t}e^{(t-s)A}b(s)\,ds.
+\]
+\end{teorema}
+\begin{proof}
+Defina $Y(t)=e^{-(t-t_0)A}X(t)$. Pela regra do produto e comutatividade de $A$ com seu exponencial,
+$Y'=e^{-(t-t_0)A}b(t)$. Integrando e multiplicando por $e^{(t-t_0)A}$, obtemos a fórmula. A substituição direta mostra que a expressão satisfaz a equação e o dado inicial. Se $X_1,X_2$ são duas soluções, a diferença $Z$ satisfaz $Z'=AZ$, $Z(t_0)=0$ e, assim, $(e^{-(t-t_0)A}Z)'=0$. Portanto $Z=0$.
+\end{proof}
+\section{Exemplo e contraponto}
+Tome $A=\operatorname{diag}(1,-1)$, $b(t)=(0,e^t)^T$, $X(0)=(1,0)^T$. Então
+\[
+x(t)=e^t,\qquad y(t)=e^{-t}\int_0^t e^{2s}\,ds
+=\frac{e^t-e^{-t}}2.
+\]
+Verifique no quadro: $x'=x$, $y'=(e^t+e^{-t})/2=-y+e^t$ e $X(0)=(1,0)^T$. \textbf{Limite:} quando $A=A(t)$, não se pode substituir automaticamente a matriz fundamental por $e^{\int A}$ se as matrizes de tempos diferentes não comutam.
+\Fechamento{Da esquerda para a direita: série, derivada, transformação $Y$, fórmula, exemplo.}{Por que não foi necessário assumir $A$ diagonalizável? Porque a série converge para toda matriz quadrada.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Justifiquei a diferenciação da série?
+\item Derivei a fórmula e provei unicidade, sem pressupor diagonalização?
+\item Testei a solução obtida na equação e na condição inicial?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+W. E. Boyce, R. C. DiPrima e D. B. Meade, \emph{Equações Diferenciais Elementares}; J. Sotomayor, \emph{Equações Diferenciais Ordinárias}.
+
+\end{document}
