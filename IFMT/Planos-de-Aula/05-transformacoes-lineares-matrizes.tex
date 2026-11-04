@@ -1,0 +1,35 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Transformações lineares e matrizes}{IFMT Edital 166/2023, Anexo X, Matemática, tema 5.}{Curso técnico integrado com matrizes ou graduação tecnológica em Álgebra Linear.}{Determinar a matriz de uma transformação em bases canônicas, justificar linearidade e interpretar o produto de matrizes como composição.}{Operações com vetores, sistemas de equações e matrizes.}{Problema de transformação de coordenadas; resolução algébrica e interpretação geométrica no quadro.}
+\Roteiro{Propor um desenho no plano e o efeito da transformação $T(x,y)=(2x,x+y)$.}{Revisar linearidade: $T(u+v)=T(u)+T(v)$ e $T(\lambda u)=\lambda T(u)$.}{Demonstrar que $[T]$ tem como colunas as imagens dos vetores canônicos; obter $A=\begin{psmallmatrix}2&0\\1&1\end{psmallmatrix}$.}{Compor com $S(x,y)=(x+y,y)$; calcular $[S][T]$, avaliar em $(1,2)$ por duas vias e discutir por que ordem importa.}{Sintetizar matriz, colunas, composição e pergunta de verificação.}
+\section{Demonstração central}
+\begin{proposicao}
+Se $T:\mathbb R^n\to\mathbb R^m$ é linear e $e_1,\ldots,e_n$ é a base canônica de $\mathbb R^n$, então $T(x)=Ax$, onde a coluna $j$ de $A$ é $T(e_j)$.
+\end{proposicao}
+\begin{proof}
+Para $x=\sum_{j=1}^n x_je_j$, a linearidade dá $T(x)=\sum_{j=1}^n x_jT(e_j)$, que é, por definição, o produto da matriz das colunas $T(e_j)$ pelo vetor coluna $x$.
+\end{proof}
+Para $T(x,y)=(2x,x+y)$, temos $T(e_1)=(2,1)$ e $T(e_2)=(0,1)$; logo
+\[
+A=\begin{pmatrix}2&0\\1&1\end{pmatrix}.
+\]
+Para $S(x,y)=(x+y,y)$, $B=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$ e a matriz de $S\circ T$ é
+\[
+BA=\begin{pmatrix}3&1\\1&1\end{pmatrix}.
+\]
+\begin{proposicao}
+A matriz da composição $S\circ T$, nas bases canônicas compatíveis, é o produto $BA$.
+\end{proposicao}
+\begin{proof}
+Para cada vetor $x$, $(S\circ T)(x)=B(Ax)=(BA)x$. Pela unicidade da matriz associada nas bases escolhidas, a matriz é $BA$.
+\end{proof}
+\section{Exemplo resolvido e advertência}
+Para $(1,2)$, $T(1,2)=(2,3)$ e $S(2,3)=(5,3)$. Pela matriz composta,
+$BA(1,2)^T=(5,3)^T$. Por contraste, $AB=\begin{psmallmatrix}2&2\\1&2\end{psmallmatrix}\ne BA$: multiplicação matricial não é comutativa.
+\QuadroEAvaliacao{À esquerda: transformação de vetores; ao centro: imagens de $e_1,e_2$ e matriz; à direita: composição.}{Uma coluna de $[T]$ representa o quê? A imagem do vetor da base correspondente, nas coordenadas da base de chegada.}
+\Auditoria{Não inferir linearidade apenas por conter variáveis; uma translação $T(x)=Ax+b$ com $b\ne0$ não é linear. Não inverter a ordem da composição. Não esquecer de indicar as bases.}
+\section{Bibliografia}
+E. L. Lima, \emph{Álgebra Linear}; A. Anton e C. Rorres, \emph{Álgebra Linear com Aplicações}.
+
+\end{document}
