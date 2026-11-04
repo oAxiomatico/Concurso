@@ -7,6 +7,12 @@ Repositório de estudos para concursos de professor de Matemática, com foco em 
 - [UFMT — 14 planos para provas didáticas universitárias](UFMT/Planos-de-Aula/README.md), organizados por edital e campus.
 - [IFMT — 15 planos para provas didáticas EBTT](IFMT/Planos-de-Aula/README.md), com 33 minutos de simulação, matemática desenvolvida e autoavaliação.
 
+## Provas anteriores de Matemática — IFMT
+
+- [Cadernos oficiais de prova objetiva (166/2023 e 029/2024; links para PDFs originais)](IFMT/Provas-Objetivas/README.md).
+- [Conteúdos programáticos da prova objetiva — comparação em LaTeX](IFMT/Provas-Objetivas/conteudos_provas_objetivas_2023_2024_2026.tex).
+- [Temas das provas didáticas anteriores — consolidação em LaTeX](IFMT/Provas-Didaticas/temas_didaticos_2023_2024_2026.tex).
+
 ## Guias em LaTeX
 
 - [UFMT — Guia para concurso docente universitário em Matemática](UFMT/Guias/guia_concurso_docente_matematica_UFMT_2026.tex): análise de edital, prova escrita, prova didática, títulos, demonstrações e preparação de longo prazo.
