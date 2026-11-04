@@ -1,0 +1,31 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Limites e continuidade de funções reais}{IFMT Edital 029/2024, Anexo X retificado em 30/08/2024, Matemática, tema 2.}{Ensino Médio técnico com introdução a limites ou Cálculo I em curso tecnológico.}{Distinguir limite de continuidade; reparar uma descontinuidade removível; aplicar o Teorema do Valor Intermediário com justificativa da existência e unicidade de raiz.}{Polinômios, funções definidas por partes, limites laterais e derivadas.}{Pergunta inicial sobre furo no gráfico, resolução algébrica e análise de sinal de um polinômio.}
+\Roteiro{Exibir função com regra distinta em $x=1$: é possível preencher o ponto e manter continuidade?}{Definir continuidade como limite igual ao valor no ponto; revisar domínio.}{Calcular limite da razão $(x^2-1)/(x-1)$ e provar que extensão contínua exige valor $2$ em $x=1$.}{Enunciar TVI e aplicá-lo a $p(x)=x^3+x-1$ em $[0,1]$; provar unicidade por monotonicidade, estreitar intervalo com bissecção.}{Fechar com hipóteses de continuidade e diferença entre existência e unicidade.}
+\section{Demonstrações}
+Defina
+\[
+f(x)=\begin{cases}
+\dfrac{x^2-1}{x-1},&x\ne1,\\c,&x=1.
+\end{cases}
+\]
+Para $x\ne1$, fatoramos $x^2-1=(x-1)(x+1)$, portanto $f(x)=x+1$ e $\lim_{x\to1}f(x)=2$. A condição $\lim_{x\to1}f(x)=f(1)$ vale se e somente se $c=2$.
+\begin{teorema}[Valor intermediário: enunciado]
+Se $g:[a,b]\to\mathbb R$ é contínua e $y$ está entre $g(a)$ e $g(b)$, existe $c\in[a,b]$ com $g(c)=y$.
+\end{teorema}
+O TVI é utilizado como resultado anterior; sua prova geral não é anunciada como parte da aula.
+\begin{proposicao}
+O polinômio $p(x)=x^3+x-1$ possui uma única raiz em $(0,1)$.
+\end{proposicao}
+\begin{proof}
+Como $p$ é contínuo, $p(0)=-1<0$ e $p(1)=1>0$, o TVI garante uma raiz. E $p'(x)=3x^2+1>0$ para todo $x$. Pelo TVM, $p$ é estritamente crescente, portanto não tem duas raízes distintas.
+\end{proof}
+\section{Exemplo e análise do processo}
+$p(1/2)=1/8+1/2-1=-3/8<0$, enquanto $p(3/4)=27/64+3/4-1=11/64>0$. Logo a única raiz está entre $1/2$ e $3/4$. O procedimento de bissecção repete tal comparação e estreita o intervalo. A existência vem do TVI; a unicidade vem da monotonicidade: não confundir argumentos.
+\QuadroEAvaliacao{Esquerda: função com ponto removido; centro: limite e $c=2$; direita: tabela de sinais de $p$.}{A mudança de sinal nas extremidades, sem continuidade, garante uma raiz? Não. Qual hipótese falta? A continuidade no intervalo.}
+\Auditoria{Não confundir valor de limite e valor da função; não aplicar TVI sem checar intervalo e continuidade; não inferir unicidade apenas de mudança de sinal; não omitir o nível da turma ao escolher formalismo.}
+\section{Bibliografia}
+E. L. Lima, \emph{Análise Real}; G. Ávila, \emph{Cálculo das Funções de uma Variável}.
+
+\end{document}
