@@ -1,0 +1,48 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teorema Fundamental do Cálculo}{UFMT, Matemática/Cuiabá, editais de 2025 e 2026; também Matemática Aplicada, 2019}{Cálculo I / Análise Real; estudantes de graduação com continuidade, derivação e integral de Riemann.}
+\section{Objetivos e metodologia}
+Ao fim da aula, espera-se que o estudante (i) enuncie a versão contínua do Teorema Fundamental do Cálculo (TFC); (ii) demonstre que a integral acumulada tem derivada igual ao integrando; (iii) deduza a fórmula de Newton--Leibniz; (iv) identifique a hipótese de continuidade. Método: questão inicial, prova guiada e exemplo calculado no quadro. Recurso: apenas quadro e pincel.
+\Cronograma{Motivar $F(x)=\int_a^x f(t)\,dt$: qual é a taxa de variação da área acumulada?}{Enunciar as duas partes do TFC, explicitando intervalo, continuidade, extremos e derivadas laterais.}{Escrever o quociente incremental e demonstrar integralmente a primeira parte, incluindo $h<0$; solicitar que o estudante identifique a estimativa-chave.}{Deduzir Newton--Leibniz; resolver $\int_0^1(3t^2+2t)\,dt$, verificar a função acumulada e discutir onde a continuidade foi usada.}{Concluir com enunciados, hipóteses e questão de saída; conferir tempo.}
+\section{Demonstrações rigorosas}
+\begin{teorema}[Derivada da integral acumulada]
+Se $f:[a,b]\to\mathbb R$ é contínua e $F(x)=\int_a^x f(t)\,dt$, então $F$ é derivável em $(a,b)$, com $F'(x)=f(x)$, e possui as derivadas laterais correspondentes em $a,b$.
+\end{teorema}
+\begin{proof}
+Fixe $x\in(a,b)$ e tome $h\neq0$ pequeno, com $x+h\in[a,b]$. Pela aditividade da integral,
+\[
+\frac{F(x+h)-F(x)}{h}-f(x)
+=\frac1h\int_x^{x+h}\bigl(f(t)-f(x)\bigr)\,dt.
+\]
+Defina $I_h=[\min(x,x+h),\max(x,x+h)]$. O sinal da integral orientada e o sinal de $h$ se compensam ao tomar módulos, logo
+\[
+\left|\frac{F(x+h)-F(x)}h-f(x)\right|
+\le \sup_{t\in I_h}|f(t)-f(x)|.
+\]
+Pela continuidade em $x$, para todo $\varepsilon>0$ existe $\delta>0$ tal que $|t-x|<\delta$ implica $|f(t)-f(x)|<\varepsilon$. Para $0<|h|<\delta$, a expressão anterior é menor que $\varepsilon$. Portanto $F'(x)=f(x)$. Em $a,b$ repete-se o argumento com incrementos unilaterais.
+\end{proof}
+\begin{teorema}[Regra de Newton--Leibniz]
+Se $f$ é contínua em $[a,b]$ e $G$ é uma primitiva de $f$ nesse intervalo, então $\int_a^b f(t)\,dt=G(b)-G(a)$.
+\end{teorema}
+\begin{proof}
+A função $F$ do primeiro teorema satisfaz $F'=f=G'$ no interior. Assim $(G-F)'=0$. Pelo Teorema do Valor Médio, $G-F$ é constante em $[a,b]$. Logo $G(b)-G(a)=F(b)-F(a)=\int_a^b f(t)\,dt$.
+\end{proof}
+\section{Exemplos, diagnóstico e limite do enunciado}
+Para $f(t)=3t^2+2t$ e $a=0$,
+\[
+F(x)=\int_0^x(3t^2+2t)\,dt=x^3+x^2,\quad
+F'(x)=3x^2+2x,\quad \int_0^1 f(t)\,dt=2.
+\]
+\textbf{Pergunta de checagem:} por que a prova contempla $h<0$? Porque derivabilidade requer limite bilateral no interior. \textbf{Armadilha:} não afirmar que uma função meramente integrável tem $F'=f$ em todos os pontos; continuidade pontual é suficiente para obter a identidade naquele ponto.
+\Fechamento{Esquerda: pergunta e enunciado; centro: quociente incremental e estimativa; direita: Newton--Leibniz e exemplo.}{Em que passagem da prova utilizamos continuidade? Resposta: ao fazer o supremo sobre $I_h$ tender a zero.}
+\section{Critérios específicos de autoavaliação}
+\begin{itemize}
+\item Demonstrei a estimativa sem pressupor $h>0$?
+\item Justifiquei a constância de $G-F$ pelo Teorema do Valor Médio?
+\item Diferenciei a versão demonstrada de versões mais gerais?
+\end{itemize}
+\RubricaUFMT
+\section{Leitura de apoio}
+E. L. Lima, \emph{Curso de Análise}, v. 1; D. G. de Figueiredo, \emph{Análise I}. Consulte a bibliografia do edital vigente.
+\end{document}
