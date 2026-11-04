@@ -1,0 +1,23 @@
+# Arquivos auxiliares do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.run.xml
+*.bcf
+*.xdv
+
+# Arquivos do editor e do sistema
+.DS_Store
+*.swp
+*~
