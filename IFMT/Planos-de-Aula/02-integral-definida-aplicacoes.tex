@@ -1,0 +1,26 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Integral definida e suas aplicações}{IFMT Edital 166/2023, Anexo X, Matemática, tema 2.}{Ensino Médio integrado em unidade de cálculo introdutório ou curso técnico subsequente/superior que utilize integrais; indicar no plano a turma escolhida.}{Interpretar uma integral como acumulação, demonstrar a fórmula da soma de Riemann para uma função linear e calcular grandeza acumulada com unidades.}{Áreas de retângulos, função afim, somatórios e taxa média.}{Problema de vazão fictícia, visualização por retângulos e cálculo com comparação; quadro e gráfico.}
+\Roteiro{Uma bomba apresenta vazão variável $q(t)=2+t$ litros/min entre $0$ e $4$ min. Quanto volume passou no período? Esboçar gráfico.}{Introduzir aproximação por $n$ retângulos à direita, $\Delta t=4/n$, e a ideia de acumulação.}{Calcular a soma de Riemann e demonstrar o limite $\int_0^4(2+t)\,dt=16$; conectar com a regra de Newton--Leibniz.}{Explicar $8$ litros de contribuição constante e $8$ litros de aumento linear; resolver a vazão média $16/4=4$ L/min e comparar limites de tempo.}{Fechar com relação entre taxa e total, unidade do resultado e pergunta sobre retângulos à esquerda.}
+\section{Demonstração pela definição}
+Para $q(t)=2+t$ no intervalo $[0,4]$, tome pontos $t_k=4k/n$ e $\Delta t=4/n$. Então
+\[
+S_n=\sum_{k=1}^{n}q(t_k)\Delta t
+=\frac4n\sum_{k=1}^{n}\left(2+\frac{4k}{n}\right)
+=8+\frac{16}{n^2}\frac{n(n+1)}2
+=16+\frac8n.
+\]
+Assim $\lim_{n\to\infty}S_n=16$ L. Como $q$ é contínua, é Riemann-integrável e as somas das partições uniformes convergem à integral. Pela primitiva $Q(t)=2t+t^2/2$,
+\[
+\int_0^4(2+t)\,dt=Q(4)-Q(0)=8+8=16.
+\]
+As duas vias concordam e a unidade é $(\mathrm{L/min})\cdot\mathrm{min}=\mathrm L$.
+\section{Exemplo de transferência}
+Se a vazão fosse constante no valor médio $4$ L/min, o volume em quatro minutos também seria $4\cdot4=16$ L. Isso \emph{não} significa que a vazão real foi $4$ durante todo o intervalo: a integral resume a acumulação. Para $0\le t\le4$, a função volume acumulado é $V(t)=2t+t^2/2$, cuja derivada é $V'(t)=q(t)$.
+\QuadroEAvaliacao{Gráfico e retângulos à esquerda; soma $S_n$ ao centro; integral e unidades à direita.}{Um aluno afirma que o resultado da integral é $16$ L/min. Qual correção? Integramos uma taxa ao longo do tempo: a unidade é litro.}
+\Auditoria{Não trocar o significado físico de taxa instantânea e volume total; não somar valores de vazão sem multiplicar pelo intervalo $\Delta t$; não usar grandeza ou dados atribuídos a equipamento real sem fonte; concluir a soma de Riemann no quadro.}
+\section{Bibliografia de estudo}
+J. Stewart, \emph{Cálculo}; E. L. Lima, \emph{Curso de Análise}.
+
+\end{document}
