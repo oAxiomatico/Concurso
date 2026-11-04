@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teorema de Stokes}{UFMT, Matemática/Cuiabá, editais de 2025 e 2026}{Cálculo Vetorial; graduação após integrais de linha e superfície.}
+\section{Objetivos e recorte}
+Enunciar corretamente Stokes com orientação da borda, demonstrar de forma rigorosa o caso planar retangular (fundamento de Green) e calcular independentemente ambos os membros no disco. \textbf{Recorte honesto:} a demonstração global para superfícies orientáveis gerais usa parametrizações, partições e cancelamento de bordas internas; não será alegado que foi demonstrada por completo em 45 minutos.
+\Cronograma{Exibir disco orientado com normal para cima e borda anti-horária.}{Enunciar Stokes, registrar regularidade de $\mathbf F$, superfície e orientação.}{Provar o caso planar retangular por aplicações do TFC, mostrando o papel da orientação.}{Calcular circulação e fluxo para o campo $(-y/2,x/2,0)$ em disco de raio $R$; discutir mudança de orientação e generalização.}{Concluir e realizar pergunta sobre compatibilidade entre normal e sentido da borda.}
+\section{Enunciado e demonstração de caso fundamental}
+\begin{teorema}[Stokes: formulação usual]
+Se $S$ é superfície orientável, regular por partes e com bordo regular por partes, e $\mathbf F$ é $C^1$ em aberto que contém $S$, então, com a orientação induzida de $\partial S$,
+\[
+\oint_{\partial S}\mathbf F\cdot d\mathbf r
+=\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\,dS.
+\]
+\end{teorema}
+\begin{proposicao}[Caso planar retangular]
+Para $D=[a,b]\times[c,d]$ orientado para cima e $\mathbf F=(P(x,y),Q(x,y),0)$ com $P,Q\in C^1$ num aberto que contém $D$,
+\[
+\oint_{\partial D}P\,dx+Q\,dy
+=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\,dx\,dy.
+\]
+\end{proposicao}
+\begin{proof}
+Na borda positiva (anti-horária), o segmento inferior vai de $(a,c)$ a $(b,c)$, o direito vai para cima, o superior para a esquerda e o esquerdo para baixo. Somando as quatro integrais,
+\[
+\oint_{\partial D}P\,dx+Q\,dy=
+\int_a^b[P(x,c)-P(x,d)]\,dx
++\int_c^d[Q(b,y)-Q(a,y)]\,dy.
+\]
+Pelo TFC aplicado a cada segmento,
+\[
+P(x,c)-P(x,d)=-\int_c^d P_y(x,y)\,dy,\quad
+Q(b,y)-Q(a,y)=\int_a^b Q_x(x,y)\,dx.
+\]
+A continuidade das derivadas permite permutar a ordem de integração, concluindo a identidade.
+\end{proof}
+\noindent O teorema geral decorre, em outra etapa de estudo, da redução local a domínios parametrizados, aplicação de Green e cancelamento de bordas internas; esses passos exigem justificativas adicionais.
+\section{Exemplo completo no disco}
+Seja $S=\{(x,y,0):x^2+y^2\le R^2\}$, orientado por $\mathbf n=(0,0,1)$, e $\mathbf F=(-y/2,x/2,0)$. A curva positiva é $\gamma(t)=(R\cos t,R\sin t,0)$, $0\le t\le2\pi$. Logo
+\[
+\mathbf F(\gamma(t))\cdot\gamma'(t)
+=\tfrac{R^2}{2}(\sin^2t+\cos^2t)=\tfrac{R^2}{2},
+\quad\oint_{\partial S}\mathbf F\cdot d\mathbf r=\pi R^2.
+\]
+Como $\nabla\times\mathbf F=(0,0,1)$, o fluxo é
+$\iint_S 1\,dS=\pi R^2$. Os resultados coincidem. Se invertêssemos a orientação de $S$, ambos os lados mudariam de sinal.
+\Fechamento{Esquerda: figura com seta da normal; centro: prova retangular; direita: cálculo duplo do disco.}{Se a normal aponta para baixo, qual é o sentido positivo da borda visto de cima? Horário.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Especifiquei regularidade, orientação de superfície e orientação induzida na borda?
+\item Demonstrei efetivamente o caso retangular sem declarar que provei o caso geral?
+\item Calculei os dois lados do exemplo independentemente?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+E. L. Lima, \emph{Curso de Análise}, v. 2; J. Stewart, \emph{Cálculo}, v. 2.
+
+\end{document}
