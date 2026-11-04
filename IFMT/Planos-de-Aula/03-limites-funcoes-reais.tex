@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Limites de funções reais de uma variável real}{IFMT Edital 166/2023, Anexo X, Matemática, tema 3.}{Ensino Médio técnico ou Cálculo I; adequar formalização ao componente curricular.}{Explicar limite bilateral com análise de tabela/gráfico, avaliar limite por fatoração e demonstrar o resultado algebricamente com estimativa $\varepsilon$--$\delta$.}{Funções polinomiais, fatoração e valor absoluto.}{Problematização de uma função não definida num ponto; raciocínio gráfico, algébrico e formal, na mesma sequência.}
+\Roteiro{Traçar gráfico de $f(x)=(x^2-4)/(x-2)$ para $x\ne2$ e perguntar: qual valor a função aproxima perto de $2$?}{Fatorar $x^2-4$, obter $f(x)=x+2$ para $x\ne2$, apontar a descontinuidade removível.}{Demonstrar pela definição que $\lim_{x\to2}f(x)=4$, escolhendo $\delta=\varepsilon$; explicar por que o valor no ponto não faz parte da definição.}{Resolver limite com racionalização $\lim_{x\to0}(\sqrt{x+1}-1)/x$, observando domínio $x>-1$ e usando fator conjugado.}{Sintetizar dois procedimentos e perguntar sobre limites laterais e falhas de existência.}
+\section{Definição e demonstrações}
+\begin{teorema}[Limite real]
+Escrevemos $\lim_{x\to a}f(x)=L$ se, para todo $\varepsilon>0$, existe $\delta>0$ tal que $0<|x-a|<\delta$, com $x$ no domínio de $f$, implica $|f(x)-L|<\varepsilon$.
+\end{teorema}
+Para $x\ne2$, temos
+\[
+\frac{x^2-4}{x-2}=\frac{(x-2)(x+2)}{x-2}=x+2.
+\]
+\begin{proof}[Verificação do limite]
+Dado $\varepsilon>0$, escolha $\delta=\varepsilon$. Se $0<|x-2|<\delta$ e $x$ pertence ao domínio, então
+\[
+\left|\frac{x^2-4}{x-2}-4\right|
+=|(x+2)-4|=|x-2|<\varepsilon.
+\]
+Logo o limite é $4$.
+\end{proof}
+\section{Exemplo adicional e diagnóstico}
+Para $x\ne0$ e $x>-1$,
+\[
+\frac{\sqrt{1+x}-1}{x}
+=\frac{(\sqrt{1+x}-1)(\sqrt{1+x}+1)}{x(\sqrt{1+x}+1)}
+=\frac1{\sqrt{1+x}+1}
+\longrightarrow\frac12.
+\]
+\textbf{Contraexemplo:} $g(x)=|x|/x$ para $x\ne0$ tem limites laterais $-1$ e $1$ em $0$, portanto não tem limite bilateral. Não afirmar que limites laterais diferentes têm média como limite.
+\QuadroEAvaliacao{Gráfico do ponto removido; fatoração e demonstração central; racionalização e limites laterais.}{Se definirmos $f(2)=100$, o limite muda? Não: o limite depende de valores com $x$ próximo, mas diferente de $2$.}
+\Auditoria{Não cancelar $x-2$ sem registrar $x\ne2$; não usar substituição direta na forma $0/0$; não confundir existência de limite com valor da função em $a$; completar uma estimativa e não apenas desenhar.}
+\section{Bibliografia de estudo}
+E. L. Lima, \emph{Análise Real}; G. Ávila, \emph{Cálculo das Funções de uma Variável}.
+
+\end{document}
