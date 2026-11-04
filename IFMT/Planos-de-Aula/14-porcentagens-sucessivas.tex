@@ -1,0 +1,27 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Porcentagens sucessivas e matemática financeira}{Ampliação curricular para Ensino Médio Integrado, inspirada no programa específico de Matemática do IFMT e nas justificativas da banca do IFC; NÃO é tema de sorteio confirmado do Anexo XVI/2026.}{1º ou 2º ano do Ensino Médio integrado, curso técnico que use custos ou estoques.}{Modelar variações percentuais por fatores multiplicativos, calcular variação acumulada e explicar a taxa inversa correta.}{Razões, números decimais, multiplicação e interpretação de porcentagens.}{Situação fictícia de orçamento de insumos, tabela antes/depois e discussão de erros previsíveis.}
+\Roteiro{Apresentar preço inicial de R\$\,1000 para um insumo; após aumento de 20\% e desconto de 20\%, retorna ao preço inicial?}{Representar aumento por $1+0{,}20$ e redução por $1-0{,}20$. Registrar que os percentuais incidem sobre bases diferentes.}{Demonstrar a regra de composição $P_f=P_0(1+r_1)(1+r_2)$, calcular $1000\to1200\to960$ e provar variação líquida $-4\%$.}{Resolver desafio de voltar de R\$\,1200 a R\$\,1000: desconto necessário $1-1000/1200=1/6$; estudar o caso $+20\%$ e $-15\%$.}{Concluir com verificação individual, erro típico e síntese formal.}
+\section{Demonstração e fundamentação}
+\begin{proposicao}
+Para valor inicial $P_0$ e taxas sucessivas $r_1,\ldots,r_n>-1$, interpretadas em forma decimal e sempre relativas ao valor da etapa anterior,
+\[
+P_n=P_0\prod_{i=1}^n(1+r_i).
+\]
+\end{proposicao}
+\begin{proof}
+Para a primeira etapa, a definição de variação percentual dá $P_1=P_0+r_1P_0=P_0(1+r_1)$. Se $P_k=P_0\prod_{i=1}^k(1+r_i)$, então
+$P_{k+1}=P_k+r_{k+1}P_k=P_k(1+r_{k+1})
+=P_0\prod_{i=1}^{k+1}(1+r_i)$. Por indução, a fórmula vale para todo $n$.
+\end{proof}
+\section{Exemplos resolvidos}
+Partindo de R\$\,1000, subir 20\% leva a $1000(1{,}2)=1200$, depois cair 20\% leva a $1200(0{,}8)=960$. A variação global é $960/1000-1=-0{,}04$, ou seja, redução de 4\%. Já um aumento de 20\% seguido de desconto de 15\% resulta em $1000(1{,}2)(0{,}85)=1020$, crescimento líquido de 2\%, não de 5\%.
+
+Para reverter um aumento de 20\%, resolvemos $1{,}2(1-d)=1$. Logo $d=1-1/1{,}2=1/6\approx16{,}67\%$. A taxa inversa da alta não é, em geral, o valor negativo da taxa de alta.
+\QuadroEAvaliacao{Esquerda: tabela preço/base/taxa; centro: prova multiplicativa; direita: reversão e comparação com erro de somar percentuais.}{Uma turma afirma que $+20\%$ e $-20\%$ se cancelam. Que conta mostra a falha? $1{,}2\cdot0{,}8=0{,}96\ne1$.}
+\Auditoria{Não somar percentuais quando suas bases mudam; não confundir variação em pontos percentuais com variação relativa; não criar narrativa técnica meramente decorativa; não dizer que o tema é sorteável em 2026 sem verificar o anexo.}
+\section{Bibliografia}
+G. Iezzi et al., \emph{Fundamentos de Matemática Elementar}; consulta ao guia analítico IFMT--IFC disponível neste repositório.
+
+\end{document}
