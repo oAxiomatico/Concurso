@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teorema de Bayes}{UFMT Várzea Grande, área Matemática Aplicada/Probabilidade, prova didática 2025}{Probabilidade I; graduação com eventos, condicionamento e partições.}
+\section{Objetivos e estratégia}
+Provar Bayes a partir de probabilidade condicional e probabilidade total, calcular uma posterior e explicar a armadilha da taxa-base. Metodologia: problema inicial com duas hipóteses, prova algébrica e análise interpretativa.
+\Cronograma{Pergunta: um teste positivo implica alta probabilidade do evento investigado?}{Definir $P(A\mid B)$, hipóteses de positividade e partição por eventos $H_i$.}{Provar a lei da probabilidade total e o teorema de Bayes com denominador correto.}{Resolver exemplo de prevalência de $1\%$, sensibilidade $90\%$ e falso positivo $5\%$; interpretar $15{,}38\%$.}{Fechar contrapondo $P(T^+\mid H)$ a $P(H\mid T^+)$.}
+\section{Demonstrações rigorosas}
+Se $P(B)>0$, define-se $P(A\mid B)=P(A\cap B)/P(B)$. Se $\{H_1,\dots,H_n\}$ é partição do espaço amostral em eventos de probabilidade positiva, então os eventos $B\cap H_i$ são disjuntos e têm união $B$. Portanto
+\[
+P(B)=\sum_{i=1}^nP(B\cap H_i)
+=\sum_{i=1}^nP(B\mid H_i)P(H_i).
+\]
+\begin{teorema}[Bayes]
+Se $P(B)>0$ e $\{H_1,\dots,H_n\}$ é partição com $P(H_i)>0$, então
+\[
+P(H_j\mid B)=
+\frac{P(B\mid H_j)P(H_j)}
+{\sum_{i=1}^{n}P(B\mid H_i)P(H_i)}.
+\]
+\end{teorema}
+\begin{proof}
+Pela definição de probabilidade condicional,
+$P(H_j\mid B)=P(B\cap H_j)/P(B)$.
+Também $P(B\cap H_j)=P(B\mid H_j)P(H_j)$, e a lei da probabilidade total fornece o denominador. Substituindo, obtemos a identidade.
+\end{proof}
+\section{Exemplo com resposta e interpretação}
+Seja $H$ o evento de uma condição presente em $1\%$ da população, e $T^+$ o teste positivo. Suponha $P(T^+\mid H)=0{,}90$ e $P(T^+\mid H^c)=0{,}05$. Logo
+\[
+P(H\mid T^+)=
+\frac{0{,}90\cdot0{,}01}
+{0{,}90\cdot0{,}01+0{,}05\cdot0{,}99}
+=\frac{0{,}009}{0{,}0585}\approx0{,}1538.
+\]
+A posterior é aproximadamente $15{,}38\%$, não $90\%$. Para explicar no quadro: em dez mil casos hipotéticos, cerca de $100$ teriam a condição, com $90$ positivos verdadeiros; entre os outros $9900$, haveria $495$ falsos positivos, produzindo $90/(90+495)=15{,}38\%$. \textbf{Limite:} frequências e taxas são pressupostos do exemplo, não dados empíricos gerais.
+\Fechamento{Esquerda: partição; centro: equação de Bayes; direita: tabela de frequências entre 10 mil casos.}{Por que $P(B\mid A)$ e $P(A\mid B)$ podem ser muito diferentes? Porque seus denominadores representam populações de referência diferentes.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Declarei $P(B)>0$ e eventos condicionantes de probabilidade positiva?
+\item Provei a decomposição do denominador por uma partição?
+\item Expliquei a discrepância entre sensibilidade e valor preditivo positivo?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+M. N. Magalhães e A. C. P. Lima, \emph{Noções de Probabilidade e Estatística}; bibliografia de Probabilidade do edital de referência.
+
+\end{document}
