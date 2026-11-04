@@ -1,0 +1,30 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Geometria plana e espacial: semelhança e volume}{IFMT Edital 029/2024, Anexo X retificado em 30/08/2024, Matemática, tema 1; recorte de tema amplo.}{2º ano de Ensino Médio integrado a curso técnico.}{Justificar uma relação de semelhança, deduzir o volume de cilindro e converter capacidade para litros.}{Triângulos semelhantes, área de círculo e medidas de comprimento.}{Situação-problema com reservatório fictício, desenho de cortes e cálculo no quadro.}
+\Roteiro{Problema: reservatório cilíndrico de raio $1$ m e altura útil $1{,}5$ m; qual a capacidade?}{Revisar razões de semelhança e escalas de área e volume, com desenhos.}{Provar que áreas de figuras semelhantes planas se escalam pelo quadrado da razão; justificar $V=\pi r^2h$ pelo princípio de Cavalieri.}{Calcular $V=1{,}5\pi$ m$^3$, converter para litros; comparar a capacidade ao dobrar somente o raio.}{Sintetizar o que depende de comprimento, área e volume; registrar uma questão de saída.}
+\section{Demonstrações e justificativas}
+\begin{proposicao}
+Dois triângulos semelhantes com razão entre lados homólogos igual a $k>0$ têm razão entre as áreas igual a $k^2$.
+\end{proposicao}
+\begin{proof}
+Tomando lados correspondentes $b$ e $kb$, as alturas correspondentes são $h$ e $kh$, pois a semelhança preserva ângulos e multiplica todas as distâncias pela mesma razão. Logo a razão das áreas é $(kb)(kh)/(bh)=k^2$.
+\end{proof}
+\begin{proposicao}
+Um cilindro circular reto de raio $r$ e altura $h$ tem volume $V=\pi r^2h$.
+\end{proposicao}
+\begin{proof}
+Todas as secções do cilindro por planos paralelos à base possuem área $\pi r^2$. Escolha um prisma de altura $h$ cuja base tenha área $\pi r^2$. Suas secções paralelas também possuem área $\pi r^2$. Pelo princípio de Cavalieri (enunciado previamente e identificado como hipótese geométrica), seus volumes coincidem; o prisma tem volume $\pi r^2h$, daí a fórmula do cilindro.
+\end{proof}
+\section{Exemplo com unidades e interpretação}
+Para $r=1$ m e $h=1{,}5$ m,
+\[
+V=\pi(1)^2(1{,}5)=1{,}5\pi\ {\rm m}^3\approx4{,}712\ {\rm m}^3\approx4712\ {\rm L}.
+\]
+Como a altura foi mantida, dobrar o raio multiplica o volume por $2^2=4$. Se as três dimensões fossem dobradas, o fator seria $2^3=8$. Estas grandezas representam \emph{capacidade geométrica ideal}; reservatórios reais podem exigir espaço livre.
+\QuadroEAvaliacao{Esquerda: figura, dimensões e unidades; centro: semelhança e Cavalieri; direita: volume e conversão.}{Se o raio dobra e a altura permanece, a capacidade dobra? Não; quadruplica, porque a área da base tem fator $2^2$.}
+\Auditoria{Não confundir diâmetro e raio; não declarar o teorema de Cavalieri como demonstração de si mesmo; não trocar m$^3$ por m$^2$; não pretender cobrir todo o amplo tema de geometria do edital numa aula de 33 min.}
+\section{Bibliografia}
+E. L. Lima, \emph{Medida e Forma em Geometria}; G. Iezzi et al., \emph{Fundamentos de Matemática Elementar}.
+
+\end{document}
