@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teorema de Isomorfismo para Grupos e para Anéis}{UFMT Matemática/Cuiabá 2025/2026; Matemática Aplicada 2019}{Álgebra I: homomorfismos, grupos quocientes e ideais.}
+\section{Objetivos e metodologia}
+Construir os isomorfismos núcleo--imagem para grupos e anéis, sem omitir a boa definição, e calcular dois exemplos. Metodologia: comparar elementos com a mesma imagem, formalizar a relação de equivalência e construir a aplicação induzida.
+\Cronograma{Problema: elementos diferentes podem ter a mesma imagem por um homomorfismo?}{Revisar núcleos, imagem, normalidade e ideal bilateral.}{Provar primeiro isomorfismo para grupos, incluindo boa definição, compatibilidade, injetividade e sobrejetividade; adaptar prova para anéis.}{Resolver $S_3/A_3$ e $\mathbb R[x]/(x-1)$; contrastar quocientes multiplicativos e aditivos.}{Concluir com quatro verificações essenciais e a pergunta: por que um subgrupo qualquer não basta?}
+\section{Demonstrações}
+\begin{teorema}[Grupos]
+Se $\varphi:G\to H$ é um homomorfismo e $K=\ker\varphi$, então $K\trianglelefteq G$ e $G/K\simeq\operatorname{Im}\varphi$.
+\end{teorema}
+\begin{proof}
+Para $g\in G$ e $k\in K$, $\varphi(gkg^{-1})=\varphi(g)e\varphi(g)^{-1}=e$; assim $K$ é normal. Defina $\bar\varphi(gK)=\varphi(g)$, com codomínio $\operatorname{Im}\varphi$. Se $gK=hK$, então $h^{-1}g\in K$, logo $\varphi(g)=\varphi(h)$; a definição independe do representante. Também $\bar\varphi(gK\cdot hK)=\varphi(gh)=\bar\varphi(gK)\bar\varphi(hK)$. É sobrejetiva por definição da imagem. Se $\bar\varphi(gK)=e$, então $g\in K$ e $gK=K$: o núcleo é trivial, o que implica injetividade.
+\end{proof}
+\begin{teorema}[Anéis]
+Se $\psi:R\to S$ é homomorfismo de anéis, $I=\ker\psi$ é ideal bilateral de $R$ e $R/I\simeq\operatorname{Im}\psi$.
+\end{teorema}
+\begin{proof}
+$I$ é subgrupo aditivo. Para $a\in I$ e $r\in R$, $\psi(ra)=\psi(r)\psi(a)=0=\psi(ar)$, logo $ra,ar\in I$. A aplicação $\bar\psi(r+I)=\psi(r)$ está bem definida, pois $r-s\in I$ implica $\psi(r)=\psi(s)$. Preserva a soma e o produto porque $\psi$ os preserva; é sobrejetiva em $\operatorname{Im}\psi$ e injetiva, visto que $\bar\psi(r+I)=0$ implica $r+I=I$.
+\end{proof}
+\section{Exemplos resolvidos}
+O sinal $\mathrm{sgn}:S_3\to\{-1,1\}$ tem núcleo $A_3$ e é sobrejetivo. Logo $S_3/A_3\simeq C_2$.
+
+A avaliação $\psi:\mathbb R[x]\to\mathbb R$, $p\mapsto p(1)$, é sobrejetiva (polinômios constantes). Pelo teorema do fator, $\ker\psi=(x-1)$ e $\mathbb R[x]/(x-1)\simeq\mathbb R$.
+\Fechamento{Definições à esquerda; prova da boa definição ao centro; exemplos e comparações à direita.}{O que é necessário provar antes de chamar $\bar\varphi$ de homomorfismo? Resposta: que não depende do representante.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Demonstrei a normalidade e a propriedade de ideal, em vez de apenas mencioná-las?
+\item Conferi boa definição antes de injetividade?
+\item Evitei escrever $G/H$ para $H$ não normal?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+A. Gonçalves, \emph{Introdução à Álgebra}; A. Garcia e Y. Lequain, \emph{Elementos de Álgebra}.
+
+\end{document}
