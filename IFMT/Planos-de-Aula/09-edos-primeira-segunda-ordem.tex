@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Equações diferenciais de primeira e segunda ordem}{IFMT Edital 029/2024, Anexo X retificado em 30/08/2024, Matemática, tema 4 (recorte de EDOs lineares).}{Curso técnico subsequente ou tecnologia com Cálculo e EDOs elementares.}{Deduzir fator integrante, reconhecer a equação característica em segunda ordem e resolver problemas de valor inicial.}{Derivada do produto, integrais e funções exponenciais.}{Comparação de dois modelos lineares e verificação direta dos resultados.}
+\Roteiro{Comparar $y'+2y=6$ e $z''-3z'+2z=0$: quantos dados iniciais são necessários?}{Definir ordem e linearidade, introduzir fator integrante $e^{2t}$.}{Demonstrar a fórmula do fator integrante, resolver $y(0)=0$ e conferir a equação.}{Obter raízes $1,2$ da característica; demonstrar independência de $e^t,e^{2t}$; resolver $z(0)=1,z'(0)=0$.}{Fechar distinguindo ordem, quantidade de dados e conferência.}
+\section{Demonstrações}
+\begin{proposicao}
+Para $p,q$ contínuas num intervalo e $P(t)=\int_{t_0}^t p(s)\,ds$, a solução de $y'+p(t)y=q(t)$ é
+\[
+y(t)=e^{-P(t)}\left(y(t_0)+\int_{t_0}^t e^{P(s)}q(s)\,ds\right).
+\]
+\end{proposicao}
+\begin{proof}
+Multiplicando por $e^{P(t)}$ e usando $P'=p$, temos
+$(e^P y)'=e^P y'+pe^P y=e^Pq$. Integrando de $t_0$ a $t$ e isolando $y$, segue a fórmula.
+\end{proof}
+\begin{proposicao}
+Se $r_1\ne r_2$ são raízes reais de $r^2+ar+b=0$, as funções $e^{r_1t}$ e $e^{r_2t}$ são soluções linearmente independentes da EDO $z''+az'+bz=0$.
+\end{proposicao}
+\begin{proof}
+A substituição $z=e^{rt}$ produz $(r^2+ar+b)e^{rt}=0$. Para as raízes dadas, ambas são soluções. Seu Wronskiano é
+\[
+W(t)=\det\begin{pmatrix}e^{r_1t}&e^{r_2t}\\r_1e^{r_1t}&r_2e^{r_2t}\end{pmatrix}
+=(r_2-r_1)e^{(r_1+r_2)t}\ne0.
+\]
+Pelo teorema de existência e unicidade de EDOs lineares, essas duas soluções formam uma base do espaço de soluções.
+\end{proof}
+\section{Exemplos calculados}
+O PVI $y'+2y=6$, $y(0)=0$, produz $y=3(1-e^{-2t})$, pois $y'=6e^{-2t}$ e $y'+2y=6$.
+A EDO $z''-3z'+2z=0$ tem $z=C_1e^t+C_2e^{2t}$. De $z(0)=1$ e $z'(0)=0$,
+\[
+C_1+C_2=1,\qquad C_1+2C_2=0
+\quad\Rightarrow\quad C_1=2,\ C_2=-1.
+\]
+Logo $z(t)=2e^t-e^{2t}$. Verificar $z(0)=1$, $z'(0)=0$ e a EDO por substituição.
+\QuadroEAvaliacao{Lado esquerdo: primeira ordem e fator; direito: característica e dados de segunda ordem.}{Uma EDO de segunda ordem, com duas raízes distintas, exige em geral quantas condições independentes para selecionar uma solução? Duas.}
+\Auditoria{Não tratar equação de segunda ordem como se bastasse um dado; não assumir raízes distintas no caso de raiz repetida; verificar os dois PVIs antes da síntese.}
+\section{Bibliografia}
+J. Sotomayor, \emph{Equações Diferenciais Ordinárias}; W. Boyce, R. DiPrima e D. Meade, \emph{Equações Diferenciais}.
+
+\end{document}
