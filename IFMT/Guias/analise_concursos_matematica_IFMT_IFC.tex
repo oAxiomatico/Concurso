@@ -1,0 +1,560 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.25cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,longtable,tabularx,multirow}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{needspace}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!55!black,pdftitle={Guia analitico para a prova didatica de Matematica do IFMT},pdfauthor={Estudo documental orientado a concursos EBTT}}
+\definecolor{azul}{RGB}{27,70,115}
+\definecolor{azulclaro}{RGB}{238,245,251}
+\definecolor{cinza}{RGB}{245,247,250}
+\definecolor{laranja}{RGB}{154,75,11}
+\definecolor{vermelho}{RGB}{153,42,42}
+\colorlet{linkcolor}{azul}
+\titleformat{\section}{\Large\bfseries\color{azul}}{\thesection}{.7em}{}
+\titleformat{\subsection}{\large\bfseries\color{azul}}{\thesubsection}{.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{.6em}{}
+\setlist[itemize]{topsep=4pt,itemsep=3pt,leftmargin=1.7em}
+\setlist[enumerate]{topsep=4pt,itemsep=3pt,leftmargin=1.7em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\emergencystretch=1em
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\textcolor{azul}{Concurso EBTT de Matemática: IFMT e IFC}}\fancyhead[R]{\small Estudo documental}\fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}\renewcommand{\headrulewidth}{0.3pt}
+\newtcolorbox{destaque}[1][]{colback=azulclaro,colframe=azul!45,boxrule=.6pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt,#1}
+\newtcolorbox{alerta}[1][]{colback=red!3,colframe=vermelho!50,boxrule=.6pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt,#1}
+\newcommand{\fonte}[1]{\textit{Fundamento:} #1}
+\newcommand{\regra}{\textbf{Regra editalícia.}~}
+\newcommand{\analise}{\textbf{Interpretação e recomendação.}~}
+\newcommand{\naocomprovado}{\textbf{Limite da prova documental.}~}
+\newcommand{\ifmt}{IFMT, Edital n.\,003/2026}
+\newcommand{\ifc}{IFC, Concurso n.\,01/2026}
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{2.2cm}
+{\large ESTUDO COMPARATIVO DE EDITAIS, ESPELHOS E JUSTIFICATIVAS DE BANCAS\par}
+\vspace{.9cm}
+{\Huge\bfseries\color{azul} Como preparar uma aula de Matemática de alto desempenho em concursos EBTT\par}
+\vspace{.8cm}
+{\LARGE Foco no Instituto Federal de Mato Grosso (IFMT)\par}
+\vspace{.4cm}
+{\Large Análise aprofundada das justificativas do Instituto Federal Catarinense (IFC)\par}
+\vspace{1.3cm}
+\begin{destaque}
+\centering\large\textbf{Critério central: não basta escrever um bom plano. É necessário executar, com rigor matemático e intencionalidade pedagógica, exatamente a aula que foi planejada.}
+\end{destaque}
+\vfill
+{\large Pesquisa documental realizada em 30 de outubro de 2026\par}
+{\normalsize Versão de estudo e preparação pessoal --- compilável com \LaTeX\par}
+\vspace{.6cm}
+{\small Este material é uma análise independente; não é publicação oficial nem substitui o edital, seus anexos, as retificações ou a convocação individual.\par}
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section{Objetivo, método e grau de confiabilidade das fontes}
+Este documento responde a uma questão prática: \textit{como projetar, escrever, ensaiar e apresentar uma aula de Matemática para obter desempenho elevado na prova didática de um concurso de professor EBTT, principalmente no IFMT?} Para isso, utiliza uma hierarquia explícita de evidências:
+\begin{enumerate}
+\item \textbf{Regras diretamente aplicáveis ao IFMT:} itens e critérios do Edital n.\,003/2026, última seleção identificada para a carreira EBTT até a data desta pesquisa. A página institucional confirma o concurso; o texto integral foi cotejado em uma reprodução pública. Como a página institucional remete a um portal de seleção cuja cópia integral não pôde ser extraída diretamente na navegação, confira a versão oficial, os anexos e as retificações antes de qualquer certame futuro. Fontes [1] e [2].
+\item \textbf{Evidências de comportamento avaliativo:} justificativas oficiais, após recursos, do \ifc. São particularmente valiosas porque explicam por que determinadas respostas e planos perderam pontos. \textit{Os critérios do IFC não são automaticamente regras do IFMT.} Fonte [3].
+\item \textbf{Comparação de rubricas de outras instituições:} UFU/ESEBA, IFAL, IFCE, Secretaria da Educação do Paraná e Centro Paula Souza/ETEC. Fontes [4]--[8].
+\item \textbf{Exemplos e referências complementares:} resultado didático do IFMG, modelos publicados para seleção municipal de Baturité e artigo sobre preparação para concurso da Prefeitura de São Paulo. Fontes [9]--[11].
+\end{enumerate}
+
+\begin{alerta}
+\textbf{Importante sobre a expressão ``plano nota máxima'':} foi localizado um resultado oficial com candidatos que alcançaram \textbf{100 pontos} em prova didática de Matemática no IFMG, mas não os planos originais entregues por essas pessoas. O espelho da UFU descreve condições para uma avaliação excelente, porém não é o plano de um candidato com nota comprovada. Nenhum modelo sem documentação pareada (plano original + identificação inequívoca do resultado) será descrito neste guia como ``plano nota 100''.
+\end{alerta}
+
+\subsection{Legenda utilizada no restante do documento}
+\begin{itemize}
+\item \textbf{Regra editalícia}: uma obrigação ou um item de pontuação do edital indicado.
+\item \textbf{Constatação do IFC}: razão explicitada pela banca para manter ou alterar uma nota de candidato do concurso catarinense.
+\item \textbf{Recomendação para o IFMT}: inferência pedagógica e estratégica que deriva das fontes, \textbf{não} um novo requisito legal.
+\end{itemize}
+
+\section{O IFMT como referência principal: último concurso EBTT de Matemática}
+\subsection{Qual concurso foi tomado como base?}
+A pesquisa identificou o \textbf{Edital IFMT n.\,003/2026}, de julho de 2026, para a carreira de professor do Ensino Básico, Técnico e Tecnológico. A página oficial de divulgação informa 21 vagas no total; a distribuição consultada do edital inclui \textbf{três vagas para Matemática}. A data da prova didática foi atualizada, em comunicado/retificação divulgado posteriormente, para \textbf{6 a 8 de novembro de 2026}. Esses dados são um retrato do certame de 2026; não devem ser tratados como datas ou regras garantidas de um concurso futuro. Fontes [1] e [2].
+
+A prova objetiva e a prova de desempenho didático são eliminatórias e classificatórias, com etapa posterior de títulos segundo o edital. Na objetiva de 2026, a pontuação estava distribuída em Língua Portuguesa (20), Legislação Educacional (10), Educação Profissional e Tecnológica (10) e Conhecimentos Específicos (60), totalizando 100 pontos; 70 pontos era o mínimo para não ser eliminado nessa etapa, ressalvados os demais limites de classificação. \textbf{A prova didática exige no mínimo 65 pontos}, não 70. Fonte [2], itens 15 e 16.
+
+\begin{destaque}
+\textbf{Estratégia de estudo:} a aprovação exige preparo simultâneo em duas frentes. Para a prova objetiva, conhecimentos específicos de Matemática têm grande peso; para a didática, o candidato precisa demonstrar, na prática, domínio técnico, didática e capacidade de planejar uma aula para um público da Educação Profissional e Tecnológica.
+\end{destaque}
+
+\subsection{A rubrica do IFMT: o que vale cada ponto}
+A seguir, a distribuição de \textbf{100 pontos} apresentada no item 16.6.9 do edital de 2026. A tabela reproduz em paráfrase os critérios; deve ser confrontada com a redação oficial se um novo edital vier a ser publicado. Fonte [2].
+\rowcolors{2}{cinza}{white}
+\begin{longtable}{p{.135\textwidth}p{.68\textwidth}r}
+\toprule
+\textbf{Bloco} & \textbf{Critério avaliado} & \textbf{Máx.}\\\midrule
+\endfirsthead
+\toprule\textbf{Bloco}&\textbf{Critério avaliado}&\textbf{Máx.}\\\midrule\endhead
+Plano & Elementos mínimos (tema/ementa, título, público, objetivos, metodologia, avaliação e referências), com início, desenvolvimento e fechamento. &5\\
+Plano & Adequação ao nível, coerência entre os componentes e referência teórica pertinente/atualizada. &5\\
+Aula & Introdução e motivação inicial do assunto. &10\\
+Aula & Clareza, correção da exposição e linguagem adequada ao público. &10\\
+Aula & Domínio profundo do conteúdo, inclusive conexões teóricas/práticas e debates relevantes. &20\\
+Aula & Progressão lógica e coerente do conteúdo. &10\\
+Aula & Síntese final, cumprimento das etapas e adequação do conteúdo ao tempo. &10\\
+Aula & Verificação da aprendizagem efetivamente vinculada aos objetivos. &5\\
+Aula & Gestão temporal e conclusão na faixa prevista (\textbf{0 ou 5}, sem nota intermediária). &5\\
+Método & Postura, comunicação verbal/não verbal, dicção, voz e adequação vocabular. &5\\
+Método & Ações docentes pertinentes aos objetivos e ao conteúdo. &5\\
+Método & Metodologia efetivamente adequada e execução segura dos procedimentos propostos. &5\\
+Recursos & Pertinência e aproveitamento real dos recursos didáticos. &5\\\midrule
+\multicolumn{2}{r}{\textbf{TOTAL}}&\textbf{100}\\\bottomrule
+\end{longtable}
+\rowcolors{2}{}{}
+
+\textbf{Leitura estratégica da rubrica.} Os \textbf{20 pontos de domínio do conteúdo} são o item individual de maior peso, mas a qualidade de exposição e sua lógica também importam. Se somarmos introdução, clareza, sequência, fechamento e avaliação, temos 45 pontos adicionais de desenvolvimento pedagógico, sem contar gestão do tempo, metodologia e recursos. Portanto, uma aula com cálculos corretos, porém monótona, desordenada, incompleta ou sem avaliação, pode perder muito.
+
+\subsection{Regras práticas que não podem ser ignoradas}
+\begin{enumerate}
+\item \regra\textbf{Tempo: 30 a 35 minutos.} O edital prevê tolerância máxima de um minuto; no critério de gestão temporal há somente 0 ou 5 pontos. \analise Treine para concluir entre \textbf{32 e 33 minutos}, preservando margem para pausas, equívocos ou problemas operacionais. Não transforme a tolerância em meta. Fonte [2], item 16.6.1 e parágrafos correlatos.
+\item \regra\textbf{Chegada com antecedência mínima de uma hora}; apresentação de documento oficial e formulário fornecido pela organização; entrega de \textbf{três vias impressas do plano} antes da apresentação. Documentos digitais não substituem os exigidos. Fonte [2], itens 16.6.2--16.6.3.
+\item \regra\textbf{Plano não entregue: zero nos itens referentes ao plano.} \textbf{Plano e apresentação com tema diferente do sorteado: eliminação}, segundo o edital consultado. \analise Confira o nome exato do tema e repita-o literalmente no cabeçalho. Fonte [2], item 16.6.3.
+\item \regra\textbf{Compatibilidade com a Educação Profissional Técnica e Tecnológica.} A apresentação deve ser direcionada a estudantes, \textbf{não à banca}. A comissão verifica a correspondência entre texto entregue e aula efetivamente ministrada. Fonte [2], item 16.6.4.
+\item \regra\textbf{Ferramentas digitais ou IA: somente como apoio à pesquisa e formatação.} Autoria, originalidade e escolhas metodológicas são responsabilidade do candidato; conceitos, trechos, imagens e metodologias de terceiros precisam de atribuição de origem segundo as normas da ABNT. \analise Não entregue um texto não compreendido; revise a terminologia, resolva todos os exercícios e use referências que você consegue explicar. Fonte [2], item 16.6.3.
+\item \regra\textbf{Cronometragem:} não contar com celular, smartwatch, relógio digital, internet ou Wi-Fi; o edital admite relógio analógico e/ou cronômetro manual. \analise Ensaiar exatamente com o dispositivo permitido. Fonte [2], item 16.6.8.
+\item \regra\textbf{Recursos:} a disponibilidade de materiais e eventuais limites de montagem e retirada dependem dos itens correspondentes e comunicados. \analise Planeje uma aula que também funcione com quadro e caneta, evitando ficar dependente de conexão ou projetor.
+\end{enumerate}
+
+\subsection{O concurso de 2025 como referência histórica, não norma vigente}
+O Edital IFMT n.\,002/2025 e as diretrizes oficiais publicadas para a prova didática auxiliam a identificar práticas recorrentes na instituição: aula com duração curta, necessidade de entregar plano, sequência didática clara e avaliação por banca. Porém, \textbf{quando houver divergência, prevalecem sempre o edital do novo certame e as retificações}. O documento de 2025 não deve ser usado isoladamente para fixar notas de corte, horários ou procedimentos de 2026 ou do próximo concurso. Fonte [12].
+
+\section{Análise aprofundada do IFC: o que, concretamente, a banca penalizou}
+O documento do IFC, publicado em \textbf{22 de junho de 2026}, reúne justificativas de manutenção/alteração de notas após recursos na prova didática do concurso n.\,01/2026. São centenas de manifestações, organizadas em dois blocos: \textit{preparação do plano} e \textit{execução da aula}. O valor do material está em registrar a distinção entre ter mencionado um elemento e tê-lo desenvolvido pedagogicamente. Fonte [3], páginas 1--2 e páginas indicadas a seguir.
+
+\textbf{Cuidado metodológico:} as pontuações como ``4,00'', ``3,50'' e ``1,83'' são \textit{notas de itens específicos do IFC}, não notas finais do concurso nem pontuação do IFMT. Os protocolos apenas localizam casos para leitura do documento; nenhum caso identifica aqui o plano integral do candidato.
+
+\subsection{Erro 1 --- listar atividades sem escrever o desenvolvimento matemático}
+\textbf{Caso documentado:} protocolo \textbf{66}, item 1.1, nota \textbf{4,00} mantida. A banca reconheceu que o plano tinha exercícios e anexos, mas julgou insuficiente a enumeração das atividades porque faltavam a descrição do desenvolvimento metodológico e as \textbf{resoluções esperadas, passo a passo}. Fonte [3], página 25 do PDF, protocolo 66.
+
+\textbf{Por que isso importa:} um plano é uma sequência de decisões de ensino. ``Resolver cinco exercícios de porcentagem'' não informa como o professor sairá da interpretação do texto para a escolha da base, como os estudantes serão orientados, como se tratará um erro ou qual raciocínio será sistematizado.
+
+\textbf{Como fazer no IFMT:} no plano entregue, para cada atividade importante, registre \textbf{enunciado, expectativa de resposta, ideia matemática, procedimento de mediação e avaliação}. Não é obrigatório transformar o plano em apostila de dezenas de páginas; um anexo sintético com as soluções da(s) situação(ões) essencial(is) já torna a execução verificável.
+
+\begin{destaque}
+\textbf{Exemplo concreto}\\
+\emph{Fraco:} ``Apresentar exercício sobre acréscimo e desconto e solicitar que os alunos resolvam.''\\
+\emph{Melhor:} ``Problematizar se um aumento de 10\% seguido de redução de 10\% restaura o valor inicial. Para 200 unidades, registrar $200\times1{,}10=220$ e $220\times0{,}90=198$. Questionar por que $+10\%-10\%$ não é zero: as bases são distintas. Propor nova situação com fatores e verificar justificativa escrita.''
+\end{destaque}
+
+\subsection{Erro 2 --- planejar para o nível errado ou não especificar o público}
+\textbf{Casos:} protocolo \textbf{67}, item 1.2, nota \textbf{3,50}; protocolo \textbf{68}, item 1.2, nota \textbf{1,83}. No primeiro, o público/ano não estava especificado com precisão e a profundidade foi considerada abaixo do Ensino Médio Integrado. No segundo, a contextualização com Agropecuária foi reconhecida, mas a abordagem permaneceu básica demais para a turma indicada. Fonte [3], página 25 do PDF, protocolos 67 e 68.
+
+\textbf{Diagnóstico:} citar ``Ensino Médio'' ou ``curso técnico'' no título não basta. A disciplina, a etapa, os conhecimentos prévios e a densidade dos problemas têm de ser compatíveis. Uma explicação do significado de 10\% pode ser necessária por alguns minutos, mas não sustenta sozinha 30--35 minutos destinados ao Ensino Médio Integrado.
+
+\textbf{Ação corretiva:} especificar ``1º ano do Ensino Médio Integrado ao curso técnico de Agropecuária'' \textit{quando esse for o público pertinente}; demonstrar uma definição, uma conexão mais profunda (fatores multiplicativos, composição, taxas, inversão, comparação de resultados) e uma aplicação relevante. \textbf{Não presuma} que toda aula de Matemática no IFMT deva ser de Agropecuária; adapte ao curso/campus/tema do futuro edital.
+
+\subsection{Erro 3 --- referências somente matemáticas, sem fundamentar as escolhas pedagógicas}
+\textbf{Caso:} protocolo \textbf{69}, item 1.3, nota \textbf{4,00}. A banca apontou que as obras de Matemática eram pertinentes, porém não ofereciam sustentação suficiente para a abordagem e as estratégias de Educação Matemática escolhidas. Fonte [3], página 25 do PDF, protocolo 69.
+
+\textbf{O que a banca parece procurar:} coerência entre objetivos, modo de ensinar e uma concepção de aprendizagem explicitada. Um livro de Matemática fundamenta a correção conceitual; literatura de Educação Matemática, didática e currículo fundamenta por que se escolheu investigação, problemas, trabalho colaborativo ou uma estratégia de avaliação.
+
+\textbf{Correção:} empregar poucas referências, mas reais e relevantes: um texto matemático adequado ao tema, o documento curricular aplicável e uma referência de ensino pertinente à metodologia. \textbf{A BNCC não substitui, por si só, a literatura pedagógica}, como a própria banca observou em outros recursos do mesmo conjunto (fonte [3], páginas 25--26).
+
+\subsection{Erro 4 --- usar nomes de metodologias como rótulos decorativos}
+\textbf{Casos:} protocolo \textbf{69}, item 1.2, nota \textbf{2,16}; justificativas de execução em páginas 105 e 109 do PDF. Alguns planos afirmavam promover resolução de problemas, investigação ou modelagem matemática, mas a apresentação consistia sobretudo em exposição de fórmulas e solução conduzida apenas pelo professor. Fonte [3], páginas 25, 105 e 109.
+
+\textbf{Diferença operacional:}
+\begin{itemize}
+\item \textit{Exemplo contextualizado:} o professor conta um caso de produção e mostra diretamente a fórmula.
+\item \textit{Problematização:} os estudantes precisam comparar hipóteses, identificar dados, decidir procedimentos e justificar resultados antes da formalização final.
+\item \textit{Modelagem matemática:} existe um ciclo efetivo de formulação de hipóteses, definição de variáveis, simplificação da situação real, construção de modelo, interpretação e validação de suas limitações.
+\end{itemize}
+\textbf{Correção:} escolha uma metodologia realmente executável em 33 minutos. Se for uma aula expositiva dialogada com problema desencadeador, escreva isso honestamente. Não prometa ``modelagem matemática'' apenas porque a situação menciona uma propriedade agrícola.
+
+\subsection{Erro 5 --- escrever competências curriculares no lugar de objetivos de aprendizagem}
+\textbf{Caso recorrente:} a banca diferenciou o uso de competências/habilidades curriculares de objetivos próprios da aula; também apontou falta de objetivo geral e de identificação de público em recursos relativos aos itens de plano. Fonte [3], páginas 25--26.
+
+\textbf{Objetivo fraco:} ``Compreender porcentagens.'' Isso não permite visualizar o que conta como sucesso.
+
+\textbf{Objetivo verificável:} ``Calcular e justificar o efeito de duas variações percentuais sucessivas, distinguindo soma de taxas e composição de fatores multiplicativos.'' Para avaliá-lo, basta observar uma solução e a justificativa sobre a mudança de base.
+
+\textbf{Alinhamento mínimo:} cada objetivo importante deve corresponder a uma atividade e a um indício observável de aprendizagem. Habilidades da BNCC podem orientar o alinhamento curricular, mas não devem substituir a formulação específica de objetivos didáticos.
+
+\subsection{Erro 6 --- prometer avaliação ou interação sem realizá-las}
+Em manifestações de execução, a banca registrou diferenças entre \textit{mencionar uma dinâmica} e \textit{materializá-la}, bem como entre cumprir formalmente a ordem do plano e aprofundar seus passos. Em um caso, o professor apresentou slides e exemplos, mas quase não explorou os processos de investigação que havia anunciado. Fonte [3], página 105 do PDF, protocolos e itens de execução.
+
+\textbf{Para não perder pontos no IFMT:}
+\begin{enumerate}
+\item Formular uma pergunta diagnóstica concreta no início.
+\item Prever o que fazer com dois tipos de respostas (correta e conceitualmente equivocada).
+\item Executar uma verificação curta durante a exposição; explicitar qual objetivo ela mede.
+\item Reservar uma devolutiva no final: mostrar a resposta, comentar o erro e sintetizar a regra matemática.
+\end{enumerate}
+\textbf{Em uma prova simulada sem estudantes presentes:} não invente que alunos responderam. Faça o convite à reflexão, conceda um intervalo de pensamento compatível, apresente respostas prováveis e analise as diferenças. A execução pode ser demonstrada sem encenar resultados fictícios.
+
+\subsection{Erro 7 --- exemplos de porcentagem tecnicamente corretos, mas rasos}
+\textbf{Casos:} protocolos \textbf{81} e \textbf{82}, itens 2.1 e 2.2. A banca reconheceu a motivação contextual e o uso de situações agrícolas, mas disse que o desenvolvimento não alcançara toda a complexidade esperada. Apontou limitações quando a aula ficou em contas isoladas como ``5\% de 200'', sem concluir adequadamente o raciocínio ou avançar a percentuais sucessivos, variação, matemática financeira e interpretação crítica de gráficos. Fonte [3], páginas 103--104 do PDF.
+
+\textbf{O que fazer:} eleger \textbf{um núcleo matemático preciso} e desenvolvê-lo em profundidade. Para percentuais sucessivos, por exemplo, o essencial não é mostrar dez aplicações diferentes, e sim fazer os estudantes entenderem (i) qual é a base de cálculo, (ii) por que a composição é multiplicativa, (iii) como interpretar a variação global e (iv) quando a operação inversa não consiste em repetir a porcentagem com sinal oposto.
+
+\textbf{Cuidado:} não é necessário incluir \textit{todos} os tópicos citados pela banca catarinense em uma aula de 33 minutos. O exemplo do IFC indica expectativas para aquele tema e aquele público; no IFMT o aprofundamento deve respeitar rigorosamente o ponto sorteado.
+
+\subsection{Erro 8 --- o contexto técnico é apenas cenário, não objeto de análise}
+No caso do IFC, a banca explicitou que mencionar colheitas, insumos ou um curso técnico não produz automaticamente uma aula apropriada ao Ensino Médio Integrado. Em outras manifestações, alertou que a interdisciplinaridade requer relações conceituais efetivas entre as áreas, não uma troca de nomes dos personagens do enunciado. Fonte [3], páginas 25, 103 e 108.
+
+\textbf{Contraste:}
+\begin{itemize}
+\item \textit{Contexto decorativo:} ``Um agricultor comprou três sacos; calcule 10\%.''
+\item \textit{Uso significativo:} ``Uma estimativa de produção foi revista para cima e, depois, ajustada para baixo. Qual é a variação líquida? Por que é inadequado somar os percentuais? Qual decisão seria tomada se o limite de armazenagem fosse 200 unidades?''
+\end{itemize}
+A segunda proposta produz uma decisão que depende do entendimento matemático; a primeira apenas altera a ambientação de uma conta.
+
+\subsection{Erro 9 --- encerramento apressado, sem síntese nem retorno aos objetivos}
+\textbf{Casos:} protocolos \textbf{78} e \textbf{82}, itens 2.9 e 2.8. A banca do IFC afirmou que cumprir um limite cronológico não garante excelente gestão temporal se a conclusão, a revisão dos conceitos e a avaliação forem sacrificadas. Encaminhar o restante de um exercício para casa não substitui uma síntese dentro da aula. Fonte [3], páginas 101 e 103 do PDF.
+
+\textbf{Aplicação para o IFMT:} reserve \textbf{três minutos reais e protegidos} para o encerramento. Nas últimas falas, recupere a pergunta inicial, enuncie os dois resultados essenciais, retome o objetivo e avalie o que foi aprendido. Se a aula estiver atrasada, corte um exemplo secundário, \textbf{nunca} a conclusão.
+
+\begin{destaque}
+\textbf{Roteiro de encerramento eficiente (exemplo):} ``Começamos perguntando se aumentar e depois reduzir 10\% anula a variação. Vimos que não, porque a segunda taxa incide sobre uma nova base. A composição foi $1{,}10\times0{,}90=0{,}99$, isto é, redução total de 1\%. Qual cálculo justificaria esse resultado em outro valor inicial?''
+\end{destaque}
+
+\subsection{Erro 10 --- recursos visuais ruins ou leitura de slides}
+A banca registrou prejuízos por projeções com letras pequenas ou pouco legíveis e por apresentações centradas na leitura dos slides, com escasso trabalho conceitual. Também distinguiu \textit{usar} um recurso e \textit{explorá-lo adequadamente}. Fonte [3], páginas 105--109.
+
+\textbf{Protocolo de prevenção:} fontes grandes, figuras com eixos e unidades identificados, pouco texto por lâmina, quadro reservado a desenvolvimentos matemáticos; ensaiar a aula sem projetor; não colocar definições extensas em slides para serem lidas. Em Matemática, a tecnologia deve favorecer a visualização ou a verificação, nunca substituir o argumento.
+
+\subsection{Erro 11 --- imprecisões matemáticas e extrapolações conceituais}
+Em questões de progressão aritmética e proporcionalidade, apareceram críticas à fragilidade no uso de propriedades e à insuficiente exploração conceitual. A comissão exigiu mais do que a aplicação automática de fórmulas. Fonte [3], páginas 104--108.
+
+\textbf{Checklist matemático antes da apresentação:}
+\begin{itemize}
+\item Cada igualdade possui justificativa? Unidades e bases percentuais estão corretas?
+\item Alguma conclusão é válida apenas sob hipóteses não explicitadas?
+\item A pergunta tem resposta única? Os números escolhidos tornam o exemplo coerente?
+\item Foi diferenciada a definição da sua interpretação? Há contraexemplo para um equívoco comum?
+\item O gráfico, quando empregado, contém escalas e legendas e não induz uma inferência indevida?
+\end{itemize}
+
+\subsection{Erro 12 --- o plano tem um público e a execução tem outro}
+Em outro grupo de manifestações, a aula planejada para \textbf{formação inicial de professores de Matemática} ficou restrita ao conteúdo escolar, sem desenvolver as decisões pedagógicas típicas da formação docente. Fonte [3], páginas 107--109. Embora esse exemplo não seja de Ensino Médio Integrado, a lição se transfere: \textbf{o público não pode ser apenas um campo preenchido no cabeçalho.} A aula deve usar linguagens, atividades e critérios de profundidade apropriados à formação a que se destina.
+
+\subsection{Tabela de evidências: do desconto concreto à prevenção}
+\small
+\rowcolors{2}{cinza}{white}
+\begin{longtable}{p{.19\textwidth}p{.26\textwidth}p{.39\textwidth}}
+\toprule
+\textbf{Caso IFC} & \textbf{Razão do desconto, em síntese} & \textbf{Ação preventiva para concurso do IFMT}\\\midrule\endfirsthead
+\toprule\textbf{Caso IFC}&\textbf{Razão}&\textbf{Ação preventiva}\\\midrule\endhead
+P.\,25, prot.\,66, item 1.1 (4,00)&Atividades e anexos listados; faltavam resoluções previstas.&Documentar pelo menos as atividades centrais com contas, respostas e intervenção docente.\\
+P.\,25, prot.\,67, item 1.2 (3,50)&Público impreciso e profundidade aquém do Médio Integrado.&Indicar série/curso e inserir pergunta que exija raciocínio além do cálculo elementar.\\
+P.\,25, prot.\,68, item 1.2 (1,83)&Tema agropecuário presente, mas complexidade superficial.&Vincular variável e decisão técnica à matemática, sem mera ornamentação.\\
+P.\,25, prot.\,69, itens 1.2/1.3 (2,16/4,00)&Metodologia pouco efetivada e bibliografia pedagógica insuficiente.&Demonstrar procedimento anunciado e citar fundamentos adequados.\\
+Pp.\,25--26, casos de plano&Objetivos genéricos; BNCC tratada como referencial didático suficiente.&Redigir objetivos observáveis e bibliografia pedagógica pertinente.\\
+P.\,103, prot.\,81, item 2.1 (4,00)&Introdução contextual boa, porém pouco aprofundamento.&Partir do caso técnico e demonstrar estrutura matemática profunda.\\
+P.\,103, prot.\,82, item 2.1 (3,00)&Cálculo elementar sem resolução completa e progressão.&Fechar cada exemplo, explicitar raciocínio e compor percentuais.\\
+P.\,103, prot.\,82, item 2.9 (6,66)&Conclusão simples/incompleta.&Reservar síntese formal e verificação ligada aos objetivos.\\
+P.\,105, caso de metodologia&Slides utilizados, mas investigação/modelagem não concretizadas.&Nomear honestamente o método e demonstrar suas etapas observáveis.\\
+P.\,101, prot.\,78, itens 2.8/2.9&Tempo esgotado sem completar a conclusão.&Treinar 33 minutos com encerramento protegido e contingência.\\
+Pp.\,108--109, casos de integração&Interdisciplinaridade somente ilustrativa; problemas sem exploração.&Construir relação conceitual real ou não prometer interdisciplinaridade.\\
+\bottomrule
+\end{longtable}
+\normalsize\rowcolors{2}{}{}
+
+\section{O que uma banca de excelência tende a esperar: dez evidências observáveis}
+Esta seção é uma \textbf{síntese interpretativa} das rubricas IFMT, IFC, UFU e IFAL. Não é um novo espelho oficial.
+\begin{enumerate}
+\item \textbf{Tema delimitado:} título e questão central que caibam integralmente em uma aula.
+\item \textbf{Rigor acessível:} explicações sem erros, definições precisas, linguagem ajustada, condições de validade explícitas.
+\item \textbf{Complexidade proporcional ao público:} ponto de partida acessível, mas desenvolvimento suficientemente profundo para Médio Integrado ou o nível indicado.
+\item \textbf{Intencionalidade:} objetivo, atividade e avaliação formam uma cadeia verificável.
+\item \textbf{Progressão visível:} recuperar conhecimento anterior, desafiar, desenvolver argumento, aplicar, conferir e sintetizar.
+\item \textbf{Problema com função didática:} a contextualização cria uma necessidade matemática e conduz a uma análise, não apenas ornamenta o cálculo.
+\item \textbf{Método executado:} o que foi prometido no plano se revela em perguntas, interações e decisões concretas.
+\item \textbf{Participação crível:} perguntas claras, tempo de reflexão e consideração de respostas plausíveis; sem fingir respostas de estudantes inexistentes.
+\item \textbf{Recursos explorados:} quadro organizado, diagramas legíveis e tecnologia utilizada com finalidade específica, se disponível.
+\item \textbf{Fechamento substantivo:} síntese, correção de erro típico, verificação dos objetivos e indicação de continuidade, tudo antes do fim do tempo.
+\end{enumerate}
+
+\subsection{Como traduzir cada item de maior peso do IFMT em desempenho}
+\begin{description}[style=nextline,leftmargin=0pt]
+\item[20 pontos --- domínio do conteúdo.] Estude os conceitos além do exemplo escolhido. Prepare justificativas, casos-limite, erros frequentes, exemplos e contraexemplos. A demonstração de profundidade não exige despejar tópicos; exige \textit{explicar por que} a resposta é válida.
+\item[10 pontos --- introdução.] Inicie com uma questão interessante que se conecte ao problema central; enuncie o objetivo sem ler o plano; recupere um pré-requisito.
+\item[10 pontos --- linguagem.] Distinguir símbolos e significados, verbalizar passagens decisivas, escrever de modo legível, não alternar conceitos matemáticos com metáforas imprecisas.
+\item[10 pontos --- sequência lógica.] Mostrar transições entre intuição, cálculo, generalização e interpretação; usar quadro com uma organização que possa ser seguida.
+\item[10 pontos --- síntese.] Retomar questão inicial e objetivos, concluir a conta principal, explicitar aprendizagem e próxima etapa possível.
+\item[5 pontos --- avaliação.] Produzir uma pergunta que revele compreensão, não apenas decorar fórmula; apresentar resposta e critério de correção.
+\item[5 pontos --- tempo.] Ensaiar integralmente. Ter uma atividade facultativa para suprimir, sem comprometer núcleo matemático e conclusão.
+\end{description}
+
+\section{Análise comparativa dos demais documentos encontrados}
+\subsection{UFU/ESEBA --- um espelho que descreve desempenho máximo}
+No concurso de Matemática para a Escola de Educação Básica da Universidade Federal de Uberlândia (2024), o espelho oficial descreve condições para avaliação ótima, com propostas sobre \textbf{jogos para números racionais} e \textbf{Estatística investigativa}. Exige correspondência entre plano, linguagem, metodologias, avaliação e execução. A prova possui intervalo de \textbf{40--50 minutos}, que \textbf{não} deve ser transportado ao IFMT. Fonte [4].
+
+\textbf{Aprendizado:} a máxima pontuação exige concretização. No caso de Estatística, uma abordagem investigativa significa formular questão, planejar coleta, organizar dados, interpretá-los e compartilhar conclusões, e não somente exibir gráficos prontos.
+
+\subsection{IFAL --- pesos de conteúdo, método e expositor}
+A ficha oficial do Instituto Federal de Alagoas distribui \textbf{9 pontos para o plano, 46 para conteúdos, 34 para procedimentos metodológicos e 11 para expositor}. Dentro dos 46 pontos, aparecem domínio do tema (16), contextualização (10), sequência lógica (12) e linguagem adequada (8). Essa decomposição reforça que \textbf{clareza e organização são desempenho avaliável}, não detalhe estético. Fonte [5].
+
+\textbf{Aplicação:} gravar-se explicando uma definição e solicitar a colegas avaliações separadas para rigor matemático, coerência e comunicação.
+
+\subsection{IFCE --- utilidade e limites de um modelo oficial}
+O portal de seleções do IFCE disponibiliza procedimentos e modelos de plano em processos seletivos para a área de Matemática Básica, incluindo referência ao anexo de plano de aula. Modelos institucionais são úteis para \textbf{checar campos obrigatórios e formatação}; não são prova de que um plano desse formato receba pontuação máxima. Fonte [6].
+
+\textbf{Aplicação:} usar o modelo de plano como \textit{checklist estrutural}; enriquecer desenvolvimento, resoluções, avaliação e sequências para atender à rubrica específica do IFMT.
+
+\subsection{Rede estadual do Paraná --- atenção ao edital e ao modelo}\label{sec:parana}
+O Edital SEED/PR n.\,73/2024 inclui orientações e modelo de plano de aula no \textbf{Anexo XV}. É exemplo de seleção estadual cuja forma de avaliação deve ser estudada em seus próprios termos. \textbf{A verificação integral do anexo não foi possível nesta sessão}; por isso não se reproduzem seus descritores como se tivessem sido integralmente conferidos. Fonte [7].
+
+\textbf{Aplicação:} aprender a seguir modelos sem imaginar que o modelo da rede estadual seja obrigatório para um Instituto Federal.
+
+\subsection{Centro Paula Souza --- ETEC Jales (2026)}
+Uma convocação de prova de métodos pedagógicos para Matemática no Ensino Médio Integrado ao Técnico apresenta três possíveis temas: \textbf{vértice de função quadrática, probabilidade condicional e área/volume do cilindro}. A convocação prevê \textbf{20 minutos} e três vias do plano correspondente ao tema sorteado. É seleção de escola técnica estadual, com regras distintas da carreira EBTT federal. Fonte [8].
+
+\textbf{Aplicação:} excelente fonte para treinar mudança rápida de conteúdo e pensar nível técnico, mas sem importar a duração da ETEC para o IFMT.
+
+\subsection{IFMG --- prova objetiva de que notas 100 existem, não de como eram os planos}
+O resultado oficial de prova didática para Matemática do IFMG, campus Ouro Branco, Edital n.\,001/2014, registra \textbf{100,0 pontos} para \textbf{Pollyanna Fiorizio Sette} e \textbf{Verônica Lopes Pereira de Oliveira}. O registro confirma o resultado, mas \textbf{não disponibiliza os planos produzidos pelas candidatas}. Fonte [9].
+
+\textbf{Valor da fonte:} permite afirmar que há notas máximas documentadas em provas didáticas de Matemática; não autoriza reconstruir ou atribuir planos a essas pessoas.
+
+\subsection{Modelos municipais de Baturité --- úteis para estrutura, limitados para EBTT}
+O material reunido para o concurso municipal de Baturité traz propostas para o \textbf{7º ano (equações do primeiro grau)} e o \textbf{9º ano (Teorema de Pitágoras)}, com aulas de cerca de 18 minutos. É um conjunto não oficial de estudos; não foi encontrada comprovação de nota máxima. Fonte [10].
+
+\textbf{Aplicação:} observar objetivos, problema inicial e encerramento; elevar o nível de precisão e profundidade quando o público for Ensino Médio Integrado.
+
+\subsection{Relato acadêmico --- preparação de aulas para concurso de Matemática}
+O artigo de \textbf{Fernando Sousa Santos e Elisabete Teresinha Guerato}, publicado em 2024, relata escolhas e desafios na preparação de propostas de Matemática para seleção docente municipal em São Paulo. É útil para comparar planejamento, didática e seleção de situações-problema, mas não constitui espelho oficial de nota máxima para o IFMT. Fonte [11].
+
+\section{Modelo de plano de aula original, orientado à rubrica do IFMT}
+\begin{alerta}
+\textbf{Status deste exemplo:} plano \textbf{elaborado originalmente para este estudo}. Não foi apresentado em concurso, não recebeu nota, não representa tema sorteado do IFMT e não deve ser copiado e entregue como trabalho próprio. Serve para demonstrar o nível de especificidade recomendado e deve ser refeito pelo candidato para o tema, público e edital efetivos. A autoria e a adequação final são de quem o utilizar.
+\end{alerta}
+
+\subsection*{Identificação}
+\textbf{Ementa/tema exemplificativo:} variações percentuais e suas aplicações.\\
+\textbf{Título:} \textit{Aumentar 10\% e depois diminuir 10\% devolve o valor inicial?}\\
+\textbf{Público-alvo hipotético:} 1º ano do Ensino Médio Integrado ao Técnico em Agropecuária.\\
+\textbf{Duração de treino:} 33 minutos.\\
+\textbf{Conhecimentos prévios:} frações, números decimais, proporção simples e operações multiplicativas.\\
+\textbf{Recursos básicos:} quadro, marcadores, apagador, plano impresso e relógio analógico/cronômetro manual, quando permitido. Material projetado é opcional.
+
+\subsection*{Objetivo geral}
+Compreender a composição de variações percentuais e utilizá-la para interpretar e justificar decisões baseadas em dados quantitativos.
+
+\subsection*{Objetivos específicos observáveis}
+Ao final, o estudante deverá ser capaz de:
+\begin{enumerate}[label=(\alph*)]
+\item converter aumento e redução percentuais em fatores multiplicativos;
+\item calcular duas variações sucessivas respeitando a base de incidência de cada taxa;
+\item justificar por que variações de mesmo módulo e sinais opostos não se anulam, em geral;
+\item comunicar a variação global e verificar a plausibilidade do resultado num contexto técnico.
+\end{enumerate}
+
+\subsection*{Questão desencadeadora e situação-problema}
+Uma cooperativa estima \textbf{200 sacas} de um produto em uma etapa de planejamento. A estimativa cresce \textbf{10\%} e, após nova revisão, diminui \textbf{10\%}. A estimativa final é 200 sacas, maior ou menor que 200? Qual é a variação percentual acumulada? \textit{Valores exclusivamente didáticos, sem pretensão de representar dados reais da atividade agrícola.}
+
+\subsection*{Metodologia realmente executável}
+\textbf{Aula expositiva dialogada com problematização e resolução orientada de situações}, explicitando um erro conceitual frequente (somar percentuais sem observar mudanças de base). O professor primeiro recolhe hipóteses plausíveis, depois demonstra as operações, propõe uma transferência do método e encerra com verificação de aprendizagem. Não se afirma que o procedimento constitui, por si só, um processo completo de modelagem matemática.
+
+\subsection*{Sequência temporal com evidências de aprendizagem}
+\small
+\rowcolors{2}{cinza}{white}
+\begin{longtable}{p{.13\textwidth}p{.39\textwidth}p{.33\textwidth}}
+\toprule
+\textbf{Tempo} & \textbf{Ação docente} & \textbf{Evidência, questionamento ou produto}\\\midrule\endfirsthead
+\toprule\textbf{Tempo}&\textbf{Ação docente}&\textbf{Evidência}\\\midrule\endhead
+0--3 min & Apresentar problema das 200 sacas, pedir hipótese inicial sem calcular. & Registrar as hipóteses ``200'' e ``menos de 200''; perguntar o motivo.\\
+3--7 min & Retomar porcentagem como taxa aplicada a uma base: $10\%=0{,}10$. & Perguntar ``10\% de qual quantidade?''; comparar duas bases.\\
+7--14 min & Resolver $200\cdot1{,}10=220$ e $220\cdot0{,}90=198$. Mostrar fatores. & Fazer o estudante explicar a mudança de base.\\
+14--21 min & Propor insumo de R\$ 500 com aumento de 20\% e desconto posterior de 10\%. & Resultado $500\cdot1{,}2\cdot0{,}9=540$: aumento global de 8\%.\\
+21--27 min & Generalizar $(1+a)(1+b)$ e discutir o caso $(1+a)(1-a)=1-a^2$. & Destacar a diferença entre taxa nominal e variação acumulada.\\
+27--30 min & Questão de saída: após +20\% e -10\%, qual a taxa total? Justifique. & Resposta: +8\%; base inicial não é base do desconto.\\
+30--33 min & Retomar pergunta, sintetizar resultado, explicitar critério e apontar continuidade. & Conclusão clara: +10\% seguido de -10\% resulta em -1\%.\\
+\bottomrule
+\end{longtable}
+\normalsize\rowcolors{2}{}{}
+
+\subsection*{Anexo interno ao plano: resoluções esperadas, com mediação}
+\textbf{Atividade 1 --- revisão da estimativa.}
+\[
+Q_0=200,\qquad Q_1=200(1+0{,}10)=220,\qquad
+Q_2=220(1-0{,}10)=198.
+\]
+Assim, $Q_2-Q_0=-2$ sacas e
+\[
+\frac{Q_2-Q_0}{Q_0}\cdot100\%=
+\frac{-2}{200}\cdot100\%=\boxed{-1\%}.
+\]
+\textbf{Dificuldade a antecipar:} alguém poderá escrever $+10\%-10\%=0\%$. \textbf{Intervenção:} perguntar explicitamente qual quantidade corresponde a 100\% antes de cada mudança; escrever lado a lado ``10\% de 200 = 20'' e ``10\% de 220 = 22''.
+
+\textbf{Atividade 2 --- custo de insumo.}
+\[
+C_0=500,\quad C_1=500\cdot1{,}20=600,\quad
+C_2=600\cdot0{,}90=540.
+\]
+Variação global: $(540-500)/500=0{,}08=\boxed{8\%}$. \textbf{Mediação:} questionar se o ``desconto de 10\%'' equivale a subtrair R\$ 50. Resposta: não, o desconto incide sobre R\$ 600 e vale R\$ 60.
+
+\textbf{Generalização.} Se a taxa de aumento é $a$ e a taxa de redução é $b$, com $a,b$ escritos na forma decimal, o fator global é $(1+a)(1-b)$. Para $a=b=t$, tem-se $(1+t)(1-t)=1-t^2$, de modo que a variação é $-t^2$. Tal desenvolvimento pressupõe o mesmo objeto quantitativo, taxas sucessivas e fatores definidos; não deve ser apresentado como regra geral para fenômenos não multiplicativos.
+
+\textbf{Pergunta de avaliação:} ``Uma quantidade passou de 100 para 120 e depois para 108. Qual a variação global em relação ao início? Justifique.'' \textbf{Resposta esperada:} $\frac{108-100}{100}=8\%$. \textbf{Evidência de domínio:} reconhecer o fator $1{,}20\cdot0{,}90=1{,}08$ e explicar o papel da base.
+
+\subsection*{Avaliação e critérios de correção}
+Verificação formativa por: (i) hipótese inicial argumentada; (ii) resolução orientada de duas composições; (iii) questão final de transferência. O estudante demonstra aprendizagem quando \textbf{identifica corretamente a base}, \textbf{compõe as taxas} e \textbf{interpreta a taxa global}. Um acerto numérico sem justificativa revela compreensão ainda parcial.
+
+\subsection*{Fechamento oral planejado (aproximadamente 1 minuto de fala)}
+``Nossa pergunta era se aumentar e reduzir 10\% são operações que se anulam. Não são, em geral, porque as bases de cálculo são distintas. Começando por 200, obtivemos 220 e depois 198: o efeito global foi uma redução de 1\%. O procedimento seguro é compor os fatores multiplicativos e interpretar o resultado em relação ao valor inicial. Agora vocês conseguem explicar por que os mesmos percentuais, com sinais opostos, não retornam ao ponto de partida.''
+
+\subsection*{Referências a preparar na versão definitiva}
+O candidato deverá identificar referências \textit{efetivamente consultadas}, incluindo a obra matemática que fundamenta porcentagem/fatores, referência pedagógica pertinente à resolução de problemas e documento curricular aplicável ao nível. Registrar dados bibliográficos completos segundo a ABNT. Não atribuir esta proposta a uma obra específica sem cotejo.
+
+\section{Erros de alto risco: prioridades de prevenção}
+\subsection{Erros com possível eliminação ou efeito objetivo imediato no IFMT 2026}
+\begin{alerta}
+\begin{enumerate}
+\item \textbf{Faltar ou apresentar-se depois da convocação/horário:} perda da prova, conforme as condições do edital.
+\item \textbf{Apresentar plano/aula com tema diferente do sorteado:} hipótese de eliminação expressamente prevista.
+\item \textbf{Não entregar o plano antes de iniciar:} zero nos critérios relacionados ao plano.
+\item \textbf{Pontuação didática menor que 65:} eliminação pela nota mínima.
+\item \textbf{Usar dispositivos vedados:} risco disciplinar e violação às regras do certame, conforme o tipo de conduta.
+\end{enumerate}
+\textbf{Estas consequências são do edital IFMT 2026 e exigem conferência em um futuro certame.} Fonte [2].
+\end{alerta}
+
+\subsection{Erros que tendem a reduzir a nota, mesmo sem eliminar automaticamente}
+\begin{enumerate}
+\item Planejar vinte conceitos e concluir três; \textit{antídoto}: estreitar a questão central e prever tempo real.
+\item Abrir com curiosidade e nunca retornar a ela; \textit{antídoto}: fechamento que responda a questão inicial.
+\item Oferecer apenas exercícios mecânicos e de baixo nível; \textit{antídoto}: um problema de interpretação com argumento matemático.
+\item Referências pedagógicas decorativas; \textit{antídoto}: mostrar onde cada decisão é materializada.
+\item Dizer ``investigação'' e só apresentar fórmulas; \textit{antídoto}: descrever com precisão a metodologia real.
+\item Apresentar erro matemático, ambiguidade ou resposta incompleta; \textit{antídoto}: resolver tudo antes, por dois caminhos quando possível.
+\item Reservar avaliação para ``se sobrar tempo''; \textit{antídoto}: avaliação estrutural, vinculada a objetivo.
+\item Usar tecnologia que não acrescenta aprendizagem ou falha ao ligar; \textit{antídoto}: versão 100\% quadro e plano de contingência.
+\item Encerrar após estourar o tempo ou sem síntese; \textit{antídoto}: ensaios cronometrados e corte de exemplo extra.
+\item Dirigir a apresentação à banca como se estivesse defendendo tese; \textit{antídoto}: manter a linguagem voltada ao aluno indicado.
+\end{enumerate}
+
+\section{Preparação para o próximo concurso: plano de estudo e treino}
+\subsection{Primeira fase --- construir um banco de aulas reutilizável (semanas 1--2)}
+\begin{enumerate}
+\item Revisar o conteúdo específico do último edital e localizar o \textbf{Anexo XVI} com temas didáticos; verificar temas efetivos do novo certame quando divulgados.
+\item Para cada tema, escrever um \textit{mapa de domínio} com definição, resultado importante, exemplo, erro típico, aplicação, objetivo e avaliação.
+\item Selecionar público-alvo compatível e identificar conhecimento anterior necessário.
+\end{enumerate}
+
+\subsection{Segunda fase --- planejar e resolver de verdade (semanas 3--4)}
+\begin{enumerate}
+\item Escolher três temas de naturezas diferentes: por exemplo, álgebra/funções, geometria e probabilidade/estatística.
+\item Elaborar planos com começo, desenvolvimento, conclusão e tabela de tempos; produzir \textbf{gabaritos comentados} dos exemplos centrais.
+\item Escrever uma evidência avaliativa para cada objetivo relevante. Conferir informações curriculares e citações bibliográficas.
+\end{enumerate}
+
+\subsection{Terceira fase --- simulações com avaliação severa (semanas 5--6)}
+\begin{enumerate}
+\item Fazer pelo menos duas gravações completas por tema, sem cortes, com cronômetro autorizado.
+\item Simular as condições reais: 33 minutos, quadro, entrega antecipada do plano, ausência de interação real, sem consultar celular.
+\item Pedir a três avaliadores, quando possível, notas independentes para \textbf{matemática}, \textbf{didática} e \textbf{comunicação}; usar a planilha textual da seção seguinte.
+\item Repetir a aula após corrigir os três maiores erros, em vez de apenas reescrever o plano.
+\end{enumerate}
+
+\subsection{Quarta fase --- refinamento e logística (a partir da semana 7)}
+\begin{enumerate}
+\item Ensaiar um tema sorteado ao acaso, mantendo a estrutura do plano, mas sem memorizar roteiro palavra por palavra.
+\item Treinar uma versão contingencial sem projetor e uma versão reduzida que preserve o núcleo e o encerramento.
+\item Conferir edital novo, retificações, sorteio, prazo e formato dos planos e documentos exigidos; imprimir exemplares reserva quando autorizado.
+\item Estabelecer meta de \textbf{excelência superior à nota mínima}: por exemplo, atingir 90 ou mais em três simulações consecutivas. Essa é uma \textit{meta pessoal}, não uma nota de corte institucional.
+\end{enumerate}
+
+\section{Ficha de autoavaliação baseada nos 100 pontos do IFMT 2026}
+Preencher após cada simulação, marcando desempenho real, não intenções. As notas máximas reproduzem a rubrica consultada; as perguntas-guia são sugestões de auditoria própria.
+\small
+\rowcolors{2}{cinza}{white}
+\begin{longtable}{p{.17\textwidth}p{.58\textwidth}p{.13\textwidth}}
+\toprule\textbf{Item} & \textbf{O que procurar no vídeo e no plano?} & \textbf{Nota}\\\midrule\endfirsthead
+\toprule\textbf{Item}&\textbf{Evidência}&\textbf{Nota}\\\midrule\endhead
+Plano: estrutura & Há tema exato, público, objetivos, conteúdo, introdução, passos, fechamento, avaliação e referências? &\rule{1cm}{.4pt}/5\\
+Plano: coerência & Todas as partes estão articuladas e o nível é adequado? &\rule{1cm}{.4pt}/5\\
+Introdução & A questão inicial gerou uma necessidade real de aprender? &\rule{1cm}{.4pt}/10\\
+Clareza & A matemática foi explicada com vocabulário correto e acessível? &\rule{1cm}{.4pt}/10\\
+Domínio & A aula foi correta, profunda e mostrou compreensão das relações matemáticas? &\rule{1cm}{.4pt}/20\\
+Sequência & A transição entre as ideias foi lógica, sem saltos? &\rule{1cm}{.4pt}/10\\
+Fechamento & Houve síntese substantiva e cumprimento dos objetivos propostos? &\rule{1cm}{.4pt}/10\\
+Avaliação & Houve verificação explícita com resposta discutida? &\rule{1cm}{.4pt}/5\\
+Tempo & Cumpriu 30--35 min e completou as etapas? Marcar somente 0 ou 5. &\rule{1cm}{.4pt}/5\\
+Comunicação & Postura, voz, dicção e linguagem apropriadas? &\rule{1cm}{.4pt}/5\\
+Ação docente & As tarefas escolhidas serviram aos objetivos? &\rule{1cm}{.4pt}/5\\
+Método & O método anunciado foi observado de fato, com segurança? &\rule{1cm}{.4pt}/5\\
+Recursos & O quadro/slides foram adequados, legíveis e bem explorados? &\rule{1cm}{.4pt}/5\\\midrule
+\multicolumn{2}{r}{\textbf{TOTAL DA SIMULAÇÃO}}&\rule{1cm}{.4pt}/100\\\bottomrule
+\end{longtable}
+\normalsize\rowcolors{2}{}{}
+
+\textbf{Após cada simulação, responder por escrito:}
+\begin{enumerate}
+\item Onde o rigor matemático ficou aquém do que eu mesmo saberia justificar?
+\item Que atividade anunciada no plano não apareceu de modo observável na aula?
+\item O estudante hipotético teria conseguido responder à questão final com os passos ensinados?
+\item Qual bloco excedeu o tempo? Que exemplo secundário deve ser eliminado?
+\item Minha situação-problema foi essencial para pensar matematicamente ou apenas ilustração?
+\end{enumerate}
+
+\section{Checklist definitivo de véspera e de apresentação}
+\subsection*{Sete dias antes}
+\begin{itemize}[label=$\square$]
+\item A redação do tema e seus desdobramentos estão conferidos no documento oficial.
+\item Público, objetivos, método e avaliação são coerentes.
+\item Cálculos, gráficos, soluções, unidades e referências foram revisados.
+\item Aula concluída em três ensaios entre 32 e 33 minutos, com síntese e avaliação.
+\item Existe versão sem projetor e o tempo de cada etapa está definido.
+\end{itemize}
+
+\subsection*{Na véspera}
+\begin{itemize}[label=$\square$]
+\item Edital, anexos, convocação e alterações oficiais conferidos.
+\item Três vias impressas do plano, ou o quantitativo definido no próximo edital, prontas e conferidas.
+\item Documento oficial, formulário exigido e materiais permitidos separados.
+\item Cronômetro manual/relógio analógico testado; nenhum dispositivo proibido será utilizado.
+\item Trajeto, local e antecedência de chegada conferidos.
+\end{itemize}
+
+\subsection*{Durante a aula}
+\begin{itemize}[label=$\square$]
+\item Iniciei pela questão central, enunciei o propósito e explicitei os conhecimentos prévios.
+\item Desenvolvi a matemática de fato, sem saltar contas essenciais.
+\item Fiz perguntas genuínas e considerei erros típicos.
+\item Usei recursos como apoio, não como roteiro para leitura.
+\item Realizei avaliação breve, com retorno ao objetivo.
+\item Reservei os minutos finais para uma conclusão completa e inteligível.
+\end{itemize}
+
+\section{Referências documentais e links para consulta}
+Os endereços abaixo identificam os materiais analisados ou localizados. Quando há reprodução não institucional, isso é assinalado. URLs e acessibilidade podem mudar. \textbf{Consulta: 30 de outubro de 2026.}
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em]
+\item \textbf{IFMT.} Edital n.\,003/2026, página institucional de concurso EBTT. \url{https://ifmt.edu.br/blog/edital/edital-003-2026-concurso-publico-professor-do-ensino-basico-tecnico-e-tecnologico/}. Portal oficial de acompanhamento: \url{https://seletivo.ifmt.edu.br/edital/visualizar/173/}.
+\item \textbf{IFMT.} Edital n.\,003/2026, texto integral disponível em reprodução pública não institucional (66 páginas), especialmente itens 15, 16.6 e 16.7. \url{https://pt.scribd.com/document/1062552666/edital-0032026}. \textbf{Verificar sempre contra a versão oficial e retificações.}
+\item \textbf{IFC.} Concurso Público n.\,01/2026. Divulgação das notas definitivas das provas de desempenho didático e justificativas após recursos, 22 jun. 2026, PDF de 247 páginas. Anexo I, especialmente páginas 25--26 e 101--109 para os casos explorados. \url{https://concursos-publicacoes.s3.amazonaws.com/1079/publico/1-1079_EBTT_Edital_de_NotasDefinitivas_DidAtica_Rev1_COMBINADO_6a39c289b18bc.pdf?idpub=508628}.
+\item \textbf{UFU/ESEBA.} Edital PROGEP n.\,02/2024, espelho de correção de prova didática de Matemática. \url{https://www.portalselecao.ufu.br/servicos/ArquivoAdministrativo/download/283aa4a76808d58cfa74922e2fe228b7}.
+\item \textbf{IFAL.} Avaliação da prova de desempenho didático para professor EBTT, ficha com critérios e pesos. \url{https://concurso-antigo.ifal.edu.br/files/Criterios%20de%20Avaliacao%20Desempenho%20Didatico_9.pdf}.
+\item \textbf{IFCE.} Portal de seleção, processo para Matemática Básica, com orientações e modelo institucional para prova didática. \url{https://qselecao.ifce.edu.br/concurso.aspx?cod_concurso=9382}.
+\item \textbf{PARANÁ. SEED.} Edital n.\,73/2024, incluindo Anexo XV (modelo de plano), material localizado sem conferência completa do anexo na sessão. \url{https://nreumuarama.educacao.pr.gov.br/sites/umuarama/files/qas/12860/edital732024_gsseed_prot224212224_pss.pdf}.
+\item \textbf{SÃO PAULO. Centro Paula Souza.} ETEC Jales. Convocação para prova de métodos pedagógicos, Matemática, 2026. \url{https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/30/2026/01/Convocacao-Prova-de-Metodos.pdf}.
+\item \textbf{IFMG.} Edital n.\,001/2014, campus Ouro Branco, Matemática. Resultado oficial da prova de desempenho didático. \url{https://solucoes.ifmg.edu.br/recepta/visao/arquivos/3408_edital_001-2014_-_area-matematica_-_resultado_prova_didatica.pdf}.
+\item \textbf{Baturité/CE.} \textit{Planos de Aula Concurso Baturité}, documento disponibilizado por particular. \textbf{Não há nota máxima oficialmente comprovada para tais planos.} \url{https://pt.scribd.com/document/1072877772/Planos-de-Aula-Concurso-Baturite}.
+\item \textbf{SANTOS, Fernando Sousa; GUERATO, Elisabete Teresinha.} Relato sobre preparação para prova prática do concurso da Prefeitura de São Paulo, 2024, na revista ACERTTE. \url{https://acertte.org/acertte/pt_BR/article/view/189}.
+\item \textbf{IFMT.} Diretrizes às bancas da prova didática, Edital n.\,002/2025 (referência histórica). \url{https://processoseletivo.ifmt.edu.br/media/filer_public/9c/da/9cda1a28-e07c-455f-a152-561626fab0f5/edital_2025002cpebttdiretrizes_membros_das_bancas_pdd_pos-recursos.pdf}.
+\end{enumerate}
+
+\section*{Síntese final}
+\addcontentsline{toc}{section}{Síntese final}
+O melhor resultado em concursos de Matemática para a carreira EBTT exige integrar \textbf{quatro competências}: saber Matemática com profundidade; escolher e justificar como ensiná-la; demonstrar essa escolha na aula real; e concluir todas as etapas dentro do tempo. O edital do IFMT fornece os pesos e obrigações; as justificativas do IFC revelam o padrão de cobrança que muitas vezes permanece invisível nos formulários: a banca quer \textbf{resolução efetiva, método aplicado, adequação do nível, avaliação concreta e fechamento completo}.
+
+A preparação mais robusta não consiste em memorizar um ``plano nota 10'', mas em desenvolver um \textbf{processo auditável e repetível} de planejamento, estudo de conteúdo, execução e revisão crítica. Essa orientação preserva o aprendizado para temas sorteados distintos e para editais futuros.
+
+\end{document}
