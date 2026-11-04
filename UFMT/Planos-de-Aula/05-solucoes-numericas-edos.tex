@@ -1,0 +1,50 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Soluções Numéricas de Equações Diferenciais Ordinárias}{UFMT, Matemática/Cuiabá, editais de 2025 e 2026}{Cálculo Numérico/EDOs; estudantes com Taylor, PVI e Lipschitz.}
+\section{Objetivos e recorte}
+Deduzir Euler explícito, provar a ordem global sob hipóteses enunciadas e distinguir convergência de estabilidade. Metodologia: discretizar um PVI, obter estimativas e resolver o caso-teste $y'=-y$.
+\Cronograma{Pergunta: como aproximar uma solução quando a fórmula exata não é conhecida?}{Fixar malha $t_n=t_0+nh$ e derivar $y_{n+1}=y_n+hf(t_n,y_n)$.}{Estimar defeito local por Taylor, deduzir recorrência do erro global e provar ordem $O(h)$.}{Resolver dois passos de Euler para $y'=-y$ com $h=1/2$, comparar com $e^{-1}$ e discutir $0<h<2$.}{Sintetizar diferenças entre erro local, erro global e estabilidade absoluta.}
+\section{Demonstração da convergência}
+Seja $y'=f(t,y)$ em $[t_0,T]$, $y(t_0)=y_0$, com $f$ contínua e Lipschitz em $y$ com constante $L$ numa região que contém a solução e todas as aproximações do método. Suponha $y\in C^2([t_0,T])$ e $|y''(t)|\le M$. O método explícito de Euler é
+\[
+Y_{n+1}=Y_n+hf(t_n,Y_n),\qquad t_n=t_0+nh,\quad Y_0=y_0.
+\]
+\begin{proposicao}
+Nas hipóteses acima, para $t_n\le T$ e $L>0$,
+\[
+|y(t_n)-Y_n|\le \frac{Mh}{2L}\bigl(e^{L(t_n-t_0)}-1\bigr).
+\]
+Se $L=0$, o limite da expressão fornece $|y(t_n)-Y_n|\le Mh(t_n-t_0)/2$.
+\end{proposicao}
+\begin{proof}
+Por Taylor com resto, para algum $\xi_n\in(t_n,t_{n+1})$,
+\[
+y(t_{n+1})=y(t_n)+hy'(t_n)+\tfrac12h^2y''(\xi_n).
+\]
+Logo o defeito local é limitado por $Mh^2/2$. Pondo $e_n=|y(t_n)-Y_n|$, a propriedade Lipschitz implica
+\[
+e_{n+1}\le(1+Lh)e_n+\tfrac12Mh^2,\qquad e_0=0.
+\]
+Iterando, $e_n\le\frac{Mh^2}{2}\sum_{j=0}^{n-1}(1+Lh)^j$.
+Para $L>0$, a soma vale $((1+Lh)^n-1)/(Lh)$, e
+$(1+Lh)^n\le e^{Lnh}$. Obtemos a estimativa anunciada. Para $L=0$, basta somar $n$ defeitos. Portanto $e_n=O(h)$ uniformemente em $t_n\le T$.
+\end{proof}
+\section{Exemplo e interpretação}
+Para $y'=-y$, $y(0)=1$, Euler produz $Y_n=(1-h)^n$. Com $h=1/2$:
+\[
+Y_0=1,\quad Y_1=\tfrac12,\quad Y_2=\tfrac14,\qquad y(1)=e^{-1}\approx0{,}3679.
+\]
+O erro em $t=1$ é aproximadamente $0{,}1179$. Para este problema-teste, a sequência numérica decai em módulo se e somente se $|1-h|<1$, ou seja, $0<h<2$. \textbf{Cuidado:} convergência ao fazer $h\to0$ em intervalo fixo não significa estabilidade para qualquer passo escolhido.
+\Fechamento{Coluna esquerda: Euler; centro: Taylor e recorrência; direita: exemplo e eixo $h$ com intervalo $(0,2)$.}{Qual é a ordem do defeito de um passo? $O(h^2)$. E do erro após $O(1/h)$ passos? $O(h)$, sob as hipóteses dadas.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Declarei regularidade, região de Lipschitz e permanência dos iterados?
+\item Distingui erro local em um passo de erro global acumulado?
+\item Expliquei por que estabilidade depende do passo, sem prometer convergência incondicional?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+R. L. Burden e J. D. Faires, \emph{Análise Numérica}; M. A. G. Ruggiero e V. L. da R. Lopes, \emph{Cálculo Numérico}.
+
+\end{document}
