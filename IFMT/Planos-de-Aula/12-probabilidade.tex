@@ -1,0 +1,27 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Probabilidade: eventos e amostragem sem reposição}{IFMT Edital complementar 01 ao Edital 210/2024, Matemática/Juína; edital 224/2025 prevê temas de Matemática em campus distinto; consultar o tema exato de cada seleção.}{2º ano do Ensino Médio integrado a curso técnico; contexto de controle de qualidade fictício.}{Distinguir probabilidade simples, conjunta e condicional; resolver um experimento sem reposição e justificar a dependência entre retiradas.}{Frações, razão, contagem por combinações e probabilidade clássica.}{Problema com fichas coloridas, árvore de probabilidades e cálculo por duas vias; material manipulável opcional.}
+\Roteiro{Propor caixa fictícia com 4 peças vermelhas e 3 azuis; retiram-se duas sem reposição: qual chance de duas vermelhas?}{Esclarecer espaço amostral, eventos $V_1,V_2$ e diferença entre reposição e não reposição.}{Definir probabilidade condicional e provar a regra do produto; construir árvore e calcular $P(V_1\cap V_2)=2/7$.}{Verificar por combinações $\binom42/\binom72=2/7$ e comparar com reposição $(4/7)^2$; interpretar dependência.}{Fechar com questão: após sair uma vermelha, qual é a chance de outra vermelha?}
+\section{Fundamentação e demonstração}
+Se $P(A)>0$, a probabilidade condicional é $P(B\mid A)=P(A\cap B)/P(A)$. Multiplicando por $P(A)$, demonstramos a regra do produto
+\[
+P(A\cap B)=P(A)P(B\mid A).
+\]
+No experimento, $P(V_1)=4/7$ e $P(V_2\mid V_1)=3/6=1/2$, então
+\[
+P(V_1\cap V_2)=\frac47\cdot\frac36=\frac{12}{42}=\frac27.
+\]
+O denominador $6$ ocorre porque a primeira retirada diminuiu em uma unidade a quantidade total de peças. Como a retirada é sem reposição, os eventos não são independentes.
+\section{Exemplo alternativo por combinações}
+Dos $\binom72=21$ pares \emph{não ordenados} de peças distintas, $\binom42=6$ são compostos por duas vermelhas; portanto
+\[
+\frac{\binom42}{\binom72}=\frac6{21}=\frac27.
+\]
+A contagem por pares não ordenados funciona porque todos os pares de peças físicas têm a mesma probabilidade de ser selecionados. Com reposição, as retiradas são independentes e a chance de duas vermelhas é $(4/7)^2=16/49$, diferente de $2/7$.
+\QuadroEAvaliacao{Esquerda: desenho 4 vermelhas e 3 azuis; centro: árvore e regra do produto; direita: combinações e contraste com reposição.}{Após retirar uma vermelha e não devolvê-la, qual a chance de outra vermelha? $3/6=1/2$, não $4/7$.}
+\Auditoria{Não supor independência automaticamente; não confundir combinações com sequências ordenadas; não interpretar resultados sem enunciar reposição ou não; usar objetos fictícios e não atribuir probabilidades a inspeções reais sem dados.}
+\section{Bibliografia}
+M. N. Magalhães e A. C. P. Lima, \emph{Noções de Probabilidade e Estatística}; livros didáticos da Educação Básica.
+
+\end{document}
