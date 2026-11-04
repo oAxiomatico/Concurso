@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teorema de Existência e Unicidade para EDOs}{UFMT Várzea Grande, área Matemática Aplicada/Probabilidade, prova didática 2025}{EDOs; graduação com espaços métricos, norma supremo e integração.}
+\section{Objetivos e estratégia}
+Demonstrar uma versão local do teorema de Picard--Lindelöf usando contração, explicar por que a garantia é local e resolver um exemplo por iterações. Método: transformar problema diferencial em equação integral, estimar operador e usar ponto fixo.
+\Cronograma{Apresentar PVI $x'=f(t,x)$ e perguntar se continuidade basta para unicidade.}{Enunciar hipótese local de continuidade e Lipschitz em $x$; construir retângulo e espaço de funções.}{Demonstrar que o operador integral é uma contração numa bola fechada; concluir existência e unicidade local.}{Calcular iterações de Picard para $x'=x$, $x(0)=1$; contrastar com $x'=\sqrt{|x|}$, $x(0)=0$.}{Concluir diferença entre existência local e prolongamento global.}
+\section{Demonstração por ponto fixo}
+\begin{teorema}[Picard--Lindelöf, versão local]
+Se $f$ é contínua no retângulo $R=[t_0-a,t_0+a]\times[x_0-b,x_0+b]$ e Lipschitz em $x$ ali, com constante $L$, então existe $T>0$ tal que o PVI $x'=f(t,x)$, $x(t_0)=x_0$, tem solução única em $[t_0-T,t_0+T]$ que permanece no retângulo.
+\end{teorema}
+\begin{proof}
+Seja $M=\max_R|f|$ e escolha $T>0$ com $T\le a$, $TM\le b$ e $TL<1$; quando $M=0$ ou $L=0$, as respectivas condições são automáticas. Considere o conjunto fechado
+\[
+\mathcal B=\{u\in C([t_0-T,t_0+T]):\|u-x_0\|_\infty\le b\},
+\]
+completo para a norma supremo. Defina
+\[
+(\Phi u)(t)=x_0+\int_{t_0}^t f(s,u(s))\,ds.
+\]
+Para $u\in\mathcal B$, vale $|\Phi u(t)-x_0|\le M|t-t_0|\le TM\le b$; então $\Phi$ leva $\mathcal B$ nela mesma. Ademais,
+\[
+\|\Phi u-\Phi v\|_\infty
+\le LT\|u-v\|_\infty,
+\]
+inclusive para $t<t_0$, usando a integral orientada. Como $LT<1$, Banach fornece único ponto fixo $x\in\mathcal B$. Pelo Teorema Fundamental do Cálculo, a equação integral implica $x'=f(t,x)$ e $x(t_0)=x_0$. Reciprocamente qualquer solução que permaneça no retângulo e no intervalo escolhido é ponto fixo, logo coincide com $x$.
+\end{proof}
+\section{Exemplos resolvidos e limites}
+Para $x'=x$, $x(0)=1$, inicie $u_0(t)=1$ e defina $u_{n+1}(t)=1+\int_0^t u_n(s)\,ds$. Obtém-se
+\[
+u_1=1+t,\quad u_2=1+t+\tfrac{t^2}{2!},\quad
+u_n=\sum_{k=0}^{n}\tfrac{t^k}{k!}\longrightarrow e^t.
+\]
+\textbf{Por que Lipschitz importa?} No PVI $x'=\sqrt{|x|}$, $x(0)=0$, tanto $x(t)\equiv0$ quanto $x(t)=t^2/4$ para $t\ge0$, prolongado por $0$ para $t\le0$, são soluções: unicidade pode falhar com $f$ contínua que não é localmente Lipschitz em $x=0$.
+\Fechamento{Esquerda: retângulo e $\mathcal B$; centro: estimativa $LT$; direita: série de Picard e contraexemplo.}{Local significa várias soluções? Não: significa garantia numa vizinhança, podendo haver prolongamento único posterior sob hipóteses.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Provei que $\Phi(\mathcal B)\subseteq\mathcal B$ e que $\Phi$ é contração?
+\item Expliquei o papel de cada limitação sobre $T$?
+\item Diferenciei unicidade local de existência global?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+J. Sotomayor, \emph{Equações Diferenciais Ordinárias}; D. G. Figueiredo e A. F. Neves, \emph{Equações Diferenciais Aplicadas}.
+
+\end{document}
