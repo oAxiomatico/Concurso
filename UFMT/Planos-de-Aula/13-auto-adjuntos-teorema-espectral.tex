@@ -1,0 +1,43 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Operadores Auto-Adjuntos e Teorema Espectral}{UFMT Várzea Grande, área Matemática Aplicada/Probabilidade, prova didática 2025}{Álgebra Linear avançada; graduação após produto interno e autovalores.}
+\section{Objetivos e recorte}
+Demonstrar o teorema espectral em espaços euclidianos reais de dimensão finita, explicar a invariância do complemento ortogonal e resolver a diagonalização ortogonal de uma matriz simétrica. Para espaços complexos, a formulação análoga usa operadores hermitianos.
+\Cronograma{Apresentar $A=\begin{psmallmatrix}2&1\\1&2\end{psmallmatrix}$ e perguntar se autovetores podem ser ortogonais.}{Definir auto-adjunção $\langle Av,w\rangle=\langle v,Aw\rangle$ e enunciar o teorema espectral real.}{Provar existência de autovetor por máximo do quociente de Rayleigh e reduzir por invariância ortogonal; concluir por indução.}{Calcular $Q^TAQ=D$ no exemplo, destacando $Q^{-1}=Q^T$.}{Fechar com diferença entre semelhança geral e ortogonal.}
+\section{Demonstração rigorosa}
+\begin{teorema}[Espectral real em dimensão finita]
+Se $A:\mathbb R^n\to\mathbb R^n$ é auto-adjunto para o produto interno usual, existe base ortonormal de autovetores. Equivalentemente, há matriz ortogonal $Q$ e diagonal real $D$ com $Q^TAQ=D$.
+\end{teorema}
+\begin{proof}
+Na esfera compacta $S^{n-1}$, a função contínua $q(v)=\langle Av,v\rangle$ assume máximo em um vetor unitário $v$. Se $w\perp v$, considere
+$\gamma(t)=(v+tw)/\|v+tw\|$, definida para $t$ pequeno. Como $A$ é auto-adjunto,
+\[
+0=\left.\frac{d}{dt}\right|_{t=0}q(\gamma(t))
+=2\langle Av,w\rangle.
+\]
+Portanto $Av$ é ortogonal a todo vetor de $v^\perp$; logo $Av=\lambda v$ para algum $\lambda\in\mathbb R$. Além disso, se $w\in v^\perp$,
+$\langle Aw,v\rangle=\langle w,Av\rangle=\lambda\langle w,v\rangle=0$.
+Assim $v^\perp$ é invariante por $A$, e a restrição $A|_{v^\perp}$ permanece auto-adjunta. Por indução na dimensão, $v^\perp$ possui base ortonormal de autovetores; reunindo-a com $v$, obtemos a base desejada. A matriz $Q$ formada por esses vetores como colunas é ortogonal e satisfaz $Q^TAQ=D$.
+\end{proof}
+\section{Exemplo calculado}
+Para $A=\begin{psmallmatrix}2&1\\1&2\end{psmallmatrix}$, o polinômio característico é $(t-3)(t-1)$. Os autovetores unitários
+$v_3=(1,1)/\sqrt2$ e $v_1=(1,-1)/\sqrt2$ são ortogonais. Com
+\[
+Q=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},
+\quad D=\begin{pmatrix}3&0\\0&1\end{pmatrix},
+\quad Q^TAQ=D.
+\]
+Uma matriz não simétrica pode ser diagonalizável sem admitir tal diagonalização ortogonal; a igualdade $Q^{-1}=Q^T$ decorre da ortonormalidade, não da simples independência dos autovetores.
+\Fechamento{Quadro: esfera e maximização à esquerda, invariância ortogonal ao centro, $Q,D$ à direita.}{Onde foi usada a auto-adjunção? Na derivação de $q$ e na invariância de $v^\perp$.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Justifiquei existência do máximo por compacidade da esfera?
+\item Mostrei, e não supus, a invariância do complemento ortogonal?
+\item Expliquei a diferença entre matrizes diagonais por semelhança e por conjugação ortogonal?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+E. L. Lima, \emph{Álgebra Linear}; K. Hoffman e R. Kunze, \emph{Álgebra Linear}.
+
+\end{document}
