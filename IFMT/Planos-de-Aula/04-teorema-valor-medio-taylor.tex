@@ -1,0 +1,35 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Teorema do Valor Médio e Teorema de Taylor}{IFMT Edital 166/2023, Anexo X, Matemática, tema 4.}{Cálculo I ou disciplina de formação científica de curso técnico com estudo de derivadas.}{Enunciar hipóteses do TVM, demonstrá-lo a partir de Rolle e aplicar Taylor de ordem dois com estimativa de erro.}{Continuidade, derivadas, máximos e mínimos absolutos, fatoriais.}{Exposição demonstrativa com situação de aproximação numérica, deixando claro o alcance das hipóteses.}
+\Roteiro{Perguntar: uma função pode crescer em média $3$ por unidade sem ter em algum ponto taxa instantânea $3$?}{Enunciar e demonstrar Rolle; formular TVM.}{Demonstrar TVM por subtração da reta secante e explicar seu papel no controle do erro.}{Enunciar Taylor com resto de Lagrange e aplicar $\sin x\approx x$ em $x=0{,}2$, provando o limite do erro; mostrar a origem da cota.}{Fechar com as hipóteses e questão sobre diferença entre aproximação e igualdade.}
+\section{Demonstrações}
+\begin{lema}[Rolle]
+Se $f$ é contínua em $[a,b]$, derivável em $(a,b)$ e $f(a)=f(b)$, existe $c\in(a,b)$ com $f'(c)=0$.
+\end{lema}
+\begin{proof}
+Por Weierstrass, $f$ atinge máximo e mínimo no compacto. Se é constante, qualquer ponto serve. Se não, um dos extremos absolutos ocorre no interior porque $f(a)=f(b)$. Pelo teorema de Fermat, a derivada nesse ponto é $0$.
+\end{proof}
+\begin{teorema}[Valor Médio]
+Se $f$ é contínua em $[a,b]$ e derivável em $(a,b)$, há $c\in(a,b)$ com $f(b)-f(a)=f'(c)(b-a)$.
+\end{teorema}
+\begin{proof}
+Defina $g(x)=f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)$. Então $g(a)=g(b)=0$, e Rolle dá $g'(c)=0$. Como $g'=f'-(f(b)-f(a))/(b-a)$, segue o resultado.
+\end{proof}
+\begin{teorema}[Taylor com resto]
+Se $f\in C^{n+1}([a,b])$, com $a<b$, existe $c\in(a,b)$ tal que
+\[
+f(b)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(b-a)^k+
+\frac{f^{(n+1)}(c)}{(n+1)!}(b-a)^{n+1}.
+\]
+\end{teorema}
+Aqui o teorema de Taylor é \emph{enunciado} para otimizar o tempo; a prova integral pode ser preparada como material suplementar para a arguição ou outros editais. Não anunciar que foi demonstrado.
+\section{Exemplo numérico}
+Como as derivadas em $0$ de $\sin x$ são $0,1,0$, Taylor de ordem dois fornece $\sin x=x+R_2(x)$ e
+$|R_2(x)|\le |x|^3/6$ pois a terceira derivada é $-\cos x$ e $|\cos x|\le1$. Em $x=0{,}2$, o erro é no máximo $0{,}2^3/6<0{,}00134$. O aluno deve identificar que o resto é uma desigualdade sobre o erro, não uma igualdade com o valor numérico.
+\QuadroEAvaliacao{Esquerda: hipóteses de Rolle e TVM; centro: construção de $g$; direita: Taylor e cálculo do erro.}{Sem continuidade em $[a,b]$, o TVM continua garantido? Não: por exemplo, valores nas extremidades podem romper a hipótese.}
+\Auditoria{Não usar Rolle sem verificar continuidade; não atribuir uma demonstração de Taylor que não ocorreu; não apresentar apenas o polinômio de aproximação sem uma estimativa de erro; evitar exemplos demasiadamente especializados para o público escolhido.}
+\section{Bibliografia}
+E. L. Lima, \emph{Curso de Análise}; G. Ávila, \emph{Cálculo das Funções de uma Variável}.
+
+\end{document}
