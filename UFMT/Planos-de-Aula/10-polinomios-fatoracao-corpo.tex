@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Anéis de Polinômios e Fatoração sobre um Corpo}{UFMT Matemática/Matemática Aplicada, edital 2019 (retificação 2021)}{Álgebra; graduação após estruturas de anéis e polinômios.}
+\section{Objetivos e estratégia}
+Demonstrar a divisão euclidiana em $K[x]$, deduzir o teorema do fator e calcular fatoração que depende do corpo base. Explorar explicitamente por que o coeficiente líder deve ser invertível.
+\Cronograma{Comparar divisão de inteiros e divisão de polinômios; anunciar hipótese de corpo $K$.}{Definir grau, polinômio unitário, divisibilidade e irreducibilidade.}{Provar existência e unicidade da divisão euclidiana; deduzir teorema do fator.}{Fatorar $x^3-1$ sobre $\mathbb R$ e sobre $\mathbb C$; discutir irreducibilidade de $x^2+x+1$.}{Encerrar com hipótese fundamental: inversão do coeficiente líder.}
+\section{Demonstrações}
+\begin{teorema}[Divisão euclidiana em $K[x]$]
+Se $K$ é corpo e $f,g\in K[x]$ com $g\ne0$, existem únicos $q,r\in K[x]$ tais que $f=qg+r$ e $r=0$ ou $\deg r<\deg g$.
+\end{teorema}
+\begin{proof}
+Se $\deg f<\deg g$, basta $q=0$, $r=f$. Caso contrário, escreva os termos líderes $a x^m$ de $f$ e $b x^n$ de $g$, com $m\ge n$ e $b\ne0$. Como $K$ é corpo, $b^{-1}$ existe e
+$f_1=f-ab^{-1}x^{m-n}g$ tem grau menor que $\deg f$ ou é zero. Repita no restante enquanto seu grau for ao menos $n$; o processo termina porque o grau cai estritamente a cada passo. Obtém-se $f=qg+r$ com $\deg r<n$ ou $r=0$.
+
+Se $f=qg+r=q'g+r'$ são duas representações, $(q-q')g=r'-r$. Se $q\ne q'$, o lado esquerdo tem grau ao menos $\deg g$, enquanto o direito, se não nulo, tem grau menor que $\deg g$; contradição. Portanto $q=q'$ e $r=r'$.
+\end{proof}
+\begin{proposicao}[Teorema do fator]
+Para $a\in K$, temos $f(a)=0$ se e somente se $(x-a)\mid f$.
+\end{proposicao}
+\begin{proof}
+Divida $f$ por $x-a$: $f=(x-a)q+r$, com $r$ constante. Avaliando em $a$, resulta $f(a)=r$. Logo $f(a)=0\iff r=0$.
+\end{proof}
+\section{Exemplo e advertências}
+Em $\mathbb R[x]$,
+\[
+x^3-1=(x-1)(x^2+x+1).
+\]
+O discriminante do segundo fator é $1-4=-3<0$, então ele não tem raízes reais e é irredutível em $\mathbb R[x]$. Em $\mathbb C[x]$, possui raízes
+$\omega=(-1+i\sqrt3)/2$ e $\bar\omega$, de modo que
+\[
+x^3-1=(x-1)(x-\omega)(x-\bar\omega).
+\]
+\textbf{Erro a evitar:} afirmar que a fatoração irredutível não muda com o corpo, ou aplicar o algoritmo sem inverter o coeficiente líder.
+\Fechamento{Quadro: algoritmo e prova de unicidade à esquerda; avaliação em $a$ e fatoração à direita.}{A divisão com resto funciona em qualquer anel de coeficientes? Não em geral; no argumento foi usada a existência de $b^{-1}$.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Provei terminação pela queda estrita do grau?
+\item Demonstrei unicidade além de existência?
+\item Separei irreducibilidade em $\mathbb R[x]$ de fatoração em $\mathbb C[x]$?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+A. Garcia e Y. Lequain, \emph{Elementos de Álgebra}; A. Gonçalves, \emph{Introdução à Álgebra}.
+
+\end{document}
