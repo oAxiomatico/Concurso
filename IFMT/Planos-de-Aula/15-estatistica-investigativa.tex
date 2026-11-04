@@ -1,0 +1,25 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Estatística investigativa: média, mediana e dados discrepantes}{Ampliação curricular para Ensino Médio Integrado, inspirada no programa de conhecimentos específicos dos editais do IFMT; NÃO é tema sorteável de 2026 confirmado.}{2º ou 3º ano de Ensino Médio integrado ao técnico, com análise de medições fictícias.}{Calcular e interpretar média, mediana e amplitude; demonstrar uma propriedade da média e tomar decisão cautelosa diante de valor discrepante.}{Frações, ordenação, tabelas, função quadrática.}{Investigação guiada de cinco tempos de execução medidos hipoteticamente; comparação de medidas de centro.}
+\Roteiro{Apresentar cinco tempos fictícios de execução: $10,11,11,12,26$ min. Qual tempo típico relataria um relatório?}{Ordenar observações e definir média, mediana, amplitude e pergunta de investigação.}{Calcular média $14$, mediana $11$ e amplitude $16$; demonstrar que a média minimiza soma dos quadrados dos desvios.}{Discutir por que o valor $26$ altera a média e não a mediana; pedir comparação entre relatórios e propor checagem de processo de coleta.}{Fechar com escolha justificada de medida e limites de generalizar de cinco observações.}
+\section{Demonstração: uma propriedade da média}
+Para observações $x_1,\ldots,x_n$ e média $\bar x=\frac1n\sum_i x_i$, vale
+\[
+\sum_{i=1}^n(x_i-a)^2
+=\sum_{i=1}^n(x_i-\bar x)^2+n(a-\bar x)^2.
+\]
+\begin{proof}
+Escreva $x_i-a=(x_i-\bar x)+(\bar x-a)$ e expanda os quadrados. O termo misto é
+$2(\bar x-a)\sum_i(x_i-\bar x)=0$, pois $\sum_i(x_i-\bar x)=\sum_i x_i-n\bar x=0$. Resta a identidade.
+\end{proof}
+Como $n(a-\bar x)^2\ge0$, a expressão é mínima precisamente quando $a=\bar x$.
+Esta propriedade diz respeito a erros quadráticos e \emph{não} implica que a média seja sempre a medida mais representativa em dados assimétricos.
+\section{Exemplo resolvido e conclusão investigativa}
+Os cinco valores já estão ordenados. A soma é $10+11+11+12+26=70$, logo a média é $70/5=14$ min. A mediana é o terceiro valor, $11$ min, e a amplitude é $26-10=16$ min. Se o registro de $26$ min foi uma interrupção extraordinária, ele requer investigação; não se deve excluí-lo sem critério documentado. Com apenas cinco observações fictícias, não se pode concluir que a distribuição populacional dos tempos esteja descrita adequadamente por nenhuma das duas medidas.
+\QuadroEAvaliacao{Esquerda: tabela de cinco medidas; centro: média, mediana e amplitude; direita: identidade dos desvios e perguntas de investigação.}{É correto excluir o tempo de 26 min só porque aumenta a média? Não. Antes é necessário investigar o processo de coleta e adotar critério explícito.}
+\Auditoria{Não apresentar mediana como média aritmética; não remover dado discrepante sem justificativa; não chamar cinco valores inventados de dados empíricos reais; não anunciar uma investigação sem apresentar as perguntas e decisões efetivamente executadas.}
+\section{Bibliografia}
+M. N. Magalhães e A. C. P. Lima, \emph{Noções de Probabilidade e Estatística}; livros de Estatística para Ensino Médio.
+
+\end{document}
