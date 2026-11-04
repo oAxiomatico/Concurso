@@ -1,0 +1,25 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Aplicações de derivadas: máximos e mínimos locais}{IFMT Edital 166/2023, Anexo X, Matemática, tema 1.}{Curso técnico integrado ao Ensino Médio, turma com estudo introdutório de funções e derivadas; adaptação para Cálculo I.}{Localizar pontos críticos, justificar o teste de sinal da derivada, resolver uma otimização com interpretação de unidades.}{Função quadrática, função derivada, gráficos e intervalos.}{Resolução de problema, exposição dialogada e análise de erro; quadro e esquema de retângulo.}
+\Roteiro{Apresentar problema: com 24 m de cerca para três lados de um canteiro retangular junto a um muro, qual área máxima? Registrar hipótese de que o muro serve de quarto lado.}{Escolher variáveis $x$ (largura), $y$ (lado paralelo ao muro), impor $2x+y=24$, domínio $0<x<12$ e construir $A(x)=x(24-2x)$.}{Derivar $A'(x)=24-4x$ e obter o crítico $x=6$. Explicar teste de sinal e prova de monotonicidade pelo Teorema do Valor Médio.}{Resolver $y=12$ m e $A=72$ m$^2$. Confirmar por completar quadrados e discutir o que muda se a cerca tiver quatro lados.}{Concluir com objetivo, condição de fronteira, valor máximo e questão de saída com justificativa.}
+\section{Fundamentação e demonstrações}
+\begin{proposicao}[Teste de monotonicidade]
+Se $f$ é contínua em $[a,b]$ e derivável em $(a,b)$, e $f'(t)>0$ para todo $t\in(a,b)$, então $f$ é estritamente crescente em $[a,b]$. Se $f'<0$, é estritamente decrescente.
+\end{proposicao}
+\begin{proof}
+Para $a\le u<v\le b$, o Teorema do Valor Médio fornece $c\in(u,v)$ tal que $f(v)-f(u)=f'(c)(v-u)$. Como $v-u>0$, o sinal da diferença é o de $f'(c)$.
+\end{proof}
+Se $f'$ muda de positivo para negativo ao atravessar $c$, a função cresce antes e decresce depois; logo $c$ é máximo local. Neste problema, $A'(x)=24-4x$ é positiva para $0<x<6$ e negativa para $6<x<12$, provando que $x=6$ dá o máximo global no intervalo admissível.
+\section{Exemplo e aprofundamento}
+Alternativamente,
+\[
+A(x)=24x-2x^2=72-2(x-6)^2\le72.
+\]
+A igualdade ocorre exatamente em $x=6$ m, e o segundo lado é $12$ m. A forma quadrática verifica independentemente a otimização. Se houvesse cerca para os quatro lados, a restrição seria $2x+2y=24$ e o máximo mudaria para $36$ m$^2$ num quadrado de lado $6$ m: o contexto altera efetivamente o modelo, não só o vocabulário.
+\QuadroEAvaliacao{Esquerda: desenho e restrição; centro: $A$ e $A'$ com quadro de sinais; direita: resultado, unidades e comparação dos dois modelos.}{Por que $x=6$ representa máximo e não mínimo? Porque $A'$ troca de sinal de $+$ para $-$ e $A(6)=72$ m$^2$.}
+\Auditoria{Não confundir ponto crítico com máximo garantido; não esquecer o domínio físico $0<x<12$; não escrever apenas $A'(x)=0$ sem teste de sinal; não omitir unidades nem a relação do modelo com a quantidade de cerca.}
+\section{Bibliografia de estudo}
+D. G. Figueiredo, \emph{Cálculo e Análise}; livros de Cálculo do currículo da turma; conferir edital vigente.
+
+\end{document}
