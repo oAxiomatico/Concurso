@@ -1,0 +1,25 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Geometria plana: semelhança de triângulos e medidas indiretas}{IFMT Edital complementar 01 ao Edital 210/2024, Matemática/Juína, tema Geometria Plana.}{9º ano do Ensino Fundamental ou 1º ano do Ensino Médio integrado ao técnico; para EBTT, optar pelo público do Ensino Médio integrado.}{Identificar semelhança por ângulos, estabelecer proporções correspondentes e resolver uma medida indireta com hipótese explícita.}{Ângulos, paralelas, proporções e triângulos retângulos.}{Situação de sombra e levantamento de altura de mastro, desenho geométrico e avaliação breve.}
+\Roteiro{Apresentar medição fictícia: haste vertical $1{,}8$ m projeta sombra de $1{,}2$ m; mastro projeta sombra de $8$ m. Qual a altura?}{Desenhar triângulos retângulos formados pelos raios solares e objetos; enunciar aproximação de raios solares paralelos.}{Demonstrar por igualdade de dois ângulos que os triângulos são semelhantes; deduzir proporcionalidade entre altura e sombra.}{Calcular altura $h=8(1{,}8/1{,}2)=12$ m. Discutir erro sistemático se medições ocorrem em horários diferentes ou solo inclinado.}{Concluir com desenho, hipótese, proporção e pergunta de saída sobre a ordem dos lados.}
+\section{Demonstração e resolução}
+\begin{proposicao}[Critério AA]
+Se dois triângulos possuem dois ângulos correspondentes congruentes, então são semelhantes.
+\end{proposicao}
+\begin{proof}[Justificativa geométrica]
+Os terceiros ângulos também coincidem, pois a soma dos ângulos internos é $180^\circ$. Pelo teorema de semelhança AA (fundamentado por paralelas e o teorema de Tales no curso anterior), os lados opostos aos ângulos correspondentes são proporcionais. Nesta aula o critério AA é tratado como resultado prévio; a verificação da correspondência dos ângulos é efetuada no problema.
+\end{proof}
+Ambos os triângulos do problema são retângulos porque os objetos são verticais e o solo é horizontal. Assumindo raios solares paralelos, os ângulos agudos formados por um raio e o solo são iguais. Portanto,
+\[
+\frac{h}{8}=\frac{1{,}8}{1{,}2}
+\quad\Rightarrow\quad h=\frac{8\cdot1{,}8}{1{,}2}=12\ {\rm m}.
+\]
+\section{Aplicação e interpretação}
+A proporção é válida sob condições de iluminação aproximadamente comum no instante da medição, objetos perpendiculares ao solo e terreno plano. A verificação de coerência é indispensável: como a sombra do mastro é maior que a da haste, sua altura calculada deve ser maior que $1{,}8$ m.
+\QuadroEAvaliacao{À esquerda: dois triângulos com ângulos marcados; ao centro: correspondência e proporção; à direita: altura calculada e hipóteses da medição.}{Se a sombra do mastro é $4$ vezes a de uma haste sob as mesmas condições, como ficam as alturas? A altura do mastro é $4$ vezes a da haste.}
+\Auditoria{Não desenhar lados correspondentes trocados; não atribuir medida a mastro real; não usar a semelhança sem mencionar paralelismo dos raios, terreno plano e verticalidade; diferenciar hipótese do modelo de resultado calculado.}
+\section{Bibliografia}
+E. L. Lima, \emph{Medida e Forma em Geometria}; G. Iezzi et al., \emph{Fundamentos de Matemática Elementar --- Geometria Plana}.
+
+\end{document}
