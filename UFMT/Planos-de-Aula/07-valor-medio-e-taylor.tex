@@ -1,0 +1,48 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teorema do Valor Médio e Teorema de Taylor}{UFMT Matemática Aplicada, 2019; Matemática Aplicada/Probabilidade, Várzea Grande, 2025}{Análise Real; graduação após continuidade e derivadas.}
+\section{Objetivos e estratégia}
+Provar Rolle, o Teorema do Valor Médio (TVM) e a fórmula de Taylor com resto de Lagrange; ilustrar com uma aproximação quadrática e estimar o erro. Estratégia: enunciar hipóteses, construir as funções auxiliares, verificar condições de aplicação.
+\Cronograma{Interpretar geometricamente inclinação de secante e tangente.}{Enunciar e provar Rolle e TVM.}{Construir polinômio de Taylor; demonstrar a fórmula de Lagrange por aplicações sucessivas de Rolle.}{Resolver aproximação de $\sin x$ perto de $0$ e estimar o resto; discutir erros por ausência de hipóteses.}{Finalizar com as três implicações lógicas da aula e questão sobre regularidade.}
+\section{Demonstrações}
+\begin{lema}[Rolle]
+Se $f:[a,b]\to\mathbb R$ é contínua no fechado, derivável no aberto e $f(a)=f(b)$, então existe $c\in(a,b)$ com $f'(c)=0$.
+\end{lema}
+\begin{proof}
+Se $f$ é constante, qualquer $c$ serve. Caso contrário, pelo Teorema de Weierstrass, possui máximo e mínimo absolutos no compacto; como os valores das extremidades coincidem, ao menos um desses extremos é atingido no interior. Pelo teorema de Fermat, a derivada nesse extremo é zero.
+\end{proof}
+\begin{teorema}[Valor Médio]
+Sob continuidade em $[a,b]$ e derivabilidade em $(a,b)$, existe $c\in(a,b)$ tal que $f(b)-f(a)=f'(c)(b-a)$.
+\end{teorema}
+\begin{proof}
+Considere $g(x)=f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)$. Então $g(a)=g(b)=0$ e $g$ satisfaz Rolle, logo $g'(c)=0$. Rearranjando, obtém-se a identidade.
+\end{proof}
+\begin{teorema}[Taylor com resto de Lagrange]
+Se $f\in C^{n+1}([a,b])$, com $a<b$, existe $c\in(a,b)$ tal que
+\[
+f(b)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(b-a)^k
++\frac{f^{(n+1)}(c)}{(n+1)!}(b-a)^{n+1}.
+\]
+\end{teorema}
+\begin{proof}
+Seja $P_n(t)=\sum_{k=0}^n f^{(k)}(a)(t-a)^k/k!$ e
+$K=[f(b)-P_n(b)]/(b-a)^{n+1}$. Defina
+$g(t)=f(t)-P_n(t)-K(t-a)^{n+1}$. Temos $g(a)=g(b)=0$ e $g^{(j)}(a)=0$ para $1\le j\le n$. Por Rolle aplicado a $g$, há um zero de $g'$ em $(a,b)$; como $g'(a)=0$, Rolle aplicado entre $a$ e esse ponto fornece zero de $g''$. Repetindo, encontramos $c\in(a,b)$ com $g^{(n+1)}(c)=0$. Como $P_n^{(n+1)}=0$,
+$0=f^{(n+1)}(c)-(n+1)!K$, concluindo a fórmula.
+\end{proof}
+\section{Exemplo resolvido}
+Para $f(x)=\sin x$ em $[0,0{,}2]$, Taylor de ordem $2$ em $0$ dá $P_2(x)=x$, e
+$|\sin x-x|\le |x|^3/6$, pois $|f^{(3)}|=|\!-\cos|\le1$. Assim, em $x=0{,}2$, o erro absoluto é no máximo $0{,}008/6\approx0{,}00134$. A estimativa, não apenas o valor aproximado, deve aparecer no quadro.
+\Fechamento{Esquerda: hipóteses do TVM; centro: funções auxiliares; direita: Taylor e erro.}{Qual passo falha se não houver continuidade nas extremidades? Rolle pode não ser aplicável.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Diferenciei hipóteses de Rolle, TVM e Taylor?
+\item Expliquei por que a cadeia de aplicações de Rolle termina em $g^{(n+1)}(c)=0$?
+\item Apresentei cota de erro numérica e não só polinômio aproximante?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+D. G. de Figueiredo, \emph{Análise I}; E. L. Lima, \emph{Curso de Análise}.
+
+\end{document}
