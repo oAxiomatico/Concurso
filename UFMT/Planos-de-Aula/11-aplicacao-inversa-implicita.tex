@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Teoremas da Aplicação Inversa e da Aplicação Implícita}{UFMT Várzea Grande, área Matemática Aplicada/Probabilidade, prova didática 2025}{Análise em várias variáveis; graduação com cálculo diferencial e Teorema do Valor Médio.}
+\section{Objetivos e recorte}
+Enunciar os teoremas locais em dimensão finita, provar a versão unidimensional do teorema da inversa e da implícita, e resolver uma curva implícita. Não confundir a demonstração das versões escalares com a prova completa dos teoremas em $\mathbb R^n$.
+\Cronograma{Pergunta: quando $y=f(x)$ pode ser invertida localmente? E quando $F(x,y)=0$ define $y$ em função de $x$?}{Enunciar inversa local com derivada não singular e implícita com $F_y\neq0$.}{Provar versão unidimensional da inversa e construção escalar da função implícita via monotonicidade e continuidade.}{Calcular derivada implícita da circunferência $x^2+y^2=1$ perto de $(0,1)$; identificar pontos de falha.}{Finalizar com hipóteses de invertibilidade e dimensão do problema tratado.}
+\section{Enunciados e demonstrações}
+\begin{teorema}[Inversa local em dimensão finita: enunciado]
+Se $f:U\subset\mathbb R^n\to\mathbb R^n$ é $C^1$ em aberto e $\det Df(a)\neq0$, existem vizinhanças de $a$ e $f(a)$ nas quais $f$ é difeomorfismo $C^1$, com $D(f^{-1})(f(a))=[Df(a)]^{-1}$.
+\end{teorema}
+\begin{proposicao}[Prova completa em uma dimensão]
+Se $f$ é $C^1$ num intervalo aberto e $f'(a)\neq0$, então $f$ tem inversa $g$ definida numa vizinhança de $f(a)$ e $g'(f(x))=1/f'(x)$ localmente.
+\end{proposicao}
+\begin{proof}
+Por continuidade de $f'$, este tem sinal constante numa vizinhança de $a$. Pelo TVM, $f$ é estritamente monótona ali, logo bijetiva sobre a imagem, e sua inversa $g$ é contínua. Para $y\ne f(x)$ próximo, o TVM aplicado entre $x$ e $g(y)$ fornece
+\[
+\frac{g(y)-x}{y-f(x)}=\frac1{f'(\xi_y)},
+\]
+com $\xi_y$ entre $x$ e $g(y)$. Quando $y\to f(x)$, a continuidade de $g$ implica $\xi_y\to x$, e a fração converge para $1/f'(x)$.
+\end{proof}
+\begin{teorema}[Implícita em dimensão finita: enunciado]
+Se $F:U\subset\mathbb R^{m+n}\to\mathbb R^n$ é $C^1$, $F(a,b)=0$ e $D_yF(a,b)$ é invertível, existe uma função $C^1$ local $y=g(x)$ satisfazendo $F(x,g(x))=0$ e
+$Dg(x)=-[D_yF(x,g(x))]^{-1}D_xF(x,g(x))$.
+\end{teorema}
+\begin{proposicao}[Caso escalar com prova]
+Se $F$ é $C^1$ perto de $(a,b)\in\mathbb R^2$, $F(a,b)=0$ e $F_y(a,b)\ne0$, há única função $C^1$ local $y=g(x)$ com $g(a)=b$, $F(x,g(x))=0$, e $g'(x)=-F_x/F_y$ ao longo da curva.
+\end{proposicao}
+\begin{proof}
+Suponha $F_y(a,b)>0$ (o outro sinal é análogo). Escolha retângulo pequeno no qual $F_y>0$. Assim, para cada $x$ fixo próximo de $a$, $y\mapsto F(x,y)$ é estritamente crescente. Fixando $b-\delta<b<b+\delta$, os valores $F(a,b-\delta)$ e $F(a,b+\delta)$ são de sinais opostos; por continuidade isso persiste para $x$ próximo de $a$. O TVI dá um único $g(x)\in(b-\delta,b+\delta)$ com $F(x,g(x))=0$. A continuidade de $g$ segue da unicidade: se $x_k\to x$, qualquer subsequência convergente dos $g(x_k)$ teria limite $y_*$ com $F(x,y_*)=0$, logo $y_*=g(x)$. Pelo TVM nas duas variáveis separadamente,
+\[
+0=F_x(\xi_h,g(x+h))h+
+F_y(x,\eta_h)[g(x+h)-g(x)]
+\]
+para pontos intermediários $\xi_h,\eta_h$. Dividindo por $h$ e fazendo $h\to0$, obtemos $g'(x)=-F_x(x,g(x))/F_y(x,g(x))$. Como as derivadas de $F$ são contínuas, $g'$ também é.
+\end{proof}
+\section{Exemplo resolvido}
+Para $F(x,y)=x^2+y^2-1$ em $(0,1)$, temos $F_y=2y=2\neq0$. Assim $y=g(x)=\sqrt{1-x^2}$ localmente e
+\[
+g'(x)=-\frac{2x}{2g(x)}=-\frac{x}{\sqrt{1-x^2}}.
+\]
+Em $(1,0)$, a hipótese $F_y\ne0$ falha: não é possível expressar a circunferência como $y(x)$ diferenciável numa vizinhança desse ponto, embora seja possível expressar $x$ em função de $y$.
+\Fechamento{Esquerda: duas condições matriciais; centro: TVM e argumento de unicidade; direita: círculo com tangente vertical em $(1,0)$.}{Por que $F_y\neq0$ é hipótese local, e o que ocorre quando ela falha?}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Distingui teoremas gerais enunciados dos casos escalares provados?
+\item Justifiquei existência e continuidade da solução implícita antes de derivá-la?
+\item Calculei a derivada implícita somente em região com $F_y\ne0$?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+E. L. Lima, \emph{Curso de Análise}, v. 2; textos de Cálculo em Várias Variáveis.
+
+\end{document}
