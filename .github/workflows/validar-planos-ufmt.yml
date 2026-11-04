@@ -1,0 +1,32 @@
+name: Validar planos de aula UFMT em LaTeX
+on:
+  push:
+    paths:
+      - "UFMT/Planos-de-Aula/**"
+      - ".github/workflows/validar-planos-ufmt.yml"
+  workflow_dispatch:
+
+jobs:
+  compilar-planos:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+
+      - name: Compilar todos os planos
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: "*.tex"
+          working_directory: "UFMT/Planos-de-Aula"
+          continue_on_error: true
+          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Publicar PDFs compilados como artefatos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: planos-de-aula-UFMT-PDF
+          path: "UFMT/Planos-de-Aula/*.pdf"
+          if-no-files-found: warn
