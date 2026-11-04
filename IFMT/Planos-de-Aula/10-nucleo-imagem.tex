@@ -1,0 +1,30 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ifmt}
+\begin{document}
+\Ficha{Espaços vetoriais e Teorema do Núcleo e da Imagem}{IFMT Edital 029/2024, Anexo X retificado em 30/08/2024, Matemática, tema 5.}{Álgebra Linear para curso superior de tecnologia.}{Demonstrar posto--nulidade e determinar, no exemplo, núcleo, imagem e número de parâmetros livres.}{Independência linear, base, dimensão e sistemas lineares.}{Problema de mapeamento de três variáveis para duas, prova por extensão de base e solução concreta.}
+\Roteiro{Apresentar $T(x,y,z)=(x+y,y+z)$ e questionar quantas informações se perdem.}{Definir núcleo e imagem, e revisar dimensão de subespaço.}{Provar posto--nulidade estendendo uma base do núcleo e mostrando que suas imagens complementares formam base da imagem.}{Resolver explicitamente o núcleo e imagem de $T$, verificar $3=1+2$ e interpretar o parâmetro livre.}{Concluir com implicações sobre injetividade e pergunta de diagnóstico.}
+\section{Demonstração}
+\begin{teorema}[Núcleo e imagem]
+Se $T:V\to W$ é linear e $\dim V=n<\infty$, então
+\[
+n=\dim\ker T+\dim\operatorname{Im}T.
+\]
+\end{teorema}
+\begin{proof}
+Seja $(u_1,\ldots,u_k)$ base de $\ker T$. Estenda-a a base de $V$:
+$(u_1,\ldots,u_k,v_1,\ldots,v_{n-k})$. Afirmamos que
+$(T(v_1),\ldots,T(v_{n-k}))$ é base da imagem.
+De fato, dado $T(x)$, escreva $x=\sum a_iu_i+\sum b_jv_j$. Como $T(u_i)=0$, temos $T(x)=\sum b_jT(v_j)$, portanto os vetores geram a imagem. Se $\sum b_jT(v_j)=0$, então $\sum b_jv_j\in\ker T$, logo $\sum b_jv_j=\sum a_iu_i$ para certos coeficientes. Pela independência da base estendida, todos os $b_j$ são zero. Assim esses $n-k$ vetores formam base da imagem.
+\end{proof}
+\section{Exemplo e interpretação}
+Para $T(x,y,z)=(x+y,y+z)$, as equações do núcleo são $x+y=0$ e $y+z=0$, logo
+\[
+\ker T=\operatorname{span}\{(-1,1,-1)\},\qquad\dim\ker T=1.
+\]
+Como $T(1,0,0)=(1,0)$ e $T(0,0,1)=(0,1)$, a imagem é $\mathbb R^2$ e tem dimensão $2$. Para qualquer $(a,b)\in\mathbb R^2$, as soluções de $T(x,y,z)=(a,b)$ são $(a-t,t,b-t)$, $t\in\mathbb R$. Portanto $3=1+2$ e um parâmetro livre corresponde ao núcleo.
+\QuadroEAvaliacao{Esquerda: núcleo, imagem e definição; centro: prova por extensão de base; direita: sistema linear com parâmetro.}{Se $\dim V=5$ e $\dim\ker T=2$, qual o posto? $3$. O núcleo trivial implica o quê? Injetividade.}
+\Auditoria{Não confundir dimensão do contradomínio com dimensão da imagem; demonstrar independência das imagens; não afirmar que toda aplicação de $\mathbb R^3$ para $\mathbb R^2$ é sobrejetiva.}
+\section{Bibliografia}
+E. L. Lima, \emph{Álgebra Linear}; H. Anton e C. Rorres, \emph{Álgebra Linear com Aplicações}.
+
+\end{document}
