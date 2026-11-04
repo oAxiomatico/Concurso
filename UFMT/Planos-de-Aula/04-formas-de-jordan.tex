@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{planos-ufmt}
+\begin{document}
+\CapaPlano{Formas de Jordan de um Operador Linear}{UFMT, Matemática/Cuiabá, editais de 2025 e 2026}{Álgebra Linear II, após autovalores, polinômio característico e espaços invariantes.}
+\section{Objetivos e recorte}
+Apresentar a hipótese de decomposição do polinômio característico, definir cadeias generalizadas, demonstrar rigorosamente o caso não diagonalizável $2\times2$ e exemplificar o efeito de um bloco de Jordan na exponencial. \textbf{Recorte:} a prova da existência da forma de Jordan em dimensão arbitrária é mais longa e não será anunciada como demonstrada nesta aula de 45 minutos.
+\Cronograma{Exibir a matriz $\begin{psmallmatrix}2&1\\0&2\end{psmallmatrix}$ e perguntar por que não tem base de autovetores.}{Definir $\ker(A-\lambda I)^k$, vetores generalizados e cadeia; enunciar a forma de Jordan sob a decomposição do polinômio característico.}{Demonstrar o caso $2\times2$ com autovalor duplo e apenas uma direção própria; construir a base de Jordan.}{Resolver $A=2I+N$, $N^2=0$, obter $e^{tA}$; comparar com matriz diagonal e apontar a dependência do corpo.}{Fechar com distinção entre enunciado geral e caso efetivamente provado.}
+\section{Demonstração principal}
+\begin{proposicao}[Bloco defeituoso de ordem dois]
+Se $A$ é um operador em espaço vetorial complexo de dimensão $2$, com polinômio característico $(t-\lambda)^2$ e $\dim\ker(A-\lambda I)=1$, então existe base na qual
+\[
+[A]=\begin{pmatrix}\lambda&1\\0&\lambda\end{pmatrix}.
+\]
+\end{proposicao}
+\begin{proof}
+Defina $N=A-\lambda I$. Pelo teorema de Cayley--Hamilton, $N^2=0$. Como $\dim\ker N=1$, temos $N\ne0$. Escolha $v_2$ com $Nv_2\ne0$ e ponha $v_1=Nv_2$. Então $Nv_1=N^2v_2=0$. Se $v_1$ e $v_2$ fossem dependentes, teríamos $v_1=cv_2$ para algum $c\ne0$, implicando $Nv_1=cNv_2=cv_1\ne0$, contradição. Assim $(v_1,v_2)$ é base e
+$Av_1=\lambda v_1$, $Av_2=v_1+\lambda v_2$, donde a matriz indicada.
+\end{proof}
+\begin{teorema}[Forma normal: enunciado]
+Sobre um corpo em que o polinômio característico de $A$ se decompõe em fatores lineares, existe uma base na qual a matriz de $A$ é soma direta de blocos de Jordan. Cada bloco corresponde a uma cadeia de autovetores generalizados.
+\end{teorema}
+\noindent A existência geral é enunciada aqui, não demonstrada; a prova exibida cobre exatamente a proposição anterior.
+\section{Exemplo resolvido}
+Para $A=\begin{psmallmatrix}2&1\\0&2\end{psmallmatrix}=2I+N$ com $N^2=0$,
+\[
+e^{tA}=e^{2t}e^{tN}
+=e^{2t}(I+tN)
+=e^{2t}\begin{pmatrix}1&t\\0&1\end{pmatrix}.
+\]
+Justifique o produto de exponenciais porque $2I$ comuta com $N$; a série de $e^{tN}$ termina após o termo linear. \textbf{Erro a evitar:} confundir multiplicidade algébrica $2$ com duas direções de autovetores. Sobre $\mathbb R$, a forma de Jordan real requer ressalvas se surgirem autovalores não reais.
+\Fechamento{Esquerda: autovetor generalizado e cadeia; centro: prova do caso $2\times2$; direita: exponencial matricial.}{Por que $v_1=Nv_2$ e $v_2$ são independentes? Solicitar o argumento pela nilpotência.}
+\section{Autoavaliação específica}
+\begin{itemize}
+\item Diferenciei teorema geral de caso demonstrado?
+\item Justifiquei $N^2=0$ por Cayley--Hamilton, e não por inspeção informal?
+\item Fiz a conferência das colunas de $[A]_{(v_1,v_2)}$?
+\end{itemize}
+\RubricaUFMT
+\section{Referências}
+K. Hoffman e R. Kunze, \emph{Álgebra Linear}; E. L. Lima, \emph{Álgebra Linear}.
+
+\end{document}
